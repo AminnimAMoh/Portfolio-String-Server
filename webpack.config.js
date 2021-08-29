@@ -1,26 +1,38 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-module.exports = {
+const nodeExternals = require("webpack-node-externals");
+
+const common = {
   devtool: "cheap-module-source-map",
-  output: {
-      filename: '[name].[contenthash].js'
+  externals: {
+    react: 'react',
   },
   module: {
     rules: [
-      { test: /\.js?$/, exclude: /node_modules/, loader: "babel-loader" },
+      { test: /\.tsx?$/, exclude: /node_modules/, loader: "babel-loader"},
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: ["to-string-loader", "css-loader"],
       },
     ],
   },
-  resolve:{
-      alias:{
-          '@material-ui/core': '@material-ui/core/es'
-      }
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
+    alias: {
+      "@material-ui/core": "@material-ui/core/es",
+    },
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "index.html",
-    }),
-  ],
 };
+module.exports = [
+  {
+    ...common,
+    entry: "./txsrc/client",
+    output: {
+      path: `${__dirname}/public`,
+    },
+  },
+  {
+    ...common,
+    target: "node",
+    entry: "./txsrc/server",
+    externals: [nodeExternals()]
+  },
+];

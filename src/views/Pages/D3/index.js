@@ -1,4 +1,3 @@
-import { jsx as _jsx } from "react/jsx-runtime";
 import React, { useRef, useEffect, useState } from "react";
 import { select } from "d3-selection";
 import { draw } from "./draw";
@@ -64,7 +63,8 @@ function D3() {
         //Dependencies
         //Conditions to retriggre this hook.
     }, [svg, svgSetupTrigger, annualrain, slums, population, months]);
-    return (_jsx("div", Object.assign({ style: { width: "100%", height: "100%" } }, { children: _jsx("svg", { style: { width: "100%", height: "100%" }, ref: svgRef }, void 0) }), void 0));
+    return (React.createElement("div", { style: { width: "100%", height: "100%" } },
+        React.createElement("svg", { style: { width: "100%", height: "100%" }, ref: svgRef })));
 }
 export default D3;
 //# sourceMappingURL=index.js.map

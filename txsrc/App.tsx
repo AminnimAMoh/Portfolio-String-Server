@@ -1,7 +1,7 @@
 //This is the 'majula'. Dark Souls fans are familiar with this place. 😅
 //Here we managing the main states.
 
-import React, { useEffect, useState, Suspense, lazy } from "react";
+import React, { useEffect, useState } from "react";
 
 // import MenuButton from "./views/MenuButton";
 // import ContentContainer from "./views/ContentContainer";
@@ -13,11 +13,13 @@ import { Snackbar, Slide } from "@material-ui/core";
 import { RootState } from "./store";
 import { useSelector, useDispatch } from "react-redux";
 import { rowGridToggleToReverce } from "./redux/slices/ScreenSettingsSlice";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { readDataAgain } from "./redux/slices/fetchSlice";
 
-const MenuButton = lazy(() => import("./views/MenuButton"));
-const ContentContainer = lazy(() => import("./views/ContentContainer"));
-const DataFetchPending = lazy(() => import("./views/DataFetchPending"));
+import DataFetchPending from "./views/DataFetchPending";
+import MenuButton from "./views/MenuButton";
+import ContentContainer from "./views/ContentContainer";
+import { isBrowser } from "./utils";
 
 //An easy way to apply transitions to Material-UI components.
 //Pre writen transition from Material-UI.
@@ -31,6 +33,9 @@ function App(): React.ReactElement {
   const [svgSetupTrigger, setSVGSetupTrigger] = useState<boolean>(false);
   const [snackState, setSnackState] = useState<boolean>(false);
   const dispatch = useDispatch();
+  const matches=useMediaQuery('(min-width:600px)');
+  console.log(matches);
+  
   const {
     buttonAction: { rootState, buttonTrigered },
     dataStore: { annualrain, slums, population, months },
@@ -44,9 +49,11 @@ function App(): React.ReactElement {
   //More specifically this hook will toggle the flex-flow on elements listening to 'screenState'.
   //Set up at 'ScreenSettingsSlice.tsx'->
   useEffect(() => {
-    if (window.innerWidth < 1280) {
-      //Sending the window width size as an argument to be checked in the reducer.
-      dispatch(rowGridToggleToReverce(window.innerWidth));
+    if (!isBrowser) {
+      if (window.innerWidth < 1280) {
+        //Sending the window width size as an argument to be checked in the reducer.
+        dispatch(rowGridToggleToReverce(window.innerWidth));
+      }
     }
   });
 
@@ -84,26 +91,26 @@ function App(): React.ReactElement {
     setSnackState(false);
   };
 
+  console.log("App");
+  
   return (
     <div
       className={rootState ? `${classes.root} open` : `${classes.root} close`}
     >
-      <Suspense fallback={'Loading...'}>
-        {!svgSetupTrigger && buttonTrigered === "D3" && (
-          <div className={classes.loading}>
-            <DataFetchPending />
-          </div>
-        )}
-        <Snackbar
-          open={snackState}
-          TransitionComponent={TransitionUp}
-          message={`Failed to fetch data. Click here to try again.`}
-          onClick={snackBarRefreshAction}
-          classes={{ root: classes.snackbar }}
-        />
-        <MenuButton />
-        <ContentContainer />
-      </Suspense>
+      {!svgSetupTrigger && buttonTrigered === "D3" && (
+        <div className={classes.loading}>
+          <DataFetchPending />;
+        </div>
+      )}
+      <Snackbar
+        open={snackState}
+        TransitionComponent={TransitionUp}
+        message={`Failed to fetch data. Click here to try again.`}
+        onClick={snackBarRefreshAction}
+        classes={{ root: classes.snackbar }}
+      />
+      <MenuButton />;
+      <ContentContainer />;
     </div>
   );
 }

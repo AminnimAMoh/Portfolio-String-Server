@@ -1,30 +1,35 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React, { useState, useRef } from "react";
 import useStyle from "./style";
 import useMeasure from "react-use-measure";
 import { useDispatch, useSelector } from "react-redux";
+import { isBrowser } from "../../utils";
 import { containerStateToggle, onDelayStateChange,
 // addButtonsPosition
  } from "../../redux/slices/buttonActionSlice";
 // import { Positions } from "./types";
 // import { Typography } from "@material-ui/core";
 const calPos = (index, length, size, state) => {
-    if (window.innerWidth > 1280) {
-        const inc = state ? 1.5 : 3;
-        const rad = size / inc;
-        const angle = ((2 * Math.PI) / length) * index;
-        const x = rad * Math.cos(angle);
-        const y = rad * Math.sin(angle);
-        return { x, y };
+    if (!isBrowser) {
+        if (window.innerWidth > 1280) {
+            const inc = state ? 1.5 : 3;
+            const rad = size / inc;
+            const angle = ((2 * Math.PI) / length) * index;
+            const x = rad * Math.cos(angle);
+            const y = rad * Math.sin(angle);
+            return { x, y };
+        }
+        else {
+            const phase = window.innerWidth < 560 ? 8 : 20;
+            const inc = state ? 3 : 30;
+            const angle = ((Math.PI * 2) / length + 2) * index;
+            const rad = size / inc;
+            const x = rad * 5 * Math.cos(angle) + 5 * (rad * Math.sin(angle)) - phase;
+            const y = 0;
+            return { x, y };
+        }
     }
     else {
-        const phase = window.innerWidth < 560 ? 8 : 20;
-        const inc = state ? 3 : 30;
-        const angle = ((Math.PI * 2) / length + 2) * index;
-        const rad = size / inc;
-        const x = rad * 5 * Math.cos(angle) + 5 * (rad * Math.sin(angle)) - phase;
-        const y = 0;
-        return { x, y };
+        return { x: 0, y: 0 };
     }
 };
 function MenuButton() {
@@ -85,20 +90,24 @@ function MenuButton() {
         }
         dispatch(containerStateToggle(payload));
     };
-    return (_jsxs("div", Object.assign({ className: classes.root, ref: parentElement, style: screenState === "wide" && !rootState && !delayState
+    return (React.createElement("div", { className: classes.root, ref: parentElement, style: screenState === "wide" && !rootState && !delayState
             ? { paddingRight: 0 }
             : screenState === "limited" && !rootState
                 ? { paddingTop: 0 }
-                : {} }, { children: [_jsx("div", Object.assign({ className: powerState
-                    ? `${classes.powerButton} open`
-                    : `${classes.powerButton} close`, onClick: handlePowerClick }, { children: _jsx("img", { ref: buttonMesures, src: 'images/Button/Menu_Trigger/Power_Button-Stoke.png', alt: "content-asset" }, void 0) }), void 0), data.map(({ name, img, toolKit, info, }, index) => {
-                const { x, y } = calPos(index, data.length, buttonSizing, powerState);
-                return (_jsx("div", Object.assign({ className: classes.buttonContainers, style: { transform: `translate(${x}px, ${y}px)` } }, { children: _jsx("div", { id: name, className: classes.iconButtons, style: {
-                            width: buttonSizing / 4,
-                            height: buttonSizing / 4,
-                            backgroundImage: `url(${img})`,
-                        }, onClick: (e) => handleClick(e) }, void 0) }), name));
-            })] }), void 0));
+                : {} },
+        React.createElement("div", { className: powerState
+                ? `${classes.powerButton} open`
+                : `${classes.powerButton} close`, onClick: handlePowerClick },
+            React.createElement("img", { ref: buttonMesures, src: "images/Button/Menu_Trigger/Power_Button-Stoke.png", alt: "content-asset" })),
+        data.map(({ name, img, toolKit, info, }, index) => {
+            const { x, y } = calPos(index, data.length, buttonSizing, powerState);
+            return (React.createElement("div", { key: name, className: classes.buttonContainers, style: { transform: `translate(${x}px, ${y}px)` } },
+                React.createElement("div", { id: name, className: classes.iconButtons, style: {
+                        width: buttonSizing / 4,
+                        height: buttonSizing / 4,
+                        backgroundImage: `url(${img})`,
+                    }, onClick: (e) => handleClick(e) })));
+        })));
 }
 export default MenuButton;
 //# sourceMappingURL=index.js.map

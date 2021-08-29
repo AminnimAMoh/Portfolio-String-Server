@@ -1,24 +1,23 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import React, { useRef, Suspense, lazy } from "react";
+import React, { useRef } from "react";
 import useStyle from "./style";
 import { useSelector } from "react-redux";
-const UX = lazy(() => import("../Pages/UX"));
-const UI = lazy(() => import("../Pages/UI"));
-const CV = lazy(() => import("../Pages/CV"));
-const D3 = lazy(() => import("../Pages/D3"));
-const Undeveloped = lazy(() => import("../Pages/Undeveloped"));
+import UX from "../Pages/UX";
+import UI from "../Pages/UI";
+import CV from "../Pages/CV";
+// import D3 from "../Pages/D3";
+import Undeveloped from "../Pages/Undeveloped";
 function RenderObject(state) {
     switch (state.state) {
         case "UX":
-            return _jsx(UX, {}, void 0);
+            return React.createElement(UX, null);
         case "UI":
-            return _jsx(UI, {}, void 0);
+            return React.createElement(UI, null);
         case "CV":
-            return _jsx(CV, {}, void 0);
-        case "D3":
-            return _jsx(D3, {}, void 0);
+            return React.createElement(CV, null);
+        // case "D3":
+        // return <D3 />;
         default:
-            return _jsx(Undeveloped, {}, void 0);
+            return React.createElement(Undeveloped, null);
     }
 }
 function ContentContainer() {
@@ -47,7 +46,7 @@ function ContentContainer() {
         });
     };
     const { buttonAction: { rootState, delayState, renderPage }, screenAction: { screenState }, } = useSelector((state) => state);
-    return (_jsx("div", Object.assign({ onScroll: handleScroll, ref: rootDetails, className: rootState && screenState === "wide"
+    return (React.createElement("div", { onScroll: handleScroll, ref: rootDetails, className: rootState && screenState === "wide"
             ? `${classes.root} open`
             : rootState && screenState === "limited"
                 ? `${classes.root} open_vertically`
@@ -65,7 +64,11 @@ function ContentContainer() {
                     ? { height: "100%" }
                     : !rootState && delayState && screenState === "limited"
                         ? { height: "0%" }
-                        : {} }, { children: _jsxs(Suspense, Object.assign({ fallback: "Loadding...." }, { children: [_jsx("div", Object.assign({ ref: scrollToTop, className: classes.scrollToTop, onClick: handleClick }, { children: _jsx("div", {}, void 0) }), void 0), _jsx("img", { src: "images/Containers/Content_Frame/Mobile.png", alt: "content", className: classes.MobileFrame }, void 0), _jsx(RenderObject, { state: renderPage }, void 0)] }), void 0) }), void 0));
+                        : {} },
+        React.createElement("div", { ref: scrollToTop, className: classes.scrollToTop, onClick: handleClick },
+            React.createElement("div", null)),
+        React.createElement("img", { src: "images/Containers/Content_Frame/Mobile.png", alt: "content", className: classes.MobileFrame }),
+        React.createElement(RenderObject, { state: renderPage })));
 }
 export default ContentContainer;
 //# sourceMappingURL=index.js.map

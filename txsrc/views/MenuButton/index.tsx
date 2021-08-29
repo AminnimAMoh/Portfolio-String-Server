@@ -1,9 +1,10 @@
 import React, { useState, useRef } from "react";
-import { RootState } from "src/store";
+import { RootState } from "../../store";
 import useStyle from "./style";
 import useMeasure from "react-use-measure";
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch } from "src/store";
+import { AppDispatch } from "../../store";
+import {isBrowser} from "../../utils"
 import {
   containerStateToggle,
   onDelayStateChange,
@@ -19,6 +20,7 @@ const calPos = (
   size: number,
   state: boolean
 ) => {
+  if(!isBrowser){
   if (window.innerWidth > 1280) {
     const inc = state ? 1.5 : 3;
     const rad = size / inc;
@@ -35,6 +37,9 @@ const calPos = (
     const y = 0;
     return { x, y };
   }
+}else{
+  return { x:0, y:0 };
+}
 };
 function MenuButton(): React.ReactElement {
   const classes = useStyle();
@@ -68,6 +73,7 @@ function MenuButton(): React.ReactElement {
   // console.log(buttonPositions);
 
   const handlePowerClick = () => {
+    console.log("Hello");
     const parentChilrdernLength = parentElement.current?.childElementCount;
     const prentArray = parentElement.current?.children;
     if (parentChilrdernLength && prentArray) {
@@ -86,6 +92,8 @@ function MenuButton(): React.ReactElement {
   };
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    
+    
     const payload = e.currentTarget.id;
     const parentChilrdernLength = parentElement.current?.childElementCount;
     const prentArray = parentElement.current?.children;
@@ -123,7 +131,7 @@ function MenuButton(): React.ReactElement {
       >
         <img
           ref={buttonMesures}
-          src='images/Button/Menu_Trigger/Power_Button-Stoke.png'
+          src="images/Button/Menu_Trigger/Power_Button-Stoke.png"
           alt="content-asset"
         />
       </div>

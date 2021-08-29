@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { useSelector } from "react-redux";
 import LinearProgress from '@material-ui/core/LinearProgress';
-import { RootState } from "src/store";
+import { RootState } from "../../store";
 
 const useStyles = makeStyles({
   root: {

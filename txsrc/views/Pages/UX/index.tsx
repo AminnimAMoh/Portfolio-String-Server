@@ -3,7 +3,7 @@ import useStyle from "../styles";
 import { Grid, Typography, Link } from "@material-ui/core";
 import YouTubeEmbed from "../YouTubeEmbed";
 import { useSelector } from "react-redux";
-import { RootState } from "src/store";
+import { RootState } from "../../../store";
 
 function UX(): React.ReactElement {
   const classes = useStyle();

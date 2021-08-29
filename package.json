@@ -2,7 +2,7 @@
   "name": "andramedian-design",
   "version": "0.1.0",
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "dist/main.js",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@material-ui/core": "^4.11.4",
@@ -13,7 +13,7 @@
     "@testing-library/user-event": "^12.8.3",
     "@types/d3-selection": "^3.0.0",
     "@types/jest": "^26.0.23",
-    "@types/node": "^12.20.15",
+    "@types/node": "^16.7.2",
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.8",
     "axios": "^0.21.1",
@@ -21,19 +21,24 @@
     "d3-fetch": "^3.0.1",
     "d3-selection": "^3.0.0",
     "d3-shape": "^3.0.1",
+    "express": "^4.17.1",
     "radar-chart-d3": "^1.2.0",
     "react": "^17.0.2",
     "react-d3-radar": "^1.0.0-rc6",
     "react-dom": "^17.0.2",
+    "react-jss": "^10.7.1",
     "react-redux": "^7.2.4",
     "react-use-measure": "^2.0.4",
-    "typescript": "^4.3.4",
-    "web-vitals": "^1.1.2"
+    "typescript": "^4.4.2",
+    "web-vitals": "^1.1.2",
+    "nodemon": "^2.0.12"
   },
   "scripts": {
-    "start": "webpack-dev-server --open --port 3001 --compress --mode development",
-    "dev": "webpack --mode development --progress",
-    "build": "del dist && webpack --mode production --progress"
+    "nd": "nodemon dist/main",
+    "start": "node dist/main.js",
+    "watch": "webpack --mode development --watch && nodemon dist/main",
+    "dev": "del -rf dist public && webpack --mode development --progress",
+    "build": "del -rf dist public && webpack --mode production --progress"
   },
   "eslintConfig": {
     "extends": [
@@ -43,7 +48,7 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
+      ">1%",
       "not dead",
       "not op_mini all"
     ],
@@ -55,17 +60,23 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.15.0",
+    "@types/express": "^4.17.13",
+    "@types/react-jss": "^10.0.0",
     "babel-loader": "^8.2.2",
     "babel-plugin-import": "^1.13.3",
     "css-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.3.2",
+    "nodemon": "^2.0.12",
+    "reload": "^3.2.0",
     "style-loader": "^3.2.1",
+    "to-string-loader": "^1.1.6",
+    "ts-loader": "^9.2.5",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^4.0.0"
+    "webpack-node-externals": "^3.0.0"
   }
 }

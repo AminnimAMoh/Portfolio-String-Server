@@ -5,7 +5,7 @@
 //Stage 4 asyncThunk responses handling.
 
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "src/store";
+import { RootState } from "../../store";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axiosInterceptor from "../../axiosInterceptor";
 
