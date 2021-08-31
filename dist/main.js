@@ -639,6 +639,45 @@ const useAppDispatch = () => (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDisp
 
 /***/ }),
 
+/***/ "./txsrc/theme.tsx":
+/*!*************************!*\
+  !*** ./txsrc/theme.tsx ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material-ui/core/colors */ "@material-ui/core/colors");
+/* harmony import */ var _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_colors__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__.createMuiTheme)({
+  palette: {
+    primary: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_0__.red,
+    secondary: {
+      main: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_0__.amber.A400,
+      light: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_0__.amber[200],
+      dark: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_0__.amber[700]
+    },
+    type: "dark"
+  },
+  spacing: {
+    unit: 10
+  },
+  props: {
+    MuiWithWidth: {
+      initialWidth: "lg"
+    }
+  }
+}));
+
+/***/ }),
+
 /***/ "./txsrc/utils.tsx":
 /*!*************************!*\
   !*** ./txsrc/utils.tsx ***!
@@ -2408,6 +2447,16 @@ module.exports = require("@material-ui/core/Typography");
 
 /***/ }),
 
+/***/ "@material-ui/core/colors":
+/*!*******************************************!*\
+  !*** external "@material-ui/core/colors" ***!
+  \*******************************************/
+/***/ ((module) => {
+
+module.exports = require("@material-ui/core/colors");
+
+/***/ }),
+
 /***/ "@material-ui/core/styles":
 /*!*******************************************!*\
   !*** external "@material-ui/core/styles" ***!
@@ -2475,6 +2524,16 @@ module.exports = require("react");
 /***/ ((module) => {
 
 module.exports = require("react-dom/server");
+
+/***/ }),
+
+/***/ "react-jss":
+/*!****************************!*\
+  !*** external "react-jss" ***!
+  \****************************/
+/***/ ((module) => {
+
+module.exports = require("react-jss");
 
 /***/ }),
 
@@ -2597,27 +2656,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/styles */ "@material-ui/core/styles");
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-jss */ "react-jss");
+/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_jss__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _theme__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./theme */ "./txsrc/theme.tsx");
 
 
- // import { createGenerateId,JssProvider } from 'react-jss';
 
 
 
 
 
- // import theme from './theme'
+
+
 
 const app = express__WEBPACK_IMPORTED_MODULE_0___default()();
 const port = 3000;
 const dev = "development" === "development";
 app.use(express__WEBPACK_IMPORTED_MODULE_0___default().static("public"));
-dev && reload__WEBPACK_IMPORTED_MODULE_3___default()(app);
+if (dev) reload__WEBPACK_IMPORTED_MODULE_3___default()(app);
 app.use((rec, res) => {
-  const sheetsRegistry = new _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_7__.ServerStyleSheets();
-  const html = (0,react_dom_server__WEBPACK_IMPORTED_MODULE_2__.renderToString)(sheetsRegistry.collect( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_redux__WEBPACK_IMPORTED_MODULE_6__.Provider, {
+  const styleSheetsRegistry = new _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_7__.ServerStyleSheets();
+  const sheetReagistry = new react_jss__WEBPACK_IMPORTED_MODULE_8__.SheetsRegistry();
+  const generateClassName = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_7__.createGenerateClassName)(); // const sheetsManager= new Map();
+
+  const html = (0,react_dom_server__WEBPACK_IMPORTED_MODULE_2__.renderToString)(styleSheetsRegistry.collect( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_jss__WEBPACK_IMPORTED_MODULE_8__.JssProvider, {
+    registry: sheetReagistry,
+    generateId: generateClassName
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_7__.MuiThemeProvider, {
+    theme: _theme__WEBPACK_IMPORTED_MODULE_9__.default
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(react_redux__WEBPACK_IMPORTED_MODULE_6__.Provider, {
     store: _store__WEBPACK_IMPORTED_MODULE_5__.default
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_App__WEBPACK_IMPORTED_MODULE_4__.default, null))));
-  const css = sheetsRegistry.toString();
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_App__WEBPACK_IMPORTED_MODULE_4__.default, null))))));
+  const css = styleSheetsRegistry.toString();
   const preloadedState = _store__WEBPACK_IMPORTED_MODULE_5__.default.getState();
   res.send(`
     <!DOCTYPE html>
@@ -2635,7 +2705,7 @@ app.use((rec, res) => {
     window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, "\\u003c")}
   </script>
     <script src='main.js' async></script>
-    ${dev ? `<script src='/reload/reload.js' async></script>` : ""}
+    ${dev ? `<script src='/reload/reload.js async></script>` : ""}
   </body>
 </html>
     `);

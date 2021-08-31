@@ -1,28 +1,37 @@
 import "@babel/polyfill";
 import React from "react";
-import ReactDOM from "react-dom";
+import { hydrate } from "react-dom";
 import "./index.css";
-import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import store from "./store";
+import App from "./App";
+import { JssProvider } from "react-jss";
+import {
+  createGenerateClassName,
+  MuiThemeProvider,
+} from "@material-ui/core/styles";
+import theme from './theme'
 
-console.log(store);
+function Main() {
+  React.useEffect(() => {
+    const jssStyle = document.querySelector("#jss-style");
 
-{
-  import(/* webpackChunkName: 'App'*/ "./App").then(({ default: App }) => {
-    ReactDOM.hydrate(
-      <Provider store={store}>
-        <App/>
-      </Provider>,
-      document.getElementById("root"),
-      () => {
-        document.getElementById("jss-style")?.remove();
-      }
-    );
-  });
+    if (jssStyle) {
+      jssStyle.parentElement?.removeChild(jssStyle);
+    }
+  }, []);
+
+  const generateClassName = createGenerateClassName();
+
+  return (
+    <JssProvider generateId={generateClassName}>
+      <MuiThemeProvider theme={theme}>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </MuiThemeProvider>
+    </JssProvider>
+  );
 }
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+hydrate(<Main />, document.getElementById("root"));

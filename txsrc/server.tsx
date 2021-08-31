@@ -1,40 +1,49 @@
 import express from "express";
 import React from "react";
 import { renderToString } from "react-dom/server";
-// import { createGenerateId,JssProvider } from 'react-jss';
 import reload from "reload";
 import App from "./App";
 import store from "./store";
 import { Provider } from "react-redux";
 import {
-  // MuiThemeProvider,
   ServerStyleSheets,
+  createGenerateClassName,
+  MuiThemeProvider,
 } from "@material-ui/core/styles";
-// import theme from './theme'
+import { JssProvider, SheetsRegistry } from "react-jss";
+import theme from "./theme";
 
 const app = express();
 
 const port = 3000;
+
 const dev = process.env.NODE_ENV === "development";
 
 app.use(express.static("public"));
 
-dev && reload(app);
+if (dev) reload(app);
 
 app.use((rec, res) => {
-  const sheetsRegistry = new ServerStyleSheets();
+  const styleSheetsRegistry = new ServerStyleSheets();
+  const sheetReagistry = new SheetsRegistry();
+  const generateClassName = createGenerateClassName();
+  // const sheetsManager= new Map();
 
   const html = renderToString(
-    sheetsRegistry.collect(
-      <Provider store={store}>
-        <App />
-      </Provider>
+    styleSheetsRegistry.collect(
+      <JssProvider registry={sheetReagistry} generateId={generateClassName}>
+        <MuiThemeProvider theme={theme}>
+          <Provider store={store}>
+            <App />
+          </Provider>
+        </MuiThemeProvider>
+      </JssProvider>
     )
   );
 
-  const css = sheetsRegistry.toString();
+  const css = styleSheetsRegistry.toString();
   const preloadedState = store.getState();
-  
+
   res.send(`
     <!DOCTYPE html>
 <html lang='en'>
@@ -54,7 +63,7 @@ app.use((rec, res) => {
     )}
   </script>
     <script src='main.js' async></script>
-    ${dev ? `<script src='/reload/reload.js' async></script>` : ""}
+    ${dev ? `<script src='/reload/reload.js async></script>` : ""}
   </body>
 </html>
     `);

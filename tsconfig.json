@@ -2,9 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "module": "esnext",
-    "target": "es6",
+    "target": "es5",
     "lib": [
-      "es6",
+      "es5",
       "dom",
       "esnext.asynciterable"
     ],

@@ -1,13 +1,13 @@
 const nodeExternals = require("webpack-node-externals");
-
 const common = {
   devtool: "cheap-module-source-map",
-  externals: {
-    react: 'react',
-  },
   module: {
     rules: [
-      { test: /\.tsx?$/, exclude: /node_modules/, loader: "babel-loader"},
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+      },
       {
         test: /\.css$/i,
         use: ["to-string-loader", "css-loader"],
@@ -33,6 +33,8 @@ module.exports = [
     ...common,
     target: "node",
     entry: "./txsrc/server",
-    externals: [nodeExternals()]
+    externals: [
+      nodeExternals(),
+    ],
   },
 ];
