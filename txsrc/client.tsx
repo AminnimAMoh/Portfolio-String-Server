@@ -5,33 +5,35 @@ import "./index.css";
 import { Provider } from "react-redux";
 import store from "./store";
 import App from "./App";
-import { JssProvider } from "react-jss";
 import {
+  StylesProvider,
   createGenerateClassName,
-  MuiThemeProvider,
 } from "@material-ui/core/styles";
-import theme from './theme'
+
+const generateClassName = createGenerateClassName({
+  productionPrefix: "c",
+});
 
 function Main() {
-  React.useEffect(() => {
-    const jssStyle = document.querySelector("#jss-style");
+  // React.useEffect(() => {
+  //   const jssStyle = document.querySelector("#jss-style");
 
-    if (jssStyle) {
-      jssStyle.parentElement?.removeChild(jssStyle);
-    }
-  }, []);
+  //   if (jssStyle) {
+  //     console.log("Removed JSS Styles Shite");
 
-  const generateClassName = createGenerateClassName();
+  //     jssStyle.parentElement?.removeChild(jssStyle);
+  //   }
+  // }, []);
 
   return (
-    <JssProvider generateId={generateClassName}>
-      <MuiThemeProvider theme={theme}>
-        <Provider store={store}>
-          <App />
-        </Provider>
-      </MuiThemeProvider>
-    </JssProvider>
+    <StylesProvider generateClassName={generateClassName}>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </StylesProvider>
   );
 }
 
-hydrate(<Main />, document.getElementById("root"));
+hydrate(<Main />, document.getElementById("root"), () => {
+  document.getElementById("jss-style")?.remove();
+});

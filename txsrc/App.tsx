@@ -7,13 +7,12 @@ import React, { useEffect, useState } from "react";
 // import ContentContainer from "./views/ContentContainer";
 // import DataFetchPending from "./views/DataFetchPending";
 import useStyle from "./AppStyle";
-import { Snackbar, Slide } from "@material-ui/core";
+import { Snackbar, Slide, useMediaQuery } from "@material-ui/core";
 
 //Importing the redux store type.
 import { RootState } from "./store";
 import { useSelector, useDispatch } from "react-redux";
 import { rowGridToggleToReverce } from "./redux/slices/ScreenSettingsSlice";
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { readDataAgain } from "./redux/slices/fetchSlice";
 
 import DataFetchPending from "./views/DataFetchPending";
@@ -33,46 +32,34 @@ function App(): React.ReactElement {
   const [svgSetupTrigger, setSVGSetupTrigger] = useState<boolean>(false);
   const [snackState, setSnackState] = useState<boolean>(false);
   const dispatch = useDispatch();
-  const matches=useMediaQuery('(min-width:600px)');
-  console.log(matches);
+  const matches = useMediaQuery('(min-width:600px)');
   
   const {
     buttonAction: { rootState, buttonTrigered },
     dataStore: { annualrain, slums, population, months },
-    //RootState is the type of Redux ToolKit for store.
-    //Addresses the type for reducers, middlewares, etc.
   } = useSelector((state: RootState) => state);
   const classes = useStyle();
 
-  //This hook listens to the size changes on the browser window.
-  //The page layout will be changed on small screens.
-  //More specifically this hook will toggle the flex-flow on elements listening to 'screenState'.
-  //Set up at 'ScreenSettingsSlice.tsx'->
+  useEffect(()=>{
+    console.log('Media query changed!!!!');
+    
+  }, [matches])
+
   useEffect(() => {
     if (!isBrowser) {
       if (window.innerWidth < 1280) {
-        //Sending the window width size as an argument to be checked in the reducer.
         dispatch(rowGridToggleToReverce(window.innerWidth));
       }
     }
   });
 
   useEffect(() => {
-    //Chacking if all data is fetched without error from APIs.
-    //If there is a problem with any of the APIs application must stop.
-    //Prompt the user to trigger the fetch action for the API call with an error.
-    //This condition controls the visibility of the loading component at the top of the
-    //screen in Map section.
-    //Untile the 'svgSetupTrigger' state is false the component will be visible.
     annualrain.state === "fulfilled" &&
       slums.state === "fulfilled" &&
       population.state === "fulfilled" &&
       months.state === "fulfilled" &&
       setSVGSetupTrigger(true);
 
-    //In the condition of any error from any of the API calls
-    //their state will be set to 'rejected' (visit fetchSlice.tsx)->
-    //Show the snack bar to recall the APIs relevant to the map.
     (annualrain.state === "rejected" ||
       slums.state === "rejected" ||
       population.state === "rejected" ||
@@ -102,6 +89,7 @@ function App(): React.ReactElement {
           <DataFetchPending />;
         </div>
       )}
+      <h1>{`(min-width:600px) matches: ${matches}`}</h1>
       <Snackbar
         open={snackState}
         TransitionComponent={TransitionUp}

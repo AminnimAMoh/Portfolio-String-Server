@@ -4,12 +4,18 @@ import useStyle from "./style";
 import useMeasure from "react-use-measure";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../../store";
-import {isBrowser} from "../../utils"
+import { isBrowser } from "../../utils";
 import {
   containerStateToggle,
   onDelayStateChange,
   // addButtonsPosition
 } from "../../redux/slices/buttonActionSlice";
+import { useMediaQuery } from "@material-ui/core";
+
+interface mediaQueries {
+  rootState: boolean;
+  phase: boolean;
+}
 
 // import { Positions } from "./types";
 // import { Typography } from "@material-ui/core";
@@ -18,10 +24,10 @@ const calPos = (
   index: number,
   length: number,
   size: number,
-  state: boolean
+  state: boolean,
+  windowState: mediaQueries
 ) => {
-  if(!isBrowser){
-  if (window.innerWidth > 1280) {
+  if (windowState.rootState) {
     const inc = state ? 1.5 : 3;
     const rad = size / inc;
     const angle = ((2 * Math.PI) / length) * index;
@@ -29,7 +35,7 @@ const calPos = (
     const y = rad * Math.sin(angle);
     return { x, y };
   } else {
-    const phase = window.innerWidth < 560 ? 8 : 20;
+    const phase = windowState.phase ? 8 : 20;
     const inc = state ? 3 : 30;
     const angle = ((Math.PI * 2) / length + 2) * index;
     const rad = size / inc;
@@ -37,13 +43,14 @@ const calPos = (
     const y = 0;
     return { x, y };
   }
-}else{
-  return { x:0, y:0 };
-}
 };
 function MenuButton(): React.ReactElement {
   const classes = useStyle();
   const dispatch: AppDispatch = useDispatch();
+  const windowState = {
+    rootState: useMediaQuery("(min-width:1280px)"),
+    phase: useMediaQuery("(max-width:560px)"),
+  };
 
   // const [showInfo, setShowInfo] = useState<boolean>(false);
   // const [buttonPositions, setButtonsPosition] = useState<Positions[]>([
@@ -92,8 +99,6 @@ function MenuButton(): React.ReactElement {
   };
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    
-    
     const payload = e.currentTarget.id;
     const parentChilrdernLength = parentElement.current?.childElementCount;
     const prentArray = parentElement.current?.children;
@@ -146,7 +151,13 @@ function MenuButton(): React.ReactElement {
           }: { name: string; img: string; toolKit: string; info: string },
           index: number
         ) => {
-          const { x, y } = calPos(index, data.length, buttonSizing, powerState);
+          const { x, y } = calPos(
+            index,
+            data.length,
+            buttonSizing,
+            powerState,
+            windowState
+          );
           return (
             <div
               key={name}

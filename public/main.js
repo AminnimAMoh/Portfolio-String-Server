@@ -1,61 +1,6 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js ***!
-  \*******************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _emotion_memoize__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @emotion/memoize */ "./node_modules/@emotion/memoize/dist/memoize.browser.esm.js");
-
-
-var reactPropsRegex = /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|suppressHydrationWarning|valueLink|accept|acceptCharset|accessKey|action|allow|allowUserMedia|allowPaymentRequest|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|challenge|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|default|defer|dir|disabled|download|draggable|encType|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|itemProp|itemScope|itemType|itemID|itemRef|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan|for|class|autofocus)|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/; // https://esbench.com/bench/5bfee68a4cd7e6009ef61d23
-
-var index = (0,_emotion_memoize__WEBPACK_IMPORTED_MODULE_0__.default)(function (prop) {
-  return reactPropsRegex.test(prop) || prop.charCodeAt(0) === 111
-  /* o */
-  && prop.charCodeAt(1) === 110
-  /* n */
-  && prop.charCodeAt(2) < 91;
-}
-/* Z+1 */
-);
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (index);
-
-
-/***/ }),
-
-/***/ "./node_modules/@emotion/memoize/dist/memoize.browser.esm.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/@emotion/memoize/dist/memoize.browser.esm.js ***!
-  \*******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-function memoize(fn) {
-  var cache = {};
-  return function (arg) {
-    if (cache[arg] === undefined) cache[arg] = fn(arg);
-    return cache[arg];
-  };
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (memoize);
-
-
-/***/ }),
-
 /***/ "./node_modules/@material-ui/core/es/ClickAwayListener/ClickAwayListener.js":
 /*!**********************************************************************************!*\
   !*** ./node_modules/@material-ui/core/es/ClickAwayListener/ClickAwayListener.js ***!
@@ -2901,37 +2846,6 @@ const Typography = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.forwardRef(fu
 
 /***/ }),
 
-/***/ "./node_modules/@material-ui/core/es/colors/amber.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/@material-ui/core/es/colors/amber.js ***!
-  \***********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-const amber = {
-  50: '#fff8e1',
-  100: '#ffecb3',
-  200: '#ffe082',
-  300: '#ffd54f',
-  400: '#ffca28',
-  500: '#ffc107',
-  600: '#ffb300',
-  700: '#ffa000',
-  800: '#ff8f00',
-  900: '#ff6f00',
-  A100: '#ffe57f',
-  A200: '#ffd740',
-  A400: '#ffc400',
-  A700: '#ffab00'
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (amber);
-
-/***/ }),
-
 /***/ "./node_modules/@material-ui/core/es/colors/blue.js":
 /*!**********************************************************!*\
   !*** ./node_modules/@material-ui/core/es/colors/blue.js ***!
@@ -3959,6 +3873,35 @@ function createSpacing(spacingInput = 8) {
   });
   spacing.mui = true;
   return spacing;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/core/es/styles/createStyles.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@material-ui/core/es/styles/createStyles.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ createStyles)
+/* harmony export */ });
+/* harmony import */ var _material_ui_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material-ui/styles */ "./node_modules/@material-ui/styles/esm/createStyles/createStyles.js");
+ // let warnOnce = false;
+// To remove in v5
+
+function createStyles(styles) {
+  // warning(
+  //   warnOnce,
+  //   [
+  //     'Material-UI: createStyles from @material-ui/core/styles is deprecated.',
+  //     'Please use @material-ui/styles/createStyles',
+  //   ].join('\n'),
+  // );
+  // warnOnce = true;
+  return (0,_material_ui_styles__WEBPACK_IMPORTED_MODULE_0__.default)(styles);
 }
 
 /***/ }),
@@ -5223,100 +5166,6 @@ if (true) {
 
 /***/ }),
 
-/***/ "./node_modules/@material-ui/styles/esm/ThemeProvider/ThemeProvider.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/@material-ui/styles/esm/ThemeProvider/ThemeProvider.js ***!
-  \*****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _material_ui_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/utils */ "./node_modules/@material-ui/utils/esm/exactProp.js");
-/* harmony import */ var _useTheme_ThemeContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../useTheme/ThemeContext */ "./node_modules/@material-ui/styles/esm/useTheme/ThemeContext.js");
-/* harmony import */ var _useTheme__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../useTheme */ "./node_modules/@material-ui/styles/esm/useTheme/useTheme.js");
-/* harmony import */ var _nested__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./nested */ "./node_modules/@material-ui/styles/esm/ThemeProvider/nested.js");
-
-
-
-
-
-
- // To support composition of theme.
-
-function mergeOuterLocalTheme(outerTheme, localTheme) {
-  if (typeof localTheme === 'function') {
-    var mergedTheme = localTheme(outerTheme);
-
-    if (true) {
-      if (!mergedTheme) {
-        console.error(['Material-UI: You should return an object from your theme function, i.e.', '<ThemeProvider theme={() => ({})} />'].join('\n'));
-      }
-    }
-
-    return mergedTheme;
-  }
-
-  return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, outerTheme, localTheme);
-}
-/**
- * This component takes a `theme` prop.
- * It makes the `theme` available down the React tree thanks to React context.
- * This component should preferably be used at **the root of your component tree**.
- */
-
-
-function ThemeProvider(props) {
-  var children = props.children,
-      localTheme = props.theme;
-  var outerTheme = (0,_useTheme__WEBPACK_IMPORTED_MODULE_3__.default)();
-
-  if (true) {
-    if (outerTheme === null && typeof localTheme === 'function') {
-      console.error(['Material-UI: You are providing a theme function prop to the ThemeProvider component:', '<ThemeProvider theme={outerTheme => outerTheme} />', '', 'However, no outer theme is present.', 'Make sure a theme is already injected higher in the React tree ' + 'or provide a theme object.'].join('\n'));
-    }
-  }
-
-  var theme = react__WEBPACK_IMPORTED_MODULE_1__.useMemo(function () {
-    var output = outerTheme === null ? localTheme : mergeOuterLocalTheme(outerTheme, localTheme);
-
-    if (output != null) {
-      output[_nested__WEBPACK_IMPORTED_MODULE_4__.default] = outerTheme !== null;
-    }
-
-    return output;
-  }, [localTheme, outerTheme]);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_useTheme_ThemeContext__WEBPACK_IMPORTED_MODULE_5__.default.Provider, {
-    value: theme
-  }, children);
-}
-
- true ? ThemeProvider.propTypes = {
-  /**
-   * Your component tree.
-   */
-  children: (prop_types__WEBPACK_IMPORTED_MODULE_2___default().node.isRequired),
-
-  /**
-   * A theme object. You can provide a function to extend the outer theme.
-   */
-  theme: prop_types__WEBPACK_IMPORTED_MODULE_2___default().oneOfType([(prop_types__WEBPACK_IMPORTED_MODULE_2___default().object), (prop_types__WEBPACK_IMPORTED_MODULE_2___default().func)]).isRequired
-} : 0;
-
-if (true) {
-   true ? ThemeProvider.propTypes = (0,_material_ui_utils__WEBPACK_IMPORTED_MODULE_6__.default)(ThemeProvider.propTypes) : 0;
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ThemeProvider);
-
-/***/ }),
-
 /***/ "./node_modules/@material-ui/styles/esm/ThemeProvider/nested.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/@material-ui/styles/esm/ThemeProvider/nested.js ***!
@@ -5414,6 +5263,23 @@ function createGenerateClassName() {
 
     return "".concat(seedPrefix).concat(suffix);
   };
+}
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/styles/esm/createStyles/createStyles.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@material-ui/styles/esm/createStyles/createStyles.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ createStyles)
+/* harmony export */ });
+function createStyles(styles) {
+  return styles;
 }
 
 /***/ }),
@@ -10036,21 +9902,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core/Snackbar */ "./node_modules/@material-ui/core/es/Snackbar/Snackbar.js");
-/* harmony import */ var _material_ui_core_Slide__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Slide */ "./node_modules/@material-ui/core/es/Slide/Slide.js");
-/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _AppStyle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AppStyle */ "./txsrc/AppStyle.tsx");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _redux_slices_ScreenSettingsSlice__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./redux/slices/ScreenSettingsSlice */ "./txsrc/redux/slices/ScreenSettingsSlice.tsx");
-/* harmony import */ var _material_ui_core_useMediaQuery__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/useMediaQuery */ "./node_modules/@material-ui/core/es/useMediaQuery/useMediaQuery.js");
-/* harmony import */ var _redux_slices_fetchSlice__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./redux/slices/fetchSlice */ "./txsrc/redux/slices/fetchSlice.tsx");
-/* harmony import */ var _views_DataFetchPending__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/DataFetchPending */ "./txsrc/views/DataFetchPending/index.tsx");
-/* harmony import */ var _views_MenuButton__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./views/MenuButton */ "./txsrc/views/MenuButton/index.tsx");
-/* harmony import */ var _views_ContentContainer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./views/ContentContainer */ "./txsrc/views/ContentContainer/index.tsx");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./utils */ "./txsrc/utils.tsx");
-
-
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _AppStyle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AppStyle */ "./txsrc/AppStyle.tsx");
+/* harmony import */ var _material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/Snackbar */ "./node_modules/@material-ui/core/es/Snackbar/Snackbar.js");
+/* harmony import */ var _material_ui_core_Slide__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Slide */ "./node_modules/@material-ui/core/es/Slide/Slide.js");
+/* harmony import */ var _material_ui_core_useMediaQuery__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/useMediaQuery */ "./node_modules/@material-ui/core/es/useMediaQuery/useMediaQuery.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _redux_slices_ScreenSettingsSlice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./redux/slices/ScreenSettingsSlice */ "./txsrc/redux/slices/ScreenSettingsSlice.tsx");
+/* harmony import */ var _redux_slices_fetchSlice__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./redux/slices/fetchSlice */ "./txsrc/redux/slices/fetchSlice.tsx");
+/* harmony import */ var _views_DataFetchPending__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/DataFetchPending */ "./txsrc/views/DataFetchPending/index.tsx");
+/* harmony import */ var _views_MenuButton__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/MenuButton */ "./txsrc/views/MenuButton/index.tsx");
+/* harmony import */ var _views_ContentContainer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./views/ContentContainer */ "./txsrc/views/ContentContainer/index.tsx");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./utils */ "./txsrc/utils.tsx");
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 //This is the 'majula'. Dark Souls fans are familiar with this place. 😅
 //Here we managing the main states.
@@ -10059,6 +9923,9 @@ __webpack_require__.r(__webpack_exports__);
 // import DataFetchPending from "./views/DataFetchPending";
 
 
+
+
+ //Importing the redux store type.
 
 
 
@@ -10071,18 +9938,17 @@ __webpack_require__.r(__webpack_exports__);
 //I could write it my self, just to show off some gadgeta. 😉
 
 function TransitionUp(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core_Slide__WEBPACK_IMPORTED_MODULE_10__.default, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, props, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Slide__WEBPACK_IMPORTED_MODULE_9__.default, _extends({}, props, {
     direction: "up"
   }));
 }
 
 function App() {
   // console.clear();
-  const [svgSetupTrigger, setSVGSetupTrigger] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
-  const [snackState, setSnackState] = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
-  const dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_3__.useDispatch)();
-  const matches = (0,_material_ui_core_useMediaQuery__WEBPACK_IMPORTED_MODULE_11__.default)('(min-width:600px)');
-  console.log(matches);
+  const [svgSetupTrigger, setSVGSetupTrigger] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [snackState, setSnackState] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
+  const matches = (0,_material_ui_core_useMediaQuery__WEBPACK_IMPORTED_MODULE_10__.default)('(min-width:600px)');
   const {
     buttonAction: {
       rootState,
@@ -10093,34 +9959,21 @@ function App() {
       slums,
       population,
       months
-    } //RootState is the type of Redux ToolKit for store.
-    //Addresses the type for reducers, middlewares, etc.
-
-  } = (0,react_redux__WEBPACK_IMPORTED_MODULE_3__.useSelector)(state => state);
-  const classes = (0,_AppStyle__WEBPACK_IMPORTED_MODULE_2__.default)(); //This hook listens to the size changes on the browser window.
-  //The page layout will be changed on small screens.
-  //More specifically this hook will toggle the flex-flow on elements listening to 'screenState'.
-  //Set up at 'ScreenSettingsSlice.tsx'->
-
-  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
-    if (!_utils__WEBPACK_IMPORTED_MODULE_9__.isBrowser) {
+    }
+  } = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)(state => state);
+  const classes = (0,_AppStyle__WEBPACK_IMPORTED_MODULE_1__.default)();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    console.log('Media query changed!!!!');
+  }, [matches]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    if (!_utils__WEBPACK_IMPORTED_MODULE_8__.isBrowser) {
       if (window.innerWidth < 1280) {
-        //Sending the window width size as an argument to be checked in the reducer.
-        dispatch((0,_redux_slices_ScreenSettingsSlice__WEBPACK_IMPORTED_MODULE_4__.rowGridToggleToReverce)(window.innerWidth));
+        dispatch((0,_redux_slices_ScreenSettingsSlice__WEBPACK_IMPORTED_MODULE_3__.rowGridToggleToReverce)(window.innerWidth));
       }
     }
   });
-  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
-    //Chacking if all data is fetched without error from APIs.
-    //If there is a problem with any of the APIs application must stop.
-    //Prompt the user to trigger the fetch action for the API call with an error.
-    //This condition controls the visibility of the loading component at the top of the
-    //screen in Map section.
-    //Untile the 'svgSetupTrigger' state is false the component will be visible.
-    annualrain.state === "fulfilled" && slums.state === "fulfilled" && population.state === "fulfilled" && months.state === "fulfilled" && setSVGSetupTrigger(true); //In the condition of any error from any of the API calls
-    //their state will be set to 'rejected' (visit fetchSlice.tsx)->
-    //Show the snack bar to recall the APIs relevant to the map.
-
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    annualrain.state === "fulfilled" && slums.state === "fulfilled" && population.state === "fulfilled" && months.state === "fulfilled" && setSVGSetupTrigger(true);
     (annualrain.state === "rejected" || slums.state === "rejected" || population.state === "rejected" || months.state === "rejected") && setSnackState(true);
   }, [annualrain.state, slums.state, population.state, months.state]); //This function controles click action on the snack bar.
 
@@ -10129,17 +9982,17 @@ function App() {
     //action on the asyncThunk function with state 'rejected'.
     //In this case only the rejected API will be called, not the rest. 🤯
     //More detail at 'fetchSlice.tsx'.
-    dispatch((0,_redux_slices_fetchSlice__WEBPACK_IMPORTED_MODULE_5__.readDataAgain)()); //Close the snack bar.
+    dispatch((0,_redux_slices_fetchSlice__WEBPACK_IMPORTED_MODULE_4__.readDataAgain)()); //Close the snack bar.
 
     setSnackState(false);
   };
 
   console.log("App");
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: rootState ? `${classes.root} open` : `${classes.root} close`
-  }, !svgSetupTrigger && buttonTrigered === "D3" && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement("div", {
+  }, !svgSetupTrigger && buttonTrigered === "D3" && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: classes.loading
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_views_DataFetchPending__WEBPACK_IMPORTED_MODULE_6__.default, null), ";"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_12__.default, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_views_DataFetchPending__WEBPACK_IMPORTED_MODULE_5__.default, null), ";"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", null, `(min-width:600px) matches: ${matches}`), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_material_ui_core_Snackbar__WEBPACK_IMPORTED_MODULE_11__.default, {
     open: snackState,
     TransitionComponent: TransitionUp,
     message: `Failed to fetch data. Click here to try again.`,
@@ -10147,7 +10000,7 @@ function App() {
     classes: {
       root: classes.snackbar
     }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_views_MenuButton__WEBPACK_IMPORTED_MODULE_7__.default, null), ";", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(_views_ContentContainer__WEBPACK_IMPORTED_MODULE_8__.default, null), ";");
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_views_MenuButton__WEBPACK_IMPORTED_MODULE_6__.default, null), ";", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_views_ContentContainer__WEBPACK_IMPORTED_MODULE_7__.default, null), ";");
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
@@ -10166,8 +10019,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/es/styles/makeStyles.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/es/styles/createStyles.js");
 
-const useStyle = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__.default)(theme => ({
+const useStyle = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__.default)(theme => (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__.default)({
   root: {
     height: "100vh",
     display: "flex",
@@ -10657,45 +10511,6 @@ const useAppDispatch = () => (0,react_redux__WEBPACK_IMPORTED_MODULE_0__.useDisp
 
 /***/ }),
 
-/***/ "./txsrc/theme.tsx":
-/*!*************************!*\
-  !*** ./txsrc/theme.tsx ***!
-  \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core/colors */ "./node_modules/@material-ui/core/es/colors/amber.js");
-/* harmony import */ var _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @material-ui/core/colors */ "./node_modules/@material-ui/core/es/colors/red.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/es/styles/createTheme.js");
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_0__.createMuiTheme)({
-  palette: {
-    primary: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_1__.default,
-    secondary: {
-      main: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_2__.default.A400,
-      light: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_2__.default[200],
-      dark: _material_ui_core_colors__WEBPACK_IMPORTED_MODULE_2__.default[700]
-    },
-    type: "dark"
-  },
-  spacing: {
-    unit: 10
-  },
-  props: {
-    MuiWithWidth: {
-      initialWidth: "lg"
-    }
-  }
-}));
-
-/***/ }),
-
 /***/ "./txsrc/utils.tsx":
 /*!*************************!*\
   !*** ./txsrc/utils.tsx ***!
@@ -11023,51 +10838,49 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style */ "./txsrc/views/MenuButton/style.tsx");
 /* harmony import */ var react_use_measure__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-use-measure */ "./node_modules/react-use-measure/dist/web.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils */ "./txsrc/utils.tsx");
-/* harmony import */ var _redux_slices_buttonActionSlice__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../redux/slices/buttonActionSlice */ "./txsrc/redux/slices/buttonActionSlice.tsx");
+/* harmony import */ var _redux_slices_buttonActionSlice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../redux/slices/buttonActionSlice */ "./txsrc/redux/slices/buttonActionSlice.tsx");
+/* harmony import */ var _material_ui_core_useMediaQuery__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/useMediaQuery */ "./node_modules/@material-ui/core/es/useMediaQuery/useMediaQuery.js");
 
 
 
 
 
- // import { Positions } from "./types";
+
+
+// import { Positions } from "./types";
 // import { Typography } from "@material-ui/core";
-
-const calPos = (index, length, size, state) => {
-  if (!_utils__WEBPACK_IMPORTED_MODULE_3__.isBrowser) {
-    if (window.innerWidth > 1280) {
-      const inc = state ? 1.5 : 3;
-      const rad = size / inc;
-      const angle = 2 * Math.PI / length * index;
-      const x = rad * Math.cos(angle);
-      const y = rad * Math.sin(angle);
-      return {
-        x,
-        y
-      };
-    } else {
-      const phase = window.innerWidth < 560 ? 8 : 20;
-      const inc = state ? 3 : 30;
-      const angle = (Math.PI * 2 / length + 2) * index;
-      const rad = size / inc;
-      const x = rad * 5 * Math.cos(angle) + 5 * (rad * Math.sin(angle)) - phase;
-      const y = 0;
-      return {
-        x,
-        y
-      };
-    }
-  } else {
+const calPos = (index, length, size, state, windowState) => {
+  if (windowState.rootState) {
+    const inc = state ? 1.5 : 3;
+    const rad = size / inc;
+    const angle = 2 * Math.PI / length * index;
+    const x = rad * Math.cos(angle);
+    const y = rad * Math.sin(angle);
     return {
-      x: 0,
-      y: 0
+      x,
+      y
+    };
+  } else {
+    const phase = windowState.phase ? 8 : 20;
+    const inc = state ? 3 : 30;
+    const angle = (Math.PI * 2 / length + 2) * index;
+    const rad = size / inc;
+    const x = rad * 5 * Math.cos(angle) + 5 * (rad * Math.sin(angle)) - phase;
+    const y = 0;
+    return {
+      x,
+      y
     };
   }
 };
 
 function MenuButton() {
   const classes = (0,_style__WEBPACK_IMPORTED_MODULE_1__.default)();
-  const dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)(); // const [showInfo, setShowInfo] = useState<boolean>(false);
+  const dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
+  const windowState = {
+    rootState: (0,_material_ui_core_useMediaQuery__WEBPACK_IMPORTED_MODULE_4__.default)("(min-width:1280px)"),
+    phase: (0,_material_ui_core_useMediaQuery__WEBPACK_IMPORTED_MODULE_4__.default)("(max-width:560px)")
+  }; // const [showInfo, setShowInfo] = useState<boolean>(false);
   // const [buttonPositions, setButtonsPosition] = useState<Positions[]>([
   //   { x: 0, y: 0 },
   // ]);
@@ -11115,9 +10928,9 @@ function MenuButton() {
     }
 
     if (rootState) {
-      dispatch((0,_redux_slices_buttonActionSlice__WEBPACK_IMPORTED_MODULE_4__.containerStateToggle)("PowerButton"));
+      dispatch((0,_redux_slices_buttonActionSlice__WEBPACK_IMPORTED_MODULE_3__.containerStateToggle)("PowerButton"));
       setTimeout(() => {
-        dispatch((0,_redux_slices_buttonActionSlice__WEBPACK_IMPORTED_MODULE_4__.onDelayStateChange)());
+        dispatch((0,_redux_slices_buttonActionSlice__WEBPACK_IMPORTED_MODULE_3__.onDelayStateChange)());
       }, 500);
     } else {
       setPowerState(() => !powerState);
@@ -11137,7 +10950,7 @@ function MenuButton() {
       }
     }
 
-    dispatch((0,_redux_slices_buttonActionSlice__WEBPACK_IMPORTED_MODULE_4__.containerStateToggle)(payload));
+    dispatch((0,_redux_slices_buttonActionSlice__WEBPACK_IMPORTED_MODULE_3__.containerStateToggle)(payload));
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -11166,7 +10979,7 @@ function MenuButton() {
     const {
       x,
       y
-    } = calPos(index, data.length, buttonSizing, powerState);
+    } = calPos(index, data.length, buttonSizing, powerState, windowState);
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       key: name,
       className: classes.buttonContainers,
@@ -11412,12 +11225,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Divider */ "./node_modules/@material-ui/core/es/Divider/Divider.js");
-/* harmony import */ var _material_ui_core_Link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Link */ "./node_modules/@material-ui/core/es/Link/Link.js");
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/es/Grid/Grid.js");
-/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/es/Typography/Typography.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles */ "./txsrc/views/Pages/styles.tsx");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/es/Grid/Grid.js");
+/* harmony import */ var _material_ui_core_Link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Link */ "./node_modules/@material-ui/core/es/Link/Link.js");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/es/Typography/Typography.js");
+/* harmony import */ var _material_ui_core_Divider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Divider */ "./node_modules/@material-ui/core/es/Divider/Divider.js");
 /* harmony import */ var _redux_slices_buttonActionSlice__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../redux/slices/buttonActionSlice */ "./txsrc/redux/slices/buttonActionSlice.tsx");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 
@@ -11709,11 +11522,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/es/Grid/Grid.js");
-/* harmony import */ var _material_ui_core_Link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Link */ "./node_modules/@material-ui/core/es/Link/Link.js");
-/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/es/Typography/Typography.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles */ "./txsrc/views/Pages/styles.tsx");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/es/Grid/Grid.js");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/es/Typography/Typography.js");
+/* harmony import */ var _material_ui_core_Link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Link */ "./node_modules/@material-ui/core/es/Link/Link.js");
 /* harmony import */ var _YouTubeEmbed__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../YouTubeEmbed */ "./txsrc/views/Pages/YouTubeEmbed/index.tsx");
 
 
@@ -11968,11 +11781,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/es/Grid/Grid.js");
-/* harmony import */ var _material_ui_core_Link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Link */ "./node_modules/@material-ui/core/es/Link/Link.js");
-/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/es/Typography/Typography.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles */ "./txsrc/views/Pages/styles.tsx");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/es/Grid/Grid.js");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/es/Typography/Typography.js");
+/* harmony import */ var _material_ui_core_Link__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Link */ "./node_modules/@material-ui/core/es/Link/Link.js");
 /* harmony import */ var _YouTubeEmbed__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../YouTubeEmbed */ "./txsrc/views/Pages/YouTubeEmbed/index.tsx");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 
@@ -13650,122 +13463,6 @@ $export($export.G + $export.B + $export.F * MSIE, {
 
 /***/ }),
 
-/***/ "./node_modules/css-jss/dist/css-jss.esm.js":
-/*!**************************************************!*\
-  !*** ./node_modules/css-jss/dist/css-jss.esm.js ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "create": () => (/* binding */ createCss)
-/* harmony export */ });
-/* harmony import */ var jss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jss */ "./node_modules/jss/dist/jss.esm.js");
-/* harmony import */ var jss_preset_default__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jss-preset-default */ "./node_modules/jss-preset-default/dist/jss-preset-default.esm.js");
-
-
-
-// I have been trying to benchmark and I have seen a slow down after about 10k rules.
-// Since we are in a single sheet mode, user shouldn't care about this.
-var MAX_RULES_PER_SHEET = 10000;
-var defaultJss = (0,jss__WEBPACK_IMPORTED_MODULE_0__.create)((0,jss_preset_default__WEBPACK_IMPORTED_MODULE_1__.default)());
-
-var createCss = function createCss(jss) {
-  if (jss === void 0) {
-    jss = defaultJss;
-  }
-
-  var cache = new Map();
-  var ruleIndex = 0;
-  var sheet;
-
-  var getSheet = function getSheet() {
-    if (!sheet || sheet.rules.index.length > MAX_RULES_PER_SHEET) {
-      sheet = jss.createStyleSheet().attach();
-    }
-
-    return sheet;
-  };
-
-  function css() {
-    // eslint-disable-next-line prefer-rest-params
-    var args = arguments; // We can avoid the need for stringification with a babel plugin,
-    // which could generate a hash at build time and add it to the object.
-
-    var argsStr = JSON.stringify(args);
-    var cached = cache.get(argsStr);
-    if (cached) return cached.className;
-    var flatArgs = []; // Flatten arguments which can be
-    // - style objects
-    // - array of style objects
-    // - arrays of style objects
-
-    for (var argIndex in args) {
-      var arg = args[argIndex];
-
-      if (!Array.isArray(arg)) {
-        flatArgs.push(arg);
-        continue;
-      }
-
-      for (var innerArgIndex = 0; innerArgIndex < arg.length; innerArgIndex++) {
-        flatArgs.push(arg[innerArgIndex]);
-      }
-    }
-
-    var mergedStyle = {};
-    var labels = [];
-
-    for (var i = 0; i < flatArgs.length; i++) {
-      var style = flatArgs[i];
-      if (!style) continue;
-      var styleObject = style; // It can be a class name that css() has previously generated.
-
-      if (typeof style === 'string') {
-        // eslint-disable-next-line no-shadow
-        var _cached = cache.get(style);
-
-        if (_cached) {
-          // eslint-disable-next-line prefer-spread
-          if (_cached.labels.length) labels.push.apply(labels, _cached.labels);
-          styleObject = _cached.style;
-        }
-      }
-
-      if (styleObject.label && labels.indexOf(styleObject.label) === -1) labels.push(styleObject.label);
-      Object.assign(mergedStyle, styleObject);
-    }
-
-    delete mergedStyle.label;
-    var label = labels.length === 0 ? 'css' : labels.join('-');
-    var key = label + "-" + ruleIndex++;
-    getSheet().addRule(key, mergedStyle);
-    var className = getSheet().classes[key];
-    var cacheValue = {
-      style: mergedStyle,
-      labels: labels,
-      className: className
-    };
-    cache.set(argsStr, cacheValue);
-    cache.set(className, cacheValue);
-    return className;
-  } // For testing only.
-
-
-  css.getSheet = getSheet;
-  return css;
-};
-
-var css = createCss();
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (css);
-
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js!./txsrc/index.css":
 /*!***************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./txsrc/index.css ***!
@@ -15083,95 +14780,6 @@ function camelCase() {
 
 /***/ }),
 
-/***/ "./node_modules/jss-plugin-compose/dist/jss-plugin-compose.esm.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/jss-plugin-compose/dist/jss-plugin-compose.esm.js ***!
-  \************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var tiny_warning__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tiny-warning */ "./node_modules/tiny-warning/dist/tiny-warning.esm.js");
-
-
-/**
- * Set selector.
- *
- * @param {Object} original rule
- * @param {String} className class string
- * @return {Boolean} flag, indicating function was successfull or not
- */
-function registerClass(rule, className) {
-  // Skip falsy values
-  if (!className) return true; // Support array of class names `{composes: ['foo', 'bar']}`
-
-  if (Array.isArray(className)) {
-    for (var index = 0; index < className.length; index++) {
-      var isSetted = registerClass(rule, className[index]);
-      if (!isSetted) return false;
-    }
-
-    return true;
-  } // Support space separated class names `{composes: 'foo bar'}`
-
-
-  if (className.indexOf(' ') > -1) {
-    return registerClass(rule, className.split(' '));
-  }
-
-  var _ref = rule.options,
-      parent = _ref.parent; // It is a ref to a local rule.
-
-  if (className[0] === '$') {
-    var refRule = parent.getRule(className.substr(1));
-
-    if (!refRule) {
-       true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_0__.default)(false, "[JSS] Referenced rule is not defined. \n" + rule.toString()) : 0;
-      return false;
-    }
-
-    if (refRule === rule) {
-       true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_0__.default)(false, "[JSS] Cyclic composition detected. \n" + rule.toString()) : 0;
-      return false;
-    }
-
-    parent.classes[rule.key] += " " + parent.classes[refRule.key];
-    return true;
-  }
-
-  parent.classes[rule.key] += " " + className;
-  return true;
-}
-/**
- * Convert compose property to additional class, remove property from original styles.
- *
- * @param {Rule} rule
- * @api public
- */
-
-
-function jssCompose() {
-  function onProcessStyle(style, rule) {
-    if (!('composes' in style)) return style;
-    registerClass(rule, style.composes); // Remove composes property to prevent infinite loop.
-
-    delete style.composes;
-    return style;
-  }
-
-  return {
-    onProcessStyle: onProcessStyle
-  };
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (jssCompose);
-
-
-/***/ }),
-
 /***/ "./node_modules/jss-plugin-default-unit/dist/jss-plugin-default-unit.esm.js":
 /*!**********************************************************************************!*\
   !*** ./node_modules/jss-plugin-default-unit/dist/jss-plugin-default-unit.esm.js ***!
@@ -15436,568 +15044,6 @@ function defaultUnit(options) {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (defaultUnit);
-
-
-/***/ }),
-
-/***/ "./node_modules/jss-plugin-expand/dist/jss-plugin-expand.esm.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/jss-plugin-expand/dist/jss-plugin-expand.esm.js ***!
-  \**********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/**
- * A scheme for converting properties from array to regular style.
- * All properties listed below will be transformed to a string separated by space.
- */
-var propArray = {
-  'background-size': true,
-  'background-position': true,
-  border: true,
-  'border-bottom': true,
-  'border-left': true,
-  'border-top': true,
-  'border-right': true,
-  'border-radius': true,
-  'border-image': true,
-  'border-width': true,
-  'border-style': true,
-  'border-color': true,
-  'box-shadow': true,
-  flex: true,
-  margin: true,
-  padding: true,
-  outline: true,
-  'transform-origin': true,
-  transform: true,
-  transition: true
-  /**
-   * A scheme for converting arrays to regular styles inside of objects.
-   * For e.g.: "{position: [0, 0]}" => "background-position: 0 0;".
-   */
-
-};
-var propArrayInObj = {
-  position: true,
-  // background-position
-  size: true // background-size
-
-  /**
-   * A scheme for parsing and building correct styles from passed objects.
-   */
-
-};
-var propObj = {
-  padding: {
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0
-  },
-  margin: {
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0
-  },
-  background: {
-    attachment: null,
-    color: null,
-    image: null,
-    position: null,
-    repeat: null
-  },
-  border: {
-    width: null,
-    style: null,
-    color: null
-  },
-  'border-top': {
-    width: null,
-    style: null,
-    color: null
-  },
-  'border-right': {
-    width: null,
-    style: null,
-    color: null
-  },
-  'border-bottom': {
-    width: null,
-    style: null,
-    color: null
-  },
-  'border-left': {
-    width: null,
-    style: null,
-    color: null
-  },
-  outline: {
-    width: null,
-    style: null,
-    color: null
-  },
-  'list-style': {
-    type: null,
-    position: null,
-    image: null
-  },
-  transition: {
-    property: null,
-    duration: null,
-    'timing-function': null,
-    timingFunction: null,
-    // Needed for avoiding comilation issues with jss-plugin-camel-case
-    delay: null
-  },
-  animation: {
-    name: null,
-    duration: null,
-    'timing-function': null,
-    timingFunction: null,
-    // Needed to avoid compilation issues with jss-plugin-camel-case
-    delay: null,
-    'iteration-count': null,
-    iterationCount: null,
-    // Needed to avoid compilation issues with jss-plugin-camel-case
-    direction: null,
-    'fill-mode': null,
-    fillMode: null,
-    // Needed to avoid compilation issues with jss-plugin-camel-case
-    'play-state': null,
-    playState: null // Needed to avoid compilation issues with jss-plugin-camel-case
-
-  },
-  'box-shadow': {
-    x: 0,
-    y: 0,
-    blur: 0,
-    spread: 0,
-    color: null,
-    inset: null
-  },
-  'text-shadow': {
-    x: 0,
-    y: 0,
-    blur: null,
-    color: null
-  }
-  /**
-   * A scheme for converting non-standart properties inside object.
-   * For e.g.: include 'border-radius' property inside 'border' object.
-   */
-
-};
-var customPropObj = {
-  border: {
-    radius: 'border-radius',
-    image: 'border-image',
-    width: 'border-width',
-    style: 'border-style',
-    color: 'border-color'
-  },
-  'border-bottom': {
-    width: 'border-bottom-width',
-    style: 'border-bottom-style',
-    color: 'border-bottom-color'
-  },
-  'border-top': {
-    width: 'border-top-width',
-    style: 'border-top-style',
-    color: 'border-top-color'
-  },
-  'border-left': {
-    width: 'border-left-width',
-    style: 'border-left-style',
-    color: 'border-left-color'
-  },
-  'border-right': {
-    width: 'border-right-width',
-    style: 'border-right-style',
-    color: 'border-right-color'
-  },
-  background: {
-    size: 'background-size',
-    image: 'background-image'
-  },
-  font: {
-    style: 'font-style',
-    variant: 'font-variant',
-    weight: 'font-weight',
-    stretch: 'font-stretch',
-    size: 'font-size',
-    family: 'font-family',
-    lineHeight: 'line-height',
-    // Needed to avoid compilation issues with jss-plugin-camel-case
-    'line-height': 'line-height'
-  },
-  flex: {
-    grow: 'flex-grow',
-    basis: 'flex-basis',
-    direction: 'flex-direction',
-    wrap: 'flex-wrap',
-    flow: 'flex-flow',
-    shrink: 'flex-shrink'
-  },
-  align: {
-    self: 'align-self',
-    items: 'align-items',
-    content: 'align-content'
-  },
-  grid: {
-    'template-columns': 'grid-template-columns',
-    templateColumns: 'grid-template-columns',
-    'template-rows': 'grid-template-rows',
-    templateRows: 'grid-template-rows',
-    'template-areas': 'grid-template-areas',
-    templateAreas: 'grid-template-areas',
-    template: 'grid-template',
-    'auto-columns': 'grid-auto-columns',
-    autoColumns: 'grid-auto-columns',
-    'auto-rows': 'grid-auto-rows',
-    autoRows: 'grid-auto-rows',
-    'auto-flow': 'grid-auto-flow',
-    autoFlow: 'grid-auto-flow',
-    row: 'grid-row',
-    column: 'grid-column',
-    'row-start': 'grid-row-start',
-    rowStart: 'grid-row-start',
-    'row-end': 'grid-row-end',
-    rowEnd: 'grid-row-end',
-    'column-start': 'grid-column-start',
-    columnStart: 'grid-column-start',
-    'column-end': 'grid-column-end',
-    columnEnd: 'grid-column-end',
-    area: 'grid-area',
-    gap: 'grid-gap',
-    'row-gap': 'grid-row-gap',
-    rowGap: 'grid-row-gap',
-    'column-gap': 'grid-column-gap',
-    columnGap: 'grid-column-gap'
-  }
-};
-
-/* eslint-disable no-use-before-define */
-
-/**
- * Map values by given prop.
- *
- * @param {Array} array of values
- * @param {String} original property
- * @param {String} original rule
- * @return {String} mapped values
- */
-function mapValuesByProp(value, prop, rule) {
-  return value.map(function (item) {
-    return objectToArray(item, prop, rule, false, true);
-  });
-}
-/**
- * Convert array to nested array, if needed
- */
-
-
-function processArray(value, prop, scheme, rule) {
-  if (scheme[prop] == null) return value;
-  if (value.length === 0) return [];
-  if (Array.isArray(value[0])) return processArray(value[0], prop, scheme, rule);
-
-  if (typeof value[0] === 'object') {
-    return mapValuesByProp(value, prop, rule);
-  }
-
-  return [value];
-}
-/**
- * Convert object to array.
- */
-
-
-function objectToArray(value, prop, rule, isFallback, isInArray) {
-  if (!(propObj[prop] || customPropObj[prop])) return [];
-  var result = []; // Check if exists any non-standard property
-
-  if (customPropObj[prop]) {
-    // eslint-disable-next-line no-param-reassign
-    value = customPropsToStyle(value, rule, customPropObj[prop], isFallback);
-  } // Pass throught all standart props
-
-
-  if (Object.keys(value).length) {
-    for (var baseProp in propObj[prop]) {
-      if (value[baseProp]) {
-        if (Array.isArray(value[baseProp])) {
-          result.push(propArrayInObj[baseProp] === null ? value[baseProp] : value[baseProp].join(' '));
-        } else result.push(value[baseProp]);
-
-        continue;
-      } // Add default value from props config.
-
-
-      if (propObj[prop][baseProp] != null) {
-        result.push(propObj[prop][baseProp]);
-      }
-    }
-  }
-
-  if (!result.length || isInArray) return result;
-  return [result];
-}
-/**
- * Convert custom properties values to styles adding them to rule directly
- */
-
-
-function customPropsToStyle(value, rule, customProps, isFallback) {
-  for (var prop in customProps) {
-    var propName = customProps[prop]; // If current property doesn't exist already in rule - add new one
-
-    if (typeof value[prop] !== 'undefined' && (isFallback || !rule.prop(propName))) {
-      var _styleDetector;
-
-      var appendedValue = styleDetector((_styleDetector = {}, _styleDetector[propName] = value[prop], _styleDetector), rule)[propName]; // Add style directly in rule
-
-      if (isFallback) rule.style.fallbacks[propName] = appendedValue;else rule.style[propName] = appendedValue;
-    } // Delete converted property to avoid double converting
-
-
-    delete value[prop];
-  }
-
-  return value;
-}
-/**
- * Detect if a style needs to be converted.
- */
-
-
-function styleDetector(style, rule, isFallback) {
-  for (var prop in style) {
-    var value = style[prop];
-
-    if (Array.isArray(value)) {
-      // Check double arrays to avoid recursion.
-      if (!Array.isArray(value[0])) {
-        if (prop === 'fallbacks') {
-          for (var index = 0; index < style.fallbacks.length; index++) {
-            style.fallbacks[index] = styleDetector(style.fallbacks[index], rule, true);
-          }
-
-          continue;
-        }
-
-        style[prop] = processArray(value, prop, propArray, rule); // Avoid creating properties with empty values
-
-        if (!style[prop].length) delete style[prop];
-      }
-    } else if (typeof value === 'object') {
-      if (prop === 'fallbacks') {
-        style.fallbacks = styleDetector(style.fallbacks, rule, true);
-        continue;
-      }
-
-      style[prop] = objectToArray(value, prop, rule, isFallback); // Avoid creating properties with empty values
-
-      if (!style[prop].length) delete style[prop];
-    } // Maybe a computed value resulting in an empty string
-    else if (style[prop] === '') delete style[prop];
-  }
-
-  return style;
-}
-/**
- * Adds possibility to write expanded styles.
- */
-
-
-function jssExpand() {
-  function onProcessStyle(style, rule) {
-    if (!style || rule.type !== 'style') return style;
-
-    if (Array.isArray(style)) {
-      // Pass rules one by one and reformat them
-      for (var index = 0; index < style.length; index++) {
-        style[index] = styleDetector(style[index], rule);
-      }
-
-      return style;
-    }
-
-    return styleDetector(style, rule);
-  }
-
-  return {
-    onProcessStyle: onProcessStyle
-  };
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (jssExpand);
-
-
-/***/ }),
-
-/***/ "./node_modules/jss-plugin-extend/dist/jss-plugin-extend.esm.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/jss-plugin-extend/dist/jss-plugin-extend.esm.js ***!
-  \**********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var tiny_warning__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tiny-warning */ "./node_modules/tiny-warning/dist/tiny-warning.esm.js");
-
-
-
-var isObject = function isObject(obj) {
-  return obj && typeof obj === 'object' && !Array.isArray(obj);
-};
-
-var valueNs = "extendCurrValue" + Date.now();
-
-function mergeExtend(style, rule, sheet, newStyle) {
-  var extendType = typeof style.extend; // Extend using a rule name.
-
-  if (extendType === 'string') {
-    if (!sheet) return;
-    var refRule = sheet.getRule(style.extend);
-    if (!refRule) return;
-
-    if (refRule === rule) {
-       true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_1__.default)(false, "[JSS] A rule tries to extend itself \n" + rule.toString()) : 0;
-      return;
-    }
-
-    var parent = refRule.options.parent;
-
-    if (parent) {
-      var originalStyle = parent.rules.raw[style.extend];
-      extend(originalStyle, rule, sheet, newStyle);
-    }
-
-    return;
-  } // Extend using an array.
-
-
-  if (Array.isArray(style.extend)) {
-    for (var index = 0; index < style.extend.length; index++) {
-      var singleExtend = style.extend[index];
-      var singleStyle = typeof singleExtend === 'string' ? (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, style, {
-        extend: singleExtend
-      }) : style.extend[index];
-      extend(singleStyle, rule, sheet, newStyle);
-    }
-
-    return;
-  } // Extend is a style object.
-
-
-  for (var prop in style.extend) {
-    if (prop === 'extend') {
-      extend(style.extend.extend, rule, sheet, newStyle);
-      continue;
-    }
-
-    if (isObject(style.extend[prop])) {
-      if (!(prop in newStyle)) newStyle[prop] = {};
-      extend(style.extend[prop], rule, sheet, newStyle[prop]);
-      continue;
-    }
-
-    newStyle[prop] = style.extend[prop];
-  }
-}
-
-function mergeRest(style, rule, sheet, newStyle) {
-  // Copy base style.
-  for (var prop in style) {
-    if (prop === 'extend') continue;
-
-    if (isObject(newStyle[prop]) && isObject(style[prop])) {
-      extend(style[prop], rule, sheet, newStyle[prop]);
-      continue;
-    }
-
-    if (isObject(style[prop])) {
-      newStyle[prop] = extend(style[prop], rule, sheet);
-      continue;
-    }
-
-    newStyle[prop] = style[prop];
-  }
-}
-/**
- * Recursively extend styles.
- */
-
-
-function extend(style, rule, sheet, newStyle) {
-  if (newStyle === void 0) {
-    newStyle = {};
-  }
-
-  mergeExtend(style, rule, sheet, newStyle);
-  mergeRest(style, rule, sheet, newStyle);
-  return newStyle;
-}
-/**
- * Handle `extend` property.
- *
- * @param {Rule} rule
- * @api public
- */
-
-
-function jssExtend() {
-  function onProcessStyle(style, rule, sheet) {
-    if ('extend' in style) return extend(style, rule, sheet);
-    return style;
-  }
-
-  function onChangeValue(value, prop, rule) {
-    if (prop !== 'extend') return value; // Value is empty, remove properties set previously.
-
-    if (value == null || value === false) {
-      // $FlowFixMe[prop-missing]
-      for (var key in rule[valueNs]) {
-        rule.prop(key, null);
-      } // $FlowFixMe[prop-missing] Flow complains because there is no indexer property in StyleRule
-
-
-      rule[valueNs] = null;
-      return null;
-    }
-
-    if (typeof value === 'object') {
-      // $FlowFixMe[invalid-in-rhs] This will be an object
-      for (var _key in value) {
-        // $FlowFixMe[incompatible-use] This will be an object
-        rule.prop(_key, value[_key]);
-      } // $FlowFixMe[prop-missing] Flow complains because there is no indexer property in StyleRule
-
-
-      rule[valueNs] = value;
-    } // Make sure we don't set the value in the core.
-
-
-    return null;
-  }
-
-  return {
-    onProcessStyle: onProcessStyle,
-    onChangeValue: onChangeValue
-  };
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (jssExtend);
 
 
 /***/ }),
@@ -16462,135 +15508,6 @@ var functionPlugin = function functionPlugin() {
 
 /***/ }),
 
-/***/ "./node_modules/jss-plugin-rule-value-observable/dist/jss-plugin-rule-value-observable.esm.js":
-/*!****************************************************************************************************!*\
-  !*** ./node_modules/jss-plugin-rule-value-observable/dist/jss-plugin-rule-value-observable.esm.js ***!
-  \****************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var symbol_observable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! symbol-observable */ "./node_modules/symbol-observable/es/index.js");
-/* harmony import */ var jss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jss */ "./node_modules/jss/dist/jss.esm.js");
-
-
-
-var isObservable = function isObservable(value) {
-  return value && value[symbol_observable__WEBPACK_IMPORTED_MODULE_0__.default] && value === value[symbol_observable__WEBPACK_IMPORTED_MODULE_0__.default]();
-};
-
-var observablePlugin = function observablePlugin(updateOptions) {
-  return {
-    onCreateRule: function onCreateRule(name, decl, options) {
-      if (!isObservable(decl)) return null; // Cast `decl` to `Observable`, since it passed the type guard.
-
-      var style$ = decl;
-      var rule = (0,jss__WEBPACK_IMPORTED_MODULE_1__.createRule)(name, {}, options); // TODO
-      // Call `stream.subscribe()` returns a subscription, which should be explicitly
-      // unsubscribed from when we know this sheet is no longer needed.
-
-      style$.subscribe(function (style) {
-        for (var prop in style) {
-          rule.prop(prop, style[prop], updateOptions);
-        }
-      });
-      return rule;
-    },
-    onProcessRule: function onProcessRule(rule) {
-      if (rule && rule.type !== 'style') return;
-      var styleRule = rule;
-      var style = styleRule.style;
-
-      var _loop = function _loop(prop) {
-        var value = style[prop];
-        if (!isObservable(value)) return "continue";
-        delete style[prop];
-        value.subscribe({
-          next: function next(nextValue) {
-            styleRule.prop(prop, nextValue, updateOptions);
-          }
-        });
-      };
-
-      for (var prop in style) {
-        var _ret = _loop(prop);
-
-        if (_ret === "continue") continue;
-      }
-    }
-  };
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (observablePlugin);
-
-
-/***/ }),
-
-/***/ "./node_modules/jss-plugin-template/dist/jss-plugin-template.esm.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/jss-plugin-template/dist/jss-plugin-template.esm.js ***!
-  \**************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var tiny_warning__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tiny-warning */ "./node_modules/tiny-warning/dist/tiny-warning.esm.js");
-
-
-var semiWithNl = /;\n/;
-
-/**
- * Naive CSS parser.
- * - Supports only rule body (no selectors)
- * - Requires semicolon and new line after the value (except of last line)
- * - No nested rules support
- */
-var parse = function parse(cssText) {
-  var style = {};
-  var split = cssText.split(semiWithNl);
-
-  for (var i = 0; i < split.length; i++) {
-    var decl = (split[i] || '').trim();
-    if (!decl) continue;
-    var colonIndex = decl.indexOf(':');
-
-    if (colonIndex === -1) {
-       true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_0__.default)(false, "[JSS] Malformed CSS string \"" + decl + "\"") : 0;
-      continue;
-    }
-
-    var prop = decl.substr(0, colonIndex).trim();
-    var value = decl.substr(colonIndex + 1).trim();
-    style[prop] = value;
-  }
-
-  return style;
-};
-
-var onProcessRule = function onProcessRule(rule) {
-  if (typeof rule.style === 'string') {
-    // $FlowFixMe[prop-missing] We can safely assume that rule has the style property
-    rule.style = parse(rule.style);
-  }
-};
-
-function templatePlugin() {
-  return {
-    onProcessRule: onProcessRule
-  };
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (templatePlugin);
-
-
-/***/ }),
-
 /***/ "./node_modules/jss-plugin-vendor-prefixer/dist/jss-plugin-vendor-prefixer.esm.js":
 /*!****************************************************************************************!*\
   !*** ./node_modules/jss-plugin-vendor-prefixer/dist/jss-plugin-vendor-prefixer.esm.js ***!
@@ -16663,57 +15580,6 @@ function jssVendorPrefixer() {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (jssVendorPrefixer);
-
-
-/***/ }),
-
-/***/ "./node_modules/jss-preset-default/dist/jss-preset-default.esm.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/jss-preset-default/dist/jss-preset-default.esm.js ***!
-  \************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var jss_plugin_rule_value_function__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jss-plugin-rule-value-function */ "./node_modules/jss-plugin-rule-value-function/dist/jss-plugin-rule-value-function.esm.js");
-/* harmony import */ var jss_plugin_rule_value_observable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jss-plugin-rule-value-observable */ "./node_modules/jss-plugin-rule-value-observable/dist/jss-plugin-rule-value-observable.esm.js");
-/* harmony import */ var jss_plugin_template__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jss-plugin-template */ "./node_modules/jss-plugin-template/dist/jss-plugin-template.esm.js");
-/* harmony import */ var jss_plugin_global__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! jss-plugin-global */ "./node_modules/jss-plugin-global/dist/jss-plugin-global.esm.js");
-/* harmony import */ var jss_plugin_extend__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! jss-plugin-extend */ "./node_modules/jss-plugin-extend/dist/jss-plugin-extend.esm.js");
-/* harmony import */ var jss_plugin_nested__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! jss-plugin-nested */ "./node_modules/jss-plugin-nested/dist/jss-plugin-nested.esm.js");
-/* harmony import */ var jss_plugin_compose__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! jss-plugin-compose */ "./node_modules/jss-plugin-compose/dist/jss-plugin-compose.esm.js");
-/* harmony import */ var jss_plugin_camel_case__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! jss-plugin-camel-case */ "./node_modules/jss-plugin-camel-case/dist/jss-plugin-camel-case.esm.js");
-/* harmony import */ var jss_plugin_default_unit__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! jss-plugin-default-unit */ "./node_modules/jss-plugin-default-unit/dist/jss-plugin-default-unit.esm.js");
-/* harmony import */ var jss_plugin_expand__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! jss-plugin-expand */ "./node_modules/jss-plugin-expand/dist/jss-plugin-expand.esm.js");
-/* harmony import */ var jss_plugin_vendor_prefixer__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! jss-plugin-vendor-prefixer */ "./node_modules/jss-plugin-vendor-prefixer/dist/jss-plugin-vendor-prefixer.esm.js");
-/* harmony import */ var jss_plugin_props_sort__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! jss-plugin-props-sort */ "./node_modules/jss-plugin-props-sort/dist/jss-plugin-props-sort.esm.js");
-
-
-
-
-
-
-
-
-
-
-
-
-
-var create = function create(options) {
-  if (options === void 0) {
-    options = {};
-  }
-
-  return {
-    plugins: [(0,jss_plugin_rule_value_function__WEBPACK_IMPORTED_MODULE_0__.default)(), (0,jss_plugin_rule_value_observable__WEBPACK_IMPORTED_MODULE_1__.default)(options.observable), (0,jss_plugin_template__WEBPACK_IMPORTED_MODULE_2__.default)(), (0,jss_plugin_global__WEBPACK_IMPORTED_MODULE_3__.default)(), (0,jss_plugin_extend__WEBPACK_IMPORTED_MODULE_4__.default)(), (0,jss_plugin_nested__WEBPACK_IMPORTED_MODULE_5__.default)(), (0,jss_plugin_compose__WEBPACK_IMPORTED_MODULE_6__.default)(), (0,jss_plugin_camel_case__WEBPACK_IMPORTED_MODULE_7__.default)(), (0,jss_plugin_default_unit__WEBPACK_IMPORTED_MODULE_8__.default)(options.defaultUnit), (0,jss_plugin_expand__WEBPACK_IMPORTED_MODULE_9__.default)(), (0,jss_plugin_vendor_prefixer__WEBPACK_IMPORTED_MODULE_10__.default)(), (0,jss_plugin_props_sort__WEBPACK_IMPORTED_MODULE_11__.default)()]
-  };
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (create);
 
 
 /***/ }),
@@ -20075,25 +18941,6 @@ if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/prop-types/node_modules/react-is/cjs/react-is.development.js");
 }
 
-
-/***/ }),
-
-/***/ "./node_modules/react-display-name/lib/getDisplayName.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/react-display-name/lib/getDisplayName.js ***!
-  \***************************************************************/
-/***/ ((__unused_webpack_module, exports) => {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports.default = getDisplayName;
-function getDisplayName(Component) {
-  return Component.displayName || Component.name || (typeof Component === 'string' && Component.length > 0 ? Component : 'Unknown');
-}
 
 /***/ }),
 
@@ -46662,723 +45509,6 @@ if (false) {} else {
 
 /***/ }),
 
-/***/ "./node_modules/react-jss/dist/react-jss.esm.js":
-/*!******************************************************!*\
-  !*** ./node_modules/react-jss/dist/react-jss.esm.js ***!
-  \******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "ThemeProvider": () => (/* reexport safe */ theming__WEBPACK_IMPORTED_MODULE_4__.ThemeProvider),
-/* harmony export */   "createTheming": () => (/* reexport safe */ theming__WEBPACK_IMPORTED_MODULE_4__.createTheming),
-/* harmony export */   "useTheme": () => (/* reexport safe */ theming__WEBPACK_IMPORTED_MODULE_4__.useTheme),
-/* harmony export */   "withTheme": () => (/* reexport safe */ theming__WEBPACK_IMPORTED_MODULE_4__.withTheme),
-/* harmony export */   "SheetsRegistry": () => (/* reexport safe */ jss__WEBPACK_IMPORTED_MODULE_6__.SheetsRegistry),
-/* harmony export */   "createGenerateId": () => (/* reexport safe */ jss__WEBPACK_IMPORTED_MODULE_6__.createGenerateId),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "JssContext": () => (/* binding */ JssContext),
-/* harmony export */   "JssProvider": () => (/* binding */ JssProvider),
-/* harmony export */   "createJsx": () => (/* binding */ create),
-/* harmony export */   "createUseStyles": () => (/* binding */ createUseStyles),
-/* harmony export */   "jss": () => (/* binding */ jss),
-/* harmony export */   "jsx": () => (/* binding */ createElement),
-/* harmony export */   "styled": () => (/* binding */ configureStyled),
-/* harmony export */   "withStyles": () => (/* binding */ createWithStyles)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! hoist-non-react-statics */ "./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
-/* harmony import */ var hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var theming__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! theming */ "./node_modules/theming/dist/theming.esm.js");
-/* harmony import */ var is_in_browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! is-in-browser */ "./node_modules/is-in-browser/dist/module.js");
-/* harmony import */ var tiny_warning__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! tiny-warning */ "./node_modules/tiny-warning/dist/tiny-warning.esm.js");
-/* harmony import */ var jss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! jss */ "./node_modules/jss/dist/jss.esm.js");
-/* harmony import */ var jss_preset_default__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! jss-preset-default */ "./node_modules/jss-preset-default/dist/jss-preset-default.esm.js");
-/* harmony import */ var shallow_equal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! shallow-equal */ "./node_modules/shallow-equal/dist/index.esm.js");
-/* harmony import */ var _emotion_is_prop_valid__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @emotion/is-prop-valid */ "./node_modules/@emotion/is-prop-valid/dist/is-prop-valid.browser.esm.js");
-/* harmony import */ var css_jss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! css-jss */ "./node_modules/css-jss/dist/css-jss.esm.js");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// eslint-disable-next-line no-unused-vars
-var getDisplayName = function getDisplayName(Component) {
-  return Component.displayName || Component.name || 'Component';
-};
-
-var memoize = function memoize(fn) {
-  var lastArgs;
-  var lastResult;
-  return function () {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    if (Array.isArray(lastArgs) && args.length === lastArgs.length) {
-      var isSame = true;
-
-      for (var i = 0; i < args.length; i++) {
-        if (args[i] !== lastArgs[i]) {
-          isSame = false;
-        }
-      }
-
-      if (isSame) {
-        return lastResult;
-      }
-    }
-
-    lastArgs = args;
-    lastResult = fn.apply(void 0, args);
-    return lastResult;
-  };
-};
-
-var mergeClasses = function mergeClasses(baseClasses, additionalClasses) {
-  var combinedClasses = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, baseClasses);
-
-  for (var name in additionalClasses) {
-    combinedClasses[name] = name in combinedClasses ? combinedClasses[name] + " " + additionalClasses[name] : additionalClasses[name];
-  }
-
-  return combinedClasses;
-};
-
-/**
- * Global index counter to preserve source order.
- * As we create the style sheet during componentWillMount lifecycle,
- * children are handled after the parents, so the order of style elements would
- * be parent->child. It is a problem though when a parent passes a className
- * which needs to override any childs styles. StyleSheet of the child has a higher
- * specificity, because of the source order.
- * So our solution is to render sheets them in the reverse order child->sheet, so
- * that parent has a higher specificity.
- *
- * We start at [Number.MIN_SAFE_INTEGER] to always insert sheets from react-jss first before any
- * sheet which might be inserted manually by the user.
- */
-var index = Number.MIN_SAFE_INTEGER || -1e9;
-
-var getSheetIndex = function getSheetIndex() {
-  return index++;
-};
-
-var JssContext = (0,react__WEBPACK_IMPORTED_MODULE_2__.createContext)({
-  classNamePrefix: '',
-  disableStylesGeneration: false
-});
-
-var defaultManagers = new Map();
-var getManager = function getManager(context, managerId) {
-  // If `managers` map is present in the context, we use it in order to
-  // let JssProvider reset them when new response has to render server-side.
-  if (context.managers) {
-    if (!context.managers[managerId]) {
-      context.managers[managerId] = new jss__WEBPACK_IMPORTED_MODULE_6__.SheetsManager();
-    }
-
-    return context.managers[managerId];
-  }
-
-  var manager = defaultManagers.get(managerId);
-
-  if (!manager) {
-    manager = new jss__WEBPACK_IMPORTED_MODULE_6__.SheetsManager();
-    defaultManagers.set(managerId, manager);
-  }
-
-  return manager;
-};
-var manageSheet = function manageSheet(options) {
-  var sheet = options.sheet,
-      context = options.context,
-      index = options.index,
-      theme = options.theme;
-
-  if (!sheet) {
-    return;
-  }
-
-  var manager = getManager(context, index);
-  manager.manage(theme);
-
-  if (context.registry) {
-    context.registry.add(sheet);
-  }
-};
-var unmanageSheet = function unmanageSheet(options) {
-  if (!options.sheet) {
-    return;
-  }
-
-  var manager = getManager(options.context, options.index);
-  manager.unmanage(options.theme);
-};
-
-var jss = (0,jss__WEBPACK_IMPORTED_MODULE_6__.create)((0,jss_preset_default__WEBPACK_IMPORTED_MODULE_9__.default)());
-
-var sheetsMeta = new WeakMap();
-var getMeta = function getMeta(sheet) {
-  return sheetsMeta.get(sheet);
-};
-var addMeta = function addMeta(sheet, meta) {
-  sheetsMeta.set(sheet, meta);
-};
-
-// eslint-disable-next-line no-unused-vars
-var getStyles = function getStyles(options) {
-  var styles = options.styles;
-
-  if (typeof styles !== 'function') {
-    return styles;
-  }
-
-   true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_10__.default)(styles.length !== 0, "[JSS] <" + (options.name || 'Hook') + " />'s styles function doesn't rely on the \"theme\" argument. We recommend declaring styles as an object instead.") : 0;
-  return styles(options.theme);
-};
-
-function getSheetOptions(options, link) {
-  var minify;
-
-  if (options.context.id && options.context.id.minify != null) {
-    minify = options.context.id.minify;
-  }
-
-  var classNamePrefix = options.context.classNamePrefix || '';
-
-  if (options.name && !minify) {
-    classNamePrefix += options.name.replace(/\s/g, '-') + "-";
-  }
-
-  var meta = '';
-  if (options.name) meta = options.name + ", ";
-  meta += typeof options.styles === 'function' ? 'Themed' : 'Unthemed';
-  return (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, options.sheetOptions, {
-    index: options.index,
-    meta: meta,
-    classNamePrefix: classNamePrefix,
-    link: link,
-    generateId: options.sheetOptions && options.sheetOptions.generateId ? options.sheetOptions.generateId : options.context.generateId
-  });
-}
-
-// eslint-disable-next-line no-unused-vars
-var createStyleSheet = function createStyleSheet(options) {
-  if (options.context.disableStylesGeneration) {
-    return undefined;
-  }
-
-  var manager = getManager(options.context, options.index);
-  var existingSheet = manager.get(options.theme);
-
-  if (existingSheet) {
-    return existingSheet;
-  }
-
-  var jss$1 = options.context.jss || jss;
-  var styles = getStyles(options);
-  var dynamicStyles = (0,jss__WEBPACK_IMPORTED_MODULE_6__.getDynamicStyles)(styles);
-  var sheet = jss$1.createStyleSheet(styles, getSheetOptions(options, dynamicStyles !== null));
-  addMeta(sheet, {
-    dynamicStyles: dynamicStyles,
-    styles: styles
-  });
-  manager.add(options.theme, sheet);
-  return sheet;
-};
-var removeDynamicRules = function removeDynamicRules(sheet, rules) {
-  // Loop over each dynamic rule and remove the dynamic rule
-  // We can't just remove the whole sheet as this has all of the rules for every component instance
-  for (var key in rules) {
-    sheet.deleteRule(rules[key]);
-  }
-};
-var updateDynamicRules = function updateDynamicRules(data, sheet, rules) {
-  // Loop over each dynamic rule and update it
-  // We can't just update the whole sheet as this has all of the rules for every component instance
-  for (var key in rules) {
-    sheet.updateOne(rules[key], data);
-  }
-};
-var addDynamicRules = function addDynamicRules(sheet, data) {
-  var meta = getMeta(sheet);
-
-  if (!meta) {
-    return undefined;
-  }
-
-  var rules = {}; // Loop over each dynamic rule and add it to the stylesheet
-
-  for (var key in meta.dynamicStyles) {
-    var initialRuleCount = sheet.rules.index.length;
-    var originalRule = sheet.addRule(key, meta.dynamicStyles[key]); // Loop through all created rules, fixes updating dynamic rules
-
-    for (var i = initialRuleCount; i < sheet.rules.index.length; i++) {
-      var rule = sheet.rules.index[i];
-      sheet.updateOne(rule, data); // If it's the original rule, we need to add it by the correct key so the hook and hoc
-      // can correctly concat the dynamic class with the static one
-
-      rules[originalRule === rule ? key : rule.key] = rule;
-    }
-  }
-
-  return rules;
-};
-
-var getSheetClasses = function getSheetClasses(sheet, dynamicRules) {
-  if (!dynamicRules) {
-    return sheet.classes;
-  }
-
-  var classes = {};
-  var meta = getMeta(sheet);
-
-  if (!meta) {
-    return sheet.classes;
-  }
-
-  for (var key in meta.styles) {
-    classes[key] = sheet.classes[key];
-
-    if (key in dynamicRules) {
-      classes[key] += " " + sheet.classes[dynamicRules[key].key];
-    }
-  }
-
-  return classes;
-};
-
-var useEffectOrLayoutEffect = is_in_browser__WEBPACK_IMPORTED_MODULE_5__.default ? react__WEBPACK_IMPORTED_MODULE_2__.useLayoutEffect : react__WEBPACK_IMPORTED_MODULE_2__.useEffect;
-var noTheme = {};
-
-var createUseStyles = function createUseStyles(styles, options) {
-  if (options === void 0) {
-    options = {};
-  }
-
-  var _options = options,
-      _options$index = _options.index,
-      index = _options$index === void 0 ? getSheetIndex() : _options$index,
-      theming = _options.theming,
-      name = _options.name,
-      sheetOptions = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__.default)(_options, ["index", "theming", "name"]);
-
-  var ThemeContext$1 = theming && theming.context || theming__WEBPACK_IMPORTED_MODULE_4__.ThemeContext;
-
-  var useTheme = function useTheme(theme) {
-    if (typeof styles === 'function') {
-      return theme || (0,react__WEBPACK_IMPORTED_MODULE_2__.useContext)(ThemeContext$1) || noTheme;
-    }
-
-    return noTheme;
-  };
-
-  return function useStyles(data) {
-    var isFirstMount = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)(true);
-    var context = (0,react__WEBPACK_IMPORTED_MODULE_2__.useContext)(JssContext);
-    var theme = useTheme(data && data.theme);
-
-    var _React$useMemo = (0,react__WEBPACK_IMPORTED_MODULE_2__.useMemo)(function () {
-      var newSheet = createStyleSheet({
-        context: context,
-        styles: styles,
-        name: name,
-        theme: theme,
-        index: index,
-        sheetOptions: sheetOptions
-      });
-      var newDynamicRules = newSheet ? addDynamicRules(newSheet, data) : null;
-
-      if (newSheet) {
-        manageSheet({
-          index: index,
-          context: context,
-          sheet: newSheet,
-          theme: theme
-        });
-      }
-
-      return [newSheet, newDynamicRules];
-    }, [context, theme]),
-        sheet = _React$useMemo[0],
-        dynamicRules = _React$useMemo[1];
-
-    useEffectOrLayoutEffect(function () {
-      // We only need to update the rules on a subsequent update and not in the first mount
-      if (sheet && dynamicRules && !isFirstMount.current) {
-        updateDynamicRules(data, sheet, dynamicRules);
-      }
-    }, [data]);
-    useEffectOrLayoutEffect(function () {
-      return (// cleanup only
-        function () {
-          if (sheet) {
-            unmanageSheet({
-              index: index,
-              context: context,
-              sheet: sheet,
-              theme: theme
-            });
-          }
-
-          if (sheet && dynamicRules) {
-            removeDynamicRules(sheet, dynamicRules);
-          }
-        }
-      );
-    }, [sheet]);
-    var classes = sheet && dynamicRules ? getSheetClasses(sheet, dynamicRules) : {};
-    (0,react__WEBPACK_IMPORTED_MODULE_2__.useDebugValue)(classes);
-    (0,react__WEBPACK_IMPORTED_MODULE_2__.useDebugValue)(theme === noTheme ? 'No theme' : theme);
-    (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
-      isFirstMount.current = false;
-    });
-    return classes;
-  };
-};
-
-var NoRenderer = function NoRenderer(props) {
-  return props.children || null;
-};
-
-/**
- * HOC creator function that wrapps the user component.
- *
- * `withStyles(styles, [options])(Component)`
- */
-var createWithStyles = function createWithStyles(styles, options) {
-  if (options === void 0) {
-    options = {};
-  }
-
-  var _options = options,
-      _options$index = _options.index,
-      index = _options$index === void 0 ? getSheetIndex() : _options$index,
-      theming = _options.theming,
-      injectTheme = _options.injectTheme,
-      sheetOptions = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__.default)(_options, ["index", "theming", "injectTheme"]);
-
-  var ThemeContext$1 = theming ? theming.context : theming__WEBPACK_IMPORTED_MODULE_4__.ThemeContext;
-  return function (InnerComponent) {
-    if (InnerComponent === void 0) {
-      InnerComponent = NoRenderer;
-    }
-
-    var displayName = getDisplayName(InnerComponent);
-    var mergeClassesProp = memoize(function (sheetClasses, classesProp) {
-      return classesProp ? mergeClasses(sheetClasses, classesProp) : sheetClasses;
-    });
-    var hookOptions = Object.assign(sheetOptions, {
-      theming: theming,
-      index: index,
-      name: displayName
-    });
-    var useStyles = createUseStyles(styles, hookOptions);
-    var WithStyles = (0,react__WEBPACK_IMPORTED_MODULE_2__.forwardRef)(function (props, ref) {
-      var theme = (0,react__WEBPACK_IMPORTED_MODULE_2__.useContext)(ThemeContext$1);
-
-      var newProps = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, props);
-
-      if (injectTheme && newProps.theme == null) {
-        newProps.theme = theme;
-      }
-
-      var sheetClasses = useStyles(newProps);
-      var classes = mergeClassesProp(sheetClasses, props.classes);
-      return (0,react__WEBPACK_IMPORTED_MODULE_2__.createElement)(InnerComponent, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, newProps, {
-        classes: classes,
-        ref: ref
-      }));
-    });
-    WithStyles.displayName = "WithStyles(" + displayName + ")"; // $FlowFixMe[prop-missing] https://github.com/facebook/flow/issues/7467
-
-    WithStyles.defaultProps = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, InnerComponent.defaultProps); // $FlowFixMe[prop-missing]
-
-    WithStyles.InnerComponent = InnerComponent;
-    return hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_3___default()(WithStyles, InnerComponent);
-  };
-};
-
-var initialContext = {};
-
-function JssProvider(props) {
-  var managersRef = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)({});
-  var prevContextRef = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)();
-  var registryRef = (0,react__WEBPACK_IMPORTED_MODULE_2__.useRef)(null);
-
-  var createContext = function createContext(parentContext, prevContext) {
-    if (prevContext === void 0) {
-      prevContext = initialContext;
-    }
-
-    var registry = props.registry,
-        classNamePrefix = props.classNamePrefix,
-        jss = props.jss,
-        generateId = props.generateId,
-        disableStylesGeneration = props.disableStylesGeneration,
-        media = props.media,
-        id = props.id;
-
-    var context = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({}, parentContext);
-
-    if (registry) {
-      context.registry = registry; // This way we identify a new request on the server, because user will create
-      // a new Registry instance for each.
-
-      if (registry !== registryRef.current) {
-        // We reset managers because we have to regenerate all sheets for the new request.
-        managersRef.current = {};
-        registryRef.current = registry;
-      }
-    }
-
-    context.managers = managersRef.current;
-
-    if (id !== undefined) {
-      context.id = id;
-    }
-
-    if (generateId !== undefined) {
-      context.generateId = generateId;
-    } else if (!context.generateId || !prevContext || context.id !== prevContext.id) {
-      context.generateId = (0,jss__WEBPACK_IMPORTED_MODULE_6__.createGenerateId)(context.id);
-    }
-
-    if (classNamePrefix) {
-      context.classNamePrefix = (context.classNamePrefix || '') + classNamePrefix;
-    }
-
-    if (media !== undefined) {
-      context.media = media;
-    }
-
-    if (jss) {
-      context.jss = jss;
-    }
-
-    if (disableStylesGeneration !== undefined) {
-      context.disableStylesGeneration = disableStylesGeneration;
-    }
-
-    if (prevContext && (0,shallow_equal__WEBPACK_IMPORTED_MODULE_7__.shallowEqualObjects)(prevContext, context)) {
-      return prevContext;
-    }
-
-    return context;
-  };
-
-  var renderProvider = function renderProvider(parentContext) {
-    var children = props.children;
-    var context = createContext(parentContext, prevContextRef.current);
-    prevContextRef.current = context;
-    return (0,react__WEBPACK_IMPORTED_MODULE_2__.createElement)(JssContext.Provider, {
-      value: context
-    }, children);
-  };
-
-  return (0,react__WEBPACK_IMPORTED_MODULE_2__.createElement)(JssContext.Consumer, null, renderProvider);
-}
-
-// eslint-disable-next-line no-unused-vars
-var parseStyles = function parseStyles(args) {
-  var dynamicStyles = [];
-  var staticStyle;
-  var labels = []; // Not using ...rest to optimize perf.
-
-  for (var key in args) {
-    var style = args[key];
-    if (!style) continue;
-
-    if (typeof style === 'function') {
-      dynamicStyles.push(style);
-    } else {
-      if (!staticStyle) staticStyle = {};
-      Object.assign(staticStyle, style);
-
-      if (staticStyle.label) {
-        if (labels.indexOf(staticStyle.label) === -1) labels.push(staticStyle.label);
-      }
-    }
-  }
-
-  var styles = {};
-  var label = labels.length === 0 ? 'sc' : labels.join('-');
-
-  if (staticStyle) {
-    // Label should not leak to the core.
-    if ('label' in staticStyle) delete staticStyle.label;
-    styles[label] = staticStyle;
-  } // When there is only one function rule, we don't need to wrap it.
-
-
-  if (dynamicStyles.length === 1) {
-    styles['scd'] = dynamicStyles[0];
-  } // We create a new function rule which will call all other function rules
-  // and merge the styles they return.
-
-
-  if (dynamicStyles.length > 1) {
-    styles['scd'] = function (props) {
-      var merged = {};
-
-      for (var i = 0; i < dynamicStyles.length; i++) {
-        var dynamicStyle = dynamicStyles[i](props);
-        if (dynamicStyle) Object.assign(merged, dynamicStyle);
-      }
-
-      return merged;
-    };
-  }
-
-  return {
-    styles: styles,
-    label: label
-  };
-};
-
-var shouldForwardPropSymbol = Symbol('react-jss-styled');
-
-var getShouldForwardProp = function getShouldForwardProp(tagOrComponent, options) {
-  var shouldForwardProp = options.shouldForwardProp; // $FlowFixMe[invalid-computed-prop]
-  // $FlowFixMe[incompatible-type]
-
-  var childShouldForwardProp = tagOrComponent[shouldForwardPropSymbol];
-  var finalShouldForwardProp = shouldForwardProp || childShouldForwardProp;
-
-  if (shouldForwardProp && childShouldForwardProp) {
-    finalShouldForwardProp = function finalShouldForwardProp(prop) {
-      return childShouldForwardProp(prop) && shouldForwardProp(prop);
-    };
-  }
-
-  return finalShouldForwardProp;
-};
-
-var getChildProps = function getChildProps(props, shouldForwardProp, isTag) {
-  var childProps = {};
-
-  for (var prop in props) {
-    if (shouldForwardProp) {
-      if (shouldForwardProp(prop) === true) {
-        childProps[prop] = props[prop];
-      }
-
-      continue;
-    } // We don't want to pass non-dom props to the DOM.
-
-
-    if (isTag) {
-      if ((0,_emotion_is_prop_valid__WEBPACK_IMPORTED_MODULE_8__.default)(prop)) {
-        childProps[prop] = props[prop];
-      }
-
-      continue;
-    }
-
-    childProps[prop] = props[prop];
-  }
-
-  return childProps;
-};
-
-// eslint-disable-next-line no-unused-vars
-var configureStyled = function configureStyled(tagOrComponent, options) {
-  if (options === void 0) {
-    options = {};
-  }
-
-  var _options = options,
-      theming = _options.theming;
-  var isTag = typeof tagOrComponent === 'string';
-  var ThemeContext$1 = theming ? theming.context : theming__WEBPACK_IMPORTED_MODULE_4__.ThemeContext;
-  var shouldForwardProp = getShouldForwardProp(tagOrComponent, options);
-
-  var _options2 = options,
-      _ = _options2.shouldForwardProp,
-      hookOptions = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__.default)(_options2, ["shouldForwardProp"]);
-
-  return function createStyledComponent() {
-    // eslint-disable-next-line prefer-rest-params
-    var _parseStyles = parseStyles(arguments),
-        styles = _parseStyles.styles,
-        label = _parseStyles.label;
-
-    var useStyles = createUseStyles(styles, hookOptions);
-
-    var Styled = function Styled(props) {
-      var as = props.as,
-          className = props.className;
-      var theme = (0,react__WEBPACK_IMPORTED_MODULE_2__.useContext)(ThemeContext$1);
-      var propsWithTheme = Object.assign({
-        theme: theme
-      }, props);
-      var classes = useStyles(propsWithTheme);
-      var childProps = getChildProps(props, shouldForwardProp, isTag);
-      var classNames = ((classes[label] || classes.sc || '') + " " + (classes.scd || '')).trim();
-      childProps.className = className ? className + " " + classNames : classNames;
-
-      if (!isTag && shouldForwardProp) {
-        // $FlowFixMe[invalid-computed-prop] we are not supposed to attach random properties to component functions.
-        // $FlowFixMe[incompatible-use]
-        tagOrComponent[shouldForwardPropSymbol] = shouldForwardProp;
-      }
-
-      if (isTag && as) {
-        return (0,react__WEBPACK_IMPORTED_MODULE_2__.createElement)(as, childProps);
-      }
-
-      return (0,react__WEBPACK_IMPORTED_MODULE_2__.createElement)(tagOrComponent, childProps);
-    };
-
-    return Styled;
-  };
-};
-
-/* eslint-disable prefer-rest-params, prefer-spread */
-var create = function create(css) {
-  if (css === void 0) {
-    css = css_jss__WEBPACK_IMPORTED_MODULE_11__.default;
-  }
-
-  return function createElement(type, props
-  /* :: , ..._args: any */
-  ) {
-    var args = arguments;
-
-    if (props && props.css) {
-      var className = css(props.css);
-      var newProps = Object.assign({}, props);
-      newProps.className = props.className ? props.className + " " + className : className;
-      delete newProps.css;
-      args[1] = newProps;
-    } // $FlowFixMe[missing-arg]
-
-
-    return react__WEBPACK_IMPORTED_MODULE_2__.createElement.apply(undefined, args);
-  };
-};
-var createElement = create();
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createWithStyles);
-
-
-
-/***/ }),
-
 /***/ "./node_modules/react-redux/es/components/Context.js":
 /*!***********************************************************!*\
   !*** ./node_modules/react-redux/es/components/Context.js ***!
@@ -54470,349 +52600,6 @@ if (false) {} else {
 
 /***/ }),
 
-/***/ "./node_modules/shallow-equal/dist/index.esm.js":
-/*!******************************************************!*\
-  !*** ./node_modules/shallow-equal/dist/index.esm.js ***!
-  \******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "shallowEqualArrays": () => (/* binding */ shallowEqualArrays),
-/* harmony export */   "shallowEqualObjects": () => (/* binding */ shallowEqualObjects)
-/* harmony export */ });
-function shallowEqualObjects(objA, objB) {
-  if (objA === objB) {
-    return true;
-  }
-
-  if (!objA || !objB) {
-    return false;
-  }
-
-  var aKeys = Object.keys(objA);
-  var bKeys = Object.keys(objB);
-  var len = aKeys.length;
-
-  if (bKeys.length !== len) {
-    return false;
-  }
-
-  for (var i = 0; i < len; i++) {
-    var key = aKeys[i];
-
-    if (objA[key] !== objB[key] || !Object.prototype.hasOwnProperty.call(objB, key)) {
-      return false;
-    }
-  }
-
-  return true;
-}
-
-function shallowEqualArrays(arrA, arrB) {
-  if (arrA === arrB) {
-    return true;
-  }
-
-  if (!arrA || !arrB) {
-    return false;
-  }
-
-  var len = arrA.length;
-
-  if (arrB.length !== len) {
-    return false;
-  }
-
-  for (var i = 0; i < len; i++) {
-    if (arrA[i] !== arrB[i]) {
-      return false;
-    }
-  }
-
-  return true;
-}
-
-
-
-
-/***/ }),
-
-/***/ "./node_modules/symbol-observable/es/index.js":
-/*!****************************************************!*\
-  !*** ./node_modules/symbol-observable/es/index.js ***!
-  \****************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _ponyfill_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ponyfill.js */ "./node_modules/symbol-observable/es/ponyfill.js");
-/* module decorator */ module = __webpack_require__.hmd(module);
-/* global window */
-
-
-var root;
-
-if (typeof self !== 'undefined') {
-  root = self;
-} else if (typeof window !== 'undefined') {
-  root = window;
-} else if (typeof __webpack_require__.g !== 'undefined') {
-  root = __webpack_require__.g;
-} else if (true) {
-  root = module;
-} else {}
-
-var result = (0,_ponyfill_js__WEBPACK_IMPORTED_MODULE_0__.default)(root);
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (result);
-
-
-/***/ }),
-
-/***/ "./node_modules/symbol-observable/es/ponyfill.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/symbol-observable/es/ponyfill.js ***!
-  \*******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ symbolObservablePonyfill)
-/* harmony export */ });
-function symbolObservablePonyfill(root) {
-	var result;
-	var Symbol = root.Symbol;
-
-	if (typeof Symbol === 'function') {
-		if (Symbol.observable) {
-			result = Symbol.observable;
-		} else {
-			result = Symbol('observable');
-			Symbol.observable = result;
-		}
-	} else {
-		result = '@@observable';
-	}
-
-	return result;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/theming/dist/theming.esm.js":
-/*!**************************************************!*\
-  !*** ./node_modules/theming/dist/theming.esm.js ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "useTheme": () => (/* binding */ useTheme),
-/* harmony export */   "ThemeContext": () => (/* binding */ ThemeContext),
-/* harmony export */   "withTheme": () => (/* binding */ withTheme),
-/* harmony export */   "createTheming": () => (/* binding */ createTheming),
-/* harmony export */   "ThemeProvider": () => (/* binding */ ThemeProvider)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var tiny_warning__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tiny-warning */ "./node_modules/tiny-warning/dist/tiny-warning.esm.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! hoist-non-react-statics */ "./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
-/* harmony import */ var hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_display_name__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-display-name */ "./node_modules/react-display-name/lib/getDisplayName.js");
-
-
-
-
-
-
-function _defineProperty(obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-}
-
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
-
-function _inheritsLoose(subClass, superClass) {
-  subClass.prototype = Object.create(superClass.prototype);
-  subClass.prototype.constructor = subClass;
-  subClass.__proto__ = superClass;
-}
-
-function _assertThisInitialized(self) {
-  if (self === void 0) {
-    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-  }
-
-  return self;
-}
-
-function isObject(obj) {
-  return obj !== null && typeof obj === 'object' && !Array.isArray(obj);
-}
-
-function createThemeProvider(context) {
-  var ThemeProvider =
-  /*#__PURE__*/
-  function (_React$Component) {
-    _inheritsLoose(ThemeProvider, _React$Component);
-
-    function ThemeProvider() {
-      var _this;
-
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      _this = _React$Component.call.apply(_React$Component, [this].concat(args)) || this;
-
-      _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "cachedTheme", void 0);
-
-      _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "lastOuterTheme", void 0);
-
-      _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "lastTheme", void 0);
-
-      _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "renderProvider", function (outerTheme) {
-        var children = _this.props.children;
-        return react__WEBPACK_IMPORTED_MODULE_0__.createElement(context.Provider, {
-          value: _this.getTheme(outerTheme)
-        }, children);
-      });
-
-      return _this;
-    }
-
-    var _proto = ThemeProvider.prototype;
-
-    // Get the theme from the props, supporting both (outerTheme) => {} as well as object notation
-    _proto.getTheme = function getTheme(outerTheme) {
-      if (this.props.theme !== this.lastTheme || outerTheme !== this.lastOuterTheme || !this.cachedTheme) {
-        this.lastOuterTheme = outerTheme;
-        this.lastTheme = this.props.theme;
-
-        if (typeof this.lastTheme === 'function') {
-          var theme = this.props.theme;
-          this.cachedTheme = theme(outerTheme);
-           true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_4__.default)(isObject(this.cachedTheme), '[ThemeProvider] Please return an object from your theme function') : 0;
-        } else {
-          var _theme = this.props.theme;
-           true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_4__.default)(isObject(_theme), '[ThemeProvider] Please make your theme prop a plain object') : 0;
-          this.cachedTheme = outerTheme ? _extends({}, outerTheme, _theme) : _theme;
-        }
-      }
-
-      return this.cachedTheme;
-    };
-
-    _proto.render = function render() {
-      var children = this.props.children;
-
-      if (!children) {
-        return null;
-      }
-
-      return react__WEBPACK_IMPORTED_MODULE_0__.createElement(context.Consumer, null, this.renderProvider);
-    };
-
-    return ThemeProvider;
-  }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
-
-  if (true) {
-    ThemeProvider.propTypes = {
-      // eslint-disable-next-line react/require-default-props
-      children: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().node),
-      theme: prop_types__WEBPACK_IMPORTED_MODULE_1___default().oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_1___default().shape({}), (prop_types__WEBPACK_IMPORTED_MODULE_1___default().func)]).isRequired
-    };
-  }
-
-  return ThemeProvider;
-}
-
-function createWithTheme(context) {
-  return function hoc(Component) {
-    var withTheme = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (props, ref) {
-      return react__WEBPACK_IMPORTED_MODULE_0__.createElement(context.Consumer, null, function (theme) {
-         true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_4__.default)(isObject(theme), '[theming] Please use withTheme only with the ThemeProvider') : 0;
-        return react__WEBPACK_IMPORTED_MODULE_0__.createElement(Component, _extends({
-          theme: theme,
-          ref: ref
-        }, props));
-      });
-    });
-
-    if (true) {
-      withTheme.displayName = "WithTheme(" + (0,react_display_name__WEBPACK_IMPORTED_MODULE_3__.default)(Component) + ")";
-    }
-
-    hoist_non_react_statics__WEBPACK_IMPORTED_MODULE_2___default()(withTheme, Component);
-    return withTheme;
-  };
-}
-
-function createUseTheme(context) {
-  var useTheme = function useTheme() {
-    var theme = react__WEBPACK_IMPORTED_MODULE_0__.useContext(context);
-     true ? (0,tiny_warning__WEBPACK_IMPORTED_MODULE_4__.default)(isObject(theme), '[theming] Please use useTheme only with the ThemeProvider') : 0;
-    return theme;
-  };
-
-  return useTheme;
-}
-
-function createTheming(context) {
-  return {
-    context: context,
-    withTheme: createWithTheme(context),
-    useTheme: createUseTheme(context),
-    ThemeProvider: createThemeProvider(context)
-  };
-}
-
-var ThemeContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)();
-
-var _createTheming = createTheming(ThemeContext),
-    withTheme = _createTheming.withTheme,
-    ThemeProvider = _createTheming.ThemeProvider,
-    useTheme = _createTheming.useTheme;
-
-
-
-
-/***/ }),
-
 /***/ "./node_modules/tiny-warning/dist/tiny-warning.esm.js":
 /*!************************************************************!*\
   !*** ./node_modules/tiny-warning/dist/tiny-warning.esm.js ***!
@@ -55405,15 +53192,12 @@ function _unsupportedIterableToArray(o, minLen) {
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
 /******/ 			id: moduleId,
-/******/ 			loaded: false,
+/******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -55441,33 +53225,6 @@ function _unsupportedIterableToArray(o, minLen) {
 /******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 				}
 /******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/global */
-/******/ 	(() => {
-/******/ 		__webpack_require__.g = (function() {
-/******/ 			if (typeof globalThis === 'object') return globalThis;
-/******/ 			try {
-/******/ 				return this || new Function('return this')();
-/******/ 			} catch (e) {
-/******/ 				if (typeof window === 'object') return window;
-/******/ 			}
-/******/ 		})();
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/harmony module decorator */
-/******/ 	(() => {
-/******/ 		__webpack_require__.hmd = (module) => {
-/******/ 			module = Object.create(module);
-/******/ 			if (!module.children) module.children = [];
-/******/ 			Object.defineProperty(module, 'exports', {
-/******/ 				enumerable: true,
-/******/ 				set: () => {
-/******/ 					throw new Error('ES Modules may not assign module.exports or exports.*, Use ESM export syntax, instead: ' + module.id);
-/******/ 				}
-/******/ 			});
-/******/ 			return module;
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -55509,10 +53266,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./store */ "./txsrc/store.tsx");
 /* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./App */ "./txsrc/App.tsx");
-/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/styles/esm/createGenerateClassName/createGenerateClassName.js");
-/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/styles/esm/ThemeProvider/ThemeProvider.js");
-/* harmony import */ var _theme__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./theme */ "./txsrc/theme.tsx");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/styles/esm/createGenerateClassName/createGenerateClassName.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/styles/esm/StylesProvider/StylesProvider.js");
 
 
 
@@ -55523,30 +53278,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
+const generateClassName = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_9__.default)({
+  productionPrefix: "c"
+});
 
 function Main() {
-  react__WEBPACK_IMPORTED_MODULE_3__.useEffect(() => {
-    const jssStyle = document.querySelector("#jss-style");
-
-    if (jssStyle) {
-      var _jssStyle$parentEleme;
-
-      (_jssStyle$parentEleme = jssStyle.parentElement) === null || _jssStyle$parentEleme === void 0 ? void 0 : _jssStyle$parentEleme.removeChild(jssStyle);
-    }
-  }, []);
-  const generateClassName = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_10__.default)();
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(react_jss__WEBPACK_IMPORTED_MODULE_11__.JssProvider, {
-    generateId: generateClassName
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_12__.default, {
-    theme: _theme__WEBPACK_IMPORTED_MODULE_9__.default
+  // React.useEffect(() => {
+  //   const jssStyle = document.querySelector("#jss-style");
+  //   if (jssStyle) {
+  //     console.log("Removed JSS Styles Shite");
+  //     jssStyle.parentElement?.removeChild(jssStyle);
+  //   }
+  // }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_10__.default, {
+    generateClassName: generateClassName
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(react_redux__WEBPACK_IMPORTED_MODULE_6__.Provider, {
     store: _store__WEBPACK_IMPORTED_MODULE_7__.default
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(_App__WEBPACK_IMPORTED_MODULE_8__.default, null))));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(_App__WEBPACK_IMPORTED_MODULE_8__.default, null)));
 }
 
-(0,react_dom__WEBPACK_IMPORTED_MODULE_4__.hydrate)( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(Main, null), document.getElementById("root"));
+(0,react_dom__WEBPACK_IMPORTED_MODULE_4__.hydrate)( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__.createElement(Main, null), document.getElementById("root"), () => {
+  var _document$getElementB;
+
+  (_document$getElementB = document.getElementById("jss-style")) === null || _document$getElementB === void 0 ? void 0 : _document$getElementB.remove();
+});
 })();
 
 /******/ })()

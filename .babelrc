@@ -16,13 +16,13 @@
   "plugins": [
     "@babel/proposal-json-strings",
     "@babel/syntax-dynamic-import",
-    "@babel/transform-runtime",
     [
-      "import",
+      "babel-plugin-transform-imports",
       {
-        "libraryName": "@material-ui/core",
-        "libraryDirectory": "",
-        "camel2DashComponentName": false
+        "@material-ui/core": {
+          "transform": "@material-ui/core/${member}",
+          "preventFullImport": true
+        }
       }
     ]
   ]

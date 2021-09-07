@@ -1,6 +1,6 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, createStyles } from "@material-ui/core/styles";
 
-const useStyle = makeStyles((theme) => ({
+const useStyle = makeStyles((theme) => createStyles({
     root: {
       height: "100vh",
       display: "flex",

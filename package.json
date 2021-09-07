@@ -60,6 +60,7 @@
     "babel-loader": "^8.2.2",
     "babel-plugin-direct-import": "^0.9.2",
     "babel-plugin-import": "^1.13.3",
+    "babel-plugin-transform-imports": "^2.0.0",
     "babel-preset-react-app": "^10.0.0",
     "css-loader": "^6.2.0",
     "nodemon": "^2.0.12",

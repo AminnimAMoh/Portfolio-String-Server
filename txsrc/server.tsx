@@ -7,11 +7,9 @@ import store from "./store";
 import { Provider } from "react-redux";
 import {
   ServerStyleSheets,
+  StylesProvider,
   createGenerateClassName,
-  MuiThemeProvider,
 } from "@material-ui/core/styles";
-import { JssProvider, SheetsRegistry } from "react-jss";
-import theme from "./theme";
 
 const app = express();
 
@@ -25,19 +23,17 @@ if (dev) reload(app);
 
 app.use((rec, res) => {
   const styleSheetsRegistry = new ServerStyleSheets();
-  const sheetReagistry = new SheetsRegistry();
-  const generateClassName = createGenerateClassName();
-  // const sheetsManager= new Map();
+  const generateClassName = createGenerateClassName({
+    productionPrefix: "c",
+  });
 
   const html = renderToString(
     styleSheetsRegistry.collect(
-      <JssProvider registry={sheetReagistry} generateId={generateClassName}>
-        <MuiThemeProvider theme={theme}>
-          <Provider store={store}>
-            <App />
-          </Provider>
-        </MuiThemeProvider>
-      </JssProvider>
+      <StylesProvider generateClassName={generateClassName}>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </StylesProvider>
     )
   );
 
@@ -56,7 +52,7 @@ app.use((rec, res) => {
   </head>
   <body>
     <div id='root'>${html}</div>
-    <script>
+    <script async>
     window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
       /</g,
       "\\u003c"
