@@ -15,16 +15,13 @@ const generateClassName = createGenerateClassName({
 });
 
 function Main() {
-  // React.useEffect(() => {
-  //   const jssStyle = document.querySelector("#jss-style");
-
-  //   if (jssStyle) {
-  //     console.log("Removed JSS Styles Shite");
-
-  //     jssStyle.parentElement?.removeChild(jssStyle);
-  //   }
-  // }, []);
-
+  React.useEffect(() => {
+    const jssStyles = document.querySelector('#jss-server-side');
+    if (jssStyles) {
+      jssStyles.parentElement?.removeChild(jssStyles);
+    }
+  }, []);
+  
   return (
     <StylesProvider generateClassName={generateClassName}>
       <Provider store={store}>
@@ -34,6 +31,4 @@ function Main() {
   );
 }
 
-hydrate(<Main />, document.getElementById("root"), () => {
-  document.getElementById("jss-style")?.remove();
-});
+hydrate(<Main />, document.getElementById("root"));

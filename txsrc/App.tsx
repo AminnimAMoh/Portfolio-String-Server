@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 // import ContentContainer from "./views/ContentContainer";
 // import DataFetchPending from "./views/DataFetchPending";
 import useStyle from "./AppStyle";
-import { Snackbar, Slide, useMediaQuery } from "@material-ui/core";
+import { Snackbar, Slide } from "@material-ui/core";
 
 //Importing the redux store type.
 import { RootState } from "./store";
@@ -32,18 +32,12 @@ function App(): React.ReactElement {
   const [svgSetupTrigger, setSVGSetupTrigger] = useState<boolean>(false);
   const [snackState, setSnackState] = useState<boolean>(false);
   const dispatch = useDispatch();
-  const matches = useMediaQuery('(min-width:600px)');
   
   const {
     buttonAction: { rootState, buttonTrigered },
     dataStore: { annualrain, slums, population, months },
   } = useSelector((state: RootState) => state);
   const classes = useStyle();
-
-  useEffect(()=>{
-    console.log('Media query changed!!!!');
-    
-  }, [matches])
 
   useEffect(() => {
     if (!isBrowser) {
@@ -89,7 +83,6 @@ function App(): React.ReactElement {
           <DataFetchPending />;
         </div>
       )}
-      <h1>{`(min-width:600px) matches: ${matches}`}</h1>
       <Snackbar
         open={snackState}
         TransitionComponent={TransitionUp}
