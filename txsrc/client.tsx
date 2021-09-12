@@ -1,34 +1,20 @@
 import "@babel/polyfill";
-import React from "react";
-import { hydrate } from "react-dom";
+import React, { lazy, Suspense } from "react";
+import ReactDOM from "react-dom";
 import "./index.css";
 import { Provider } from "react-redux";
 import store from "./store";
-import App from "./App";
-import {
-  StylesProvider,
-  createGenerateClassName,
-} from "@material-ui/core/styles";
+import Loading from "./views/Loading";
+const App = lazy(() => import("./App"));
 
-const generateClassName = createGenerateClassName({
-  productionPrefix: "c",
-});
-
-function Main() {
-  React.useEffect(() => {
-    const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles) {
-      jssStyles.parentElement?.removeChild(jssStyles);
-    }
-  }, []);
-  
-  return (
-    <StylesProvider generateClassName={generateClassName}>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </StylesProvider>
-  );
-}
-
-hydrate(<Main />, document.getElementById("root"));
+ReactDOM.hydrate(
+  <Suspense fallback={<Loading />}>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </Suspense>,
+  document.getElementById("root"),
+  () => {
+    document.getElementById("jss-server-side")?.remove();
+  }
+);

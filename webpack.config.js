@@ -10,7 +10,7 @@ const common = {
       },
       {
         test: /\.css$/i,
-        use: ["to-string-loader", "css-loader"],
+        use: ["style-loader", "css-loader"],
       },
     ],
   },
@@ -27,14 +27,23 @@ module.exports = [
     entry: "./txsrc/client",
     output: {
       path: `${__dirname}/public`,
+      filename: "[name].js",
+      chunkFilename: "[name].js",
+      publicPath: "/"
     },
   },
   {
     ...common,
     target: "node",
     entry: "./txsrc/server",
-    externals: [
-      nodeExternals(),
-    ],
+    output: {
+      path: `${__dirname}/dist`,
+      filename: "[name].js",
+      chunkFilename: "[name].js",
+      publicPath: "/"
+    },
+    // externals: [
+    //   nodeExternals(),
+    // ],
   },
 ];

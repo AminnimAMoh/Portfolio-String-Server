@@ -1,9 +1,11 @@
 import React from "react";
 import useStyle from "../styles";
 import { Grid, Typography, Link } from "@material-ui/core";
-import YouTubeEmbed from "../YouTubeEmbed";
+
 import { useSelector } from "react-redux";
 import { RootState } from "../../../store";
+
+const YouTubeEmbed =React.lazy(()=>import("../YouTubeEmbed"));
 
 function UX(): React.ReactElement {
   const classes = useStyle();

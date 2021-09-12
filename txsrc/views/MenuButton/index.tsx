@@ -4,7 +4,7 @@ import useStyle from "./style";
 import useMeasure from "react-use-measure";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../../store";
-import { isBrowser } from "../../utils";
+
 import {
   containerStateToggle,
   onDelayStateChange,

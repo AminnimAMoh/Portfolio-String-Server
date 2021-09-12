@@ -2,9 +2,14 @@ import React, { useRef } from "react";
 import useStyle from "./style";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
-import UX from "../Pages/UX";
-import UI from "../Pages/UI";
-import CV from "../Pages/CV";
+// import UX from "../Pages/UX";
+// import UI from "../Pages/UI";
+// import CV from "../Pages/CV";
+
+const UX = React.lazy(()=>import("../Pages/UX"));
+const UI = React.lazy(()=>import("../Pages/UI"));
+const CV = React.lazy(()=>import("../Pages/CV"));
+
 // import D3 from "../Pages/D3";
 import Undeveloped from "../Pages/Undeveloped";
 

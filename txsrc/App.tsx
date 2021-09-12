@@ -3,9 +3,6 @@
 
 import React, { useEffect, useState } from "react";
 
-// import MenuButton from "./views/MenuButton";
-// import ContentContainer from "./views/ContentContainer";
-// import DataFetchPending from "./views/DataFetchPending";
 import useStyle from "./AppStyle";
 import { Snackbar, Slide } from "@material-ui/core";
 
@@ -14,11 +11,13 @@ import { RootState } from "./store";
 import { useSelector, useDispatch } from "react-redux";
 import { rowGridToggleToReverce } from "./redux/slices/ScreenSettingsSlice";
 import { readDataAgain } from "./redux/slices/fetchSlice";
+import { useMediaQuery } from "@material-ui/core";
 
-import DataFetchPending from "./views/DataFetchPending";
+
 import MenuButton from "./views/MenuButton";
 import ContentContainer from "./views/ContentContainer";
-import { isBrowser } from "./utils";
+
+const DataFetchPending=React.lazy(()=>import("./views/DataFetchPending"));
 
 //An easy way to apply transitions to Material-UI components.
 //Pre writen transition from Material-UI.
@@ -32,7 +31,8 @@ function App(): React.ReactElement {
   const [svgSetupTrigger, setSVGSetupTrigger] = useState<boolean>(false);
   const [snackState, setSnackState] = useState<boolean>(false);
   const dispatch = useDispatch();
-  
+  const windowState=useMediaQuery("(max-width:1280px)")
+
   const {
     buttonAction: { rootState, buttonTrigered },
     dataStore: { annualrain, slums, population, months },
@@ -40,12 +40,10 @@ function App(): React.ReactElement {
   const classes = useStyle();
 
   useEffect(() => {
-    if (!isBrowser) {
-      if (window.innerWidth < 1280) {
+      if (windowState) {
         dispatch(rowGridToggleToReverce(window.innerWidth));
       }
-    }
-  });
+  }, [windowState]);
 
   useEffect(() => {
     annualrain.state === "fulfilled" &&
@@ -72,15 +70,15 @@ function App(): React.ReactElement {
     setSnackState(false);
   };
 
-  console.log("App");
-  
+  console.log(process.env.NODE_ENV);
+
   return (
     <div
       className={rootState ? `${classes.root} open` : `${classes.root} close`}
     >
       {!svgSetupTrigger && buttonTrigered === "D3" && (
         <div className={classes.loading}>
-          <DataFetchPending />;
+            <DataFetchPending />
         </div>
       )}
       <Snackbar
@@ -90,8 +88,8 @@ function App(): React.ReactElement {
         onClick={snackBarRefreshAction}
         classes={{ root: classes.snackbar }}
       />
-      <MenuButton />;
-      <ContentContainer />;
+      <MenuButton />
+      <ContentContainer />
     </div>
   );
 }

@@ -1,7 +1,8 @@
 import React from "react";
 import useStyle from "../styles";
 import { Grid, Typography, Link } from "@material-ui/core";
-import YouTubeEmbed from "../YouTubeEmbed";
+
+const YouTubeEmbed = React.lazy(() => import("../YouTubeEmbed"));
 
 function UI(): React.ReactElement {
   const classes = useStyle();
@@ -73,7 +74,7 @@ function UI(): React.ReactElement {
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <YouTubeEmbed embedID="aQ017METpTU" />
+            <YouTubeEmbed embedID="aQ017METpTU" />
         </Grid>
         <Grid
           item
