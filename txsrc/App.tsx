@@ -70,8 +70,6 @@ function App(): React.ReactElement {
     setSnackState(false);
   };
 
-  console.log(process.env.NODE_ENV);
-
   return (
     <div
       className={rootState ? `${classes.root} open` : `${classes.root} close`}

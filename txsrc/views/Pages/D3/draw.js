@@ -1,19 +1,9 @@
 import * as d3 from "d3";
 import style from "./style.css";
 
-import removeEllipses from "./MapComponents/RemoveEllipses";
-import slumsComponent from "./MapComponents/SlumsComponent";
-import DrawAll from "./MapComponents/DrawAllComponents";
-import removeFunction from "./MapComponents/RemoveFunction";
-
 import { generateAllGroups } from "./DrawFunction/generateAllGroups";
 
-import stationsClick from "./MapMouseControles/StationsClick";
-
-// import url from "./data/GeoJson/bangladesh.geojson";
 import { staticState } from "./data/staticVariables";
-
-import gsonData from "./data/GeoJson/bangladesh.json";
 
 import {
   generatGradient,
@@ -27,13 +17,14 @@ import {
   geoLocations,
 } from "./utilities";
 
-export const draw = (
+const Draw = (
   container,
   svgRef,
   annualrain,
   slums,
   population,
-  months
+  months,
+  mapData
 ) => {
   let containerElement = svgRef.current;
   let containerX = 0;
@@ -47,7 +38,6 @@ export const draw = (
   let w = containerX;
   let h = containerY;
   let yearSelected = "2013";
-  const url = "D3/data/GeoJson/bangladesh.geojson";
   let generatedGroups = generateAllGroups(d3, container);
   while (!generatedGroups) {
     generatedGroups = generateAllGroups(d3, container);
@@ -72,15 +62,16 @@ export const draw = (
     5,
     0.2
   );
-  
+
   let names = [];
-  if (gsonData) {
-    for (let i = 0; i < gsonData.features.length; i++) {
-      names.push(gsonData.features[i].properties.NAME_4);
+  if (mapData) {
+    console.log(mapData);
+    for (let i = 0; i < mapData.features.length; i++) {
+      names.push(mapData.features[i].properties.NAME_4);
     }
     generatedGroups.mapContainer
       .selectAll("path")
-      .data(gsonData.features)
+      .data(mapData.features)
       .enter()
       .append("path")
       .attr("d", (d) => geoLocations(d));
@@ -218,18 +209,26 @@ export const draw = (
       })
 
       .on("click", function () {
-        stationsClick(
-          population,
-          months,
-          yearSelected,
-          generatedGroups,
-          d3,
-          mapXOffSet,
-          this
-        );
+        import(
+          /* webpackChunkName: 'D3-stationsClick' */ "./MapMouseControles/StationsClick"
+        ).then(({ default: stationsClick }) => {
+          stationsClick(
+            population,
+            months,
+            yearSelected,
+            generatedGroups,
+            d3,
+            mapXOffSet,
+            this
+          );
+        });
       });
 
-    slumsComponent(slums, generatedGroups, yearLableInc);
+    import(
+      /* webpackChunkName: 'D3-slumsComponent' */ "./MapComponents/SlumsComponent"
+    ).then(({ default: slumsComponent }) => {
+      slumsComponent(slums, generatedGroups, yearLableInc);
+    });
 
     generatedGroups.yearsContainer.attr("transform", "translate(150,20)");
     generatedGroups.yearsContainer
@@ -289,31 +288,47 @@ export const draw = (
           .style("opacity", 0);
       })
       .on("click", function (d) {
-        removeFunction(d3, container, generatedGroups);
+        import(
+          /* webpackChunkName: 'D3-removeFunction' */ "./MapComponents/RemoveFunction"
+        ).then(({ default: removeFunction }) => {
+          removeFunction(d3, container, generatedGroups);
+        });
         onClickTextFunction(this, generatedGroups.yearsContainer);
         const yearListSelected = this.id;
-        DrawAll(
-          d3,
-          annualrain,
-          yearListSelected,
-          yearSelected,
-          firstMin,
-          firstMax,
-          generatedGroups
-        );
+        import(
+          /* webpackChunkName: 'D3-DrawAll' */ "./MapComponents/DrawAllComponents"
+        ).then(({ default: DrawAll }) => {
+          DrawAll(
+            d3,
+            annualrain,
+            yearListSelected,
+            yearSelected,
+            firstMin,
+            firstMax,
+            generatedGroups
+          );
+        });
       });
 
-    removeEllipses(d3, container, generatedGroups);
+    import(
+      /* webpackChunkName: 'D3-removeEllipses' */ "./MapComponents/RemoveEllipses"
+    ).then(({ default: removeEllipses }) => {
+      removeEllipses(d3, container, generatedGroups);
+    });
 
-    DrawAll(
-      d3,
-      annualrain,
-      2013,
-      yearSelected,
-      firstMin,
-      firstMax,
-      generatedGroups
-    );
+    import(
+      /* webpackChunkName: 'D3-DrawAll' */ "./MapComponents/DrawAllComponents"
+    ).then(({ default: DrawAll }) => {
+      DrawAll(
+        d3,
+        annualrain,
+        2013,
+        yearSelected,
+        firstMin,
+        firstMax,
+        generatedGroups
+      );
+    });
 
     d3.selectAll("g").raise();
 
@@ -352,3 +367,5 @@ export const draw = (
   // });
   containerElement && reDrawCan();
 };
+
+export default Draw;

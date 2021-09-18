@@ -21,6 +21,7 @@ interface states {
 //This helps to prevent mutation on properties from different components.
 interface fetchStat {
   refresh: boolean;
+  mapJSON:states,
   annualrain: states;
   slums: states;
   population: states;
@@ -32,6 +33,11 @@ interface fetchStat {
 const initialState: fetchStat = {
   refresh: false,
   errorState: false,
+  mapJSON:{
+    data: [],
+    state: "empty",
+    error: "",
+  },
   annualrain: {
     data: [],
     state: "empty",
@@ -53,6 +59,18 @@ const initialState: fetchStat = {
     error: "",
   },
 };
+
+export const fetchMap = createAsyncThunk(
+  "fetchData/Map",
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await axiosInterceptor().get("map");
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err);
+    }
+  }
+);
 
 //AsyncThunk function to read 'annualrain' data from data store.
 //Benefits of using asyncThunk in this case is easy API response handeling.
@@ -271,7 +289,40 @@ const FetchSlice = createSlice({
           },
           errorState: true
         };
-      });
+      })
+      .addCase(fetchMap.pending, (state: RootState) => {
+        return {
+          ...state,
+          refresh: false,
+          mapJSON: {
+            ...state.months,
+            state: "pending",
+          },
+        };
+      })
+      .addCase(fetchMap.fulfilled, (state: RootState, action) => {
+        return {
+          ...state,
+          refresh: false,
+          mapJSON: {
+            ...state.months,
+            data: action.payload,
+            state: "fulfilled",
+          },
+        };
+      })
+      .addCase(fetchMap.rejected, (state: RootState, action) => {
+        return {
+          ...state,
+          refresh: false,
+          mapJSON: {
+            ...state.months,
+            state: "rejected",
+            error: action.payload,
+          },
+          errorState: true
+        };
+    });
   },
 });
 

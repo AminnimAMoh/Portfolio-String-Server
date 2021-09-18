@@ -38,6 +38,7 @@ app.use((rec, res) => {
 <html lang='en'>
   <head>
     <meta charset='utf-8' />
+    <link rel="icon" href="images/favicon.ico" />
     <link rel='icon' href='./favicon.ico' />
     <link rel='image' href='images/Button/Menu_Trigger/Power_Button-Stoke.png'/>
     <link rel='image' href='images/Button/Menu_List/ColorPalette.png'/>

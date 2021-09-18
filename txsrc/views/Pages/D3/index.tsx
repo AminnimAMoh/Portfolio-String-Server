@@ -1,18 +1,18 @@
 import React, { useRef, useEffect, useState } from "react";
 import { select, Selection } from "d3-selection";
-import { draw } from "./draw";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchAnnualrainData,
   fetchSlumsData,
   fetchPopulationData,
   fetchMonthData,
+  fetchMap
 } from "../../../redux/slices/fetchSlice";
 import { RootState } from "../../../store";
 
 function D3(): React.ReactElement {
   const {
-    dataStore: { annualrain, slums, population, months, refresh },
+    dataStore: { annualrain, slums, population, months, mapJSON, refresh },
   } = useSelector((state: RootState) => state);
   const dispatch = useDispatch();
   const svgRef = useRef<SVGSVGElement | null>(null);
@@ -34,12 +34,15 @@ function D3(): React.ReactElement {
       dispatch(fetchPopulationData());
     if (months.state === "empty" || months.state === "rejected")
       dispatch(fetchMonthData());
+    if (mapJSON.state === "empty" || mapJSON.state === "rejected")
+      dispatch(fetchMap());
   }, [
     refresh,
     annualrain.state,
     slums.state,
     population.state,
     months.state,
+    mapJSON.state,
     dispatch,
   ]);
 
@@ -48,13 +51,18 @@ function D3(): React.ReactElement {
       slums.state === "fulfilled" &&
       population.state === "fulfilled" &&
       months.state === "fulfilled" &&
+      mapJSON.state==="fulfilled" &&
       setSVGSetupTrigger(true);
-  }, [annualrain.state, slums.state, population.state, months.state]);
+  }, [annualrain.state, slums.state, population.state, months.state, mapJSON.state]);
 
   useEffect(() => {
     !svg && svgSetupTrigger && setSvg(select(svgRef.current));
     if (annualrain.data.length > 0 && svg) {
-      draw(svg, svgRef, annualrain, slums, population, months);
+      import(/* webpackChunkName: 'D3-Draw' */ "./draw").then(
+        ({ default: Draw }) => {
+          Draw(svg, svgRef, annualrain, slums, population, months, mapJSON.data);
+        }
+      );
     }
   }, [svg, svgSetupTrigger, annualrain, slums, population, months]);
 
