@@ -9,6 +9,7 @@ import { RootState } from "../../store";
 const UX = React.lazy(()=>import("../Pages/UX"));
 const UI = React.lazy(()=>import("../Pages/UI"));
 const CV = React.lazy(()=>import("../Pages/CV"));
+const D3=React.lazy(()=>import("../Pages/D3"));
 
 // import D3 from "../Pages/D3";
 import Undeveloped from "../Pages/Undeveloped";
@@ -21,8 +22,8 @@ function RenderObject(state: any): React.ReactElement {
       return <UI />;
     case "CV":
       return <CV />;
-    // case "D3":
-      // return <D3 />;
+    case "D3":
+      return <D3 />;
     default:
       return <Undeveloped />;
   }

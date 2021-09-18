@@ -37,7 +37,7 @@
   "scripts": {
     "nd": "nodemon dist/main",
     "start": "node dist/main.js",
-    "watch": "webpack --mode development --watch & nodemon dist/main",
+    "watch": "webpack --mode development --watch && nodemon dist/main",
     "dev": "del dist public && webpack --mode development --progress",
     "build": "del dist public && webpack --mode production --progress"
   },

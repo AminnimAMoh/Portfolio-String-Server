@@ -9430,7 +9430,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const axiosInterception = () => {
-  const baseURL = process.env.REACT_APP_BASE_DESTINATION;
+  const baseURL = 'https://andramedian-database.herokuapp.com/';
   const headers = {
     "Content-Type": "application/json"
   };
@@ -9879,7 +9879,8 @@ __webpack_require__.r(__webpack_exports__);
 // import CV from "../Pages/CV";
 const UX = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(() => Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_material-ui_core_es_Grid_Grid_js-node_modules_material-ui_core_es_Link_Link_js"), __webpack_require__.e("txsrc_views_Pages_UX_index_tsx")]).then(__webpack_require__.bind(__webpack_require__, /*! ../Pages/UX */ "./txsrc/views/Pages/UX/index.tsx")));
 const UI = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(() => Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_material-ui_core_es_Grid_Grid_js-node_modules_material-ui_core_es_Link_Link_js"), __webpack_require__.e("txsrc_views_Pages_UI_index_tsx")]).then(__webpack_require__.bind(__webpack_require__, /*! ../Pages/UI */ "./txsrc/views/Pages/UI/index.tsx")));
-const CV = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(() => Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_material-ui_core_es_Grid_Grid_js-node_modules_material-ui_core_es_Link_Link_js"), __webpack_require__.e("txsrc_views_Pages_CV_index_tsx")]).then(__webpack_require__.bind(__webpack_require__, /*! ../Pages/CV */ "./txsrc/views/Pages/CV/index.tsx"))); // import D3 from "../Pages/D3";
+const CV = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(() => Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_material-ui_core_es_Grid_Grid_js-node_modules_material-ui_core_es_Link_Link_js"), __webpack_require__.e("txsrc_views_Pages_CV_index_tsx")]).then(__webpack_require__.bind(__webpack_require__, /*! ../Pages/CV */ "./txsrc/views/Pages/CV/index.tsx")));
+const D3 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.lazy(() => Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_css-loader_dist_runtime_api_js-node_modules_css-loader_dist_runtime_cssW-d4b9f5"), __webpack_require__.e("txsrc_views_Pages_D3_index_tsx")]).then(__webpack_require__.bind(__webpack_require__, /*! ../Pages/D3 */ "./txsrc/views/Pages/D3/index.tsx"))); // import D3 from "../Pages/D3";
 
 
 
@@ -9893,8 +9894,9 @@ function RenderObject(state) {
 
     case "CV":
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(CV, null);
-    // case "D3":
-    // return <D3 />;
+
+    case "D3":
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(D3, null);
 
     default:
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Pages_Undeveloped__WEBPACK_IMPORTED_MODULE_3__.default, null);
@@ -10188,7 +10190,6 @@ function MenuButton() {
   const handlePowerClick = () => {
     var _parentElement$curren, _parentElement$curren2;
 
-    console.log("Hello");
     const parentChilrdernLength = (_parentElement$curren = parentElement.current) === null || _parentElement$curren === void 0 ? void 0 : _parentElement$curren.childElementCount;
     const prentArray = (_parentElement$curren2 = parentElement.current) === null || _parentElement$curren2 === void 0 ? void 0 : _parentElement$curren2.children;
 
@@ -75385,7 +75386,6 @@ __webpack_require__.r(__webpack_exports__);
 
 const app = express__WEBPACK_IMPORTED_MODULE_0___default()();
 const port = 3000;
-const dev = "development" === "development";
 app.use(express__WEBPACK_IMPORTED_MODULE_0___default().static("public"));
 app.use((rec, res) => {
   const styleSheetsRegistry = new _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_6__.default();

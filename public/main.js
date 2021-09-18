@@ -7079,7 +7079,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const axiosInterception = () => {
-  const baseURL = process.env.REACT_APP_BASE_DESTINATION;
+  const baseURL = 'https://andramedian-database.herokuapp.com/';
   const headers = {
     "Content-Type": "application/json"
   };

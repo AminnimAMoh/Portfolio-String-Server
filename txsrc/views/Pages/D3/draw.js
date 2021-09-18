@@ -13,7 +13,13 @@ import stationsClick from "./MapMouseControles/StationsClick";
 // import url from "./data/GeoJson/bangladesh.geojson";
 import { staticState } from "./data/staticVariables";
 
-import { generatGradient, shadowGenerator, generateBlur } from "./styleFunctions";
+import gsonData from "./data/GeoJson/bangladesh.json";
+
+import {
+  generatGradient,
+  shadowGenerator,
+  generateBlur,
+} from "./styleFunctions";
 import {
   onClickTextFunction,
   slumScale,
@@ -41,7 +47,7 @@ export const draw = (
   let w = containerX;
   let h = containerY;
   let yearSelected = "2013";
-  const url = "https://github.com/fahimxyz/bangladesh-geojson/blob/master/bangladesh.geojson";
+  const url = "D3/data/GeoJson/bangladesh.geojson";
   let generatedGroups = generateAllGroups(d3, container);
   while (!generatedGroups) {
     generatedGroups = generateAllGroups(d3, container);
@@ -66,21 +72,19 @@ export const draw = (
     5,
     0.2
   );
-
-  d3.json(url).then((countries) => {
-    let names = [];
-    if (countries) {
-      for (let i = 0; i < countries.features.length; i++) {
-        names.push(countries.features[i].properties.NAME_4);
-      }
-      generatedGroups.mapContainer
-        .selectAll("path")
-        .data(countries.features)
-        .enter()
-        .append("path")
-        .attr("d", (d) => geoLocations(d));
+  
+  let names = [];
+  if (gsonData) {
+    for (let i = 0; i < gsonData.features.length; i++) {
+      names.push(gsonData.features[i].properties.NAME_4);
     }
-  });
+    generatedGroups.mapContainer
+      .selectAll("path")
+      .data(gsonData.features)
+      .enter()
+      .append("path")
+      .attr("d", (d) => geoLocations(d));
+  }
 
   function reDrawCan() {
     const annualRainData = annualrain.data;

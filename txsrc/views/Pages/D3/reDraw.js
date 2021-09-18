@@ -129,7 +129,6 @@ const reDrawCan=(annualrain, months)=>{
       .enter()
         .append("circle")
         .attr("id", function (d) {
-          console.log(d);
           return d['Station'];
         })
         .attr("class", "cities-circles")
@@ -372,7 +371,6 @@ const reDrawCan=(annualrain, months)=>{
           // }
           const data = months.data.forEach(month => {
             const dataStation=month['Station']
-            console.log( nameOfCity);
             dataStation==nameOfCity && console.log(month['Station'])
           })
           thisCityRain.push({

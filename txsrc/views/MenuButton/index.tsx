@@ -80,7 +80,6 @@ function MenuButton(): React.ReactElement {
   // console.log(buttonPositions);
 
   const handlePowerClick = () => {
-    console.log("Hello");
     const parentChilrdernLength = parentElement.current?.childElementCount;
     const prentArray = parentElement.current?.children;
     if (parentChilrdernLength && prentArray) {
