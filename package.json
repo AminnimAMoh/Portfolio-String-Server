@@ -39,7 +39,7 @@
     "start": "node dist/main.js",
     "watch": "webpack --mode development --watch && nodemon dist/main",
     "dev": "rm -rf dist public && webpack --mode development --progress",
-    "build": "rm -rf dist public node_modules && yarn install && webpack --mode production --progress"
+    "build": "rm -rf dist public node_modules && npm install && webpack --mode production --progress"
   },
   "eslintConfig": {
     "extends": [
