@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "license": "MIT",
   "main": "dist/main.js",
+  "engines": {
+    "node": "14.17.0"
+  },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "@babel/runtime": "^7.15.3",
