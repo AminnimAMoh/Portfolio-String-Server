@@ -39,6 +39,7 @@
     "src/setupTests.ts"
   ],
   "include": [
-    "txsrc"
+    "txsrc/**/*",
+    "node_modules/@types/*"
   ]
 }
