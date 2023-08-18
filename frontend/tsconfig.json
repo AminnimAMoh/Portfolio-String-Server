@@ -13,7 +13,7 @@
     "jsx": "react",
     "moduleResolution": "node",
     "rootDir": "./txsrc",
-    "outDir": "./src", 
+    "outDir": "./dist", 
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -29,15 +29,6 @@
     "resolveJsonModule": true,
     "isolatedModules": false,
   },
-  "exclude": [
-    "node_modules",
-    "build",
-    "scripts",
-    "acceptance-tests",
-    "webpack",
-    "jest",
-    "src/setupTests.ts"
-  ],
   "include": [
     "txsrc/**/*",
     "node_modules/@types/*"
