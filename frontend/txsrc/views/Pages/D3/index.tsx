@@ -58,7 +58,7 @@ function D3(): React.ReactElement {
   useEffect(() => {
     !svg && svgSetupTrigger && setSvg(select(svgRef.current));
     if (annualrain.data.length > 0 && svg) {
-      import(/* webpackChunkName: 'D3-Draw' */ "./draw").then(
+      import(/* webpackChunkName: 'D3-Draw' */ "./Draw").then(
         ({ default: Draw }) => {
           Draw(svg, svgRef, annualrain, slums, population, months, mapJSON.data);
         }
