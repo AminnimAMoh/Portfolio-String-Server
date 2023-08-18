@@ -16,7 +16,7 @@
     "start:dev": "pnpm start:api & pnpm build:dashboard && build:dashboard:dev",
     "watch": "webpack --mode development --watch && nodemon dist/main",
     "dev": "rm -rf dist && webpack --mode development --progress",
-    "build": "rm -rf dist && webpack --mode production --progress"
+    "build": "pnpm --aggregate-output --parallel build"
   },
   "eslintConfig": {
     "extends": [
