@@ -9,10 +9,10 @@ const map=require("./exports/Map.json")
 const server= jsonServer.create();
 const router=jsonServer.router({annualrain, slums, months, population, map});
 const middleware=jsonServer.defaults();
-const port =process.env.PORT || 3001;
+const port =process.env.BACKEND_PORT || 3001;
 
 process.on('uncaughtException', (error)=>{
-    console.error('Uncaught exception:', error);
+    console.error(`Uncaught exception: ${error}`);
 
     process.exit(1);
 })
@@ -30,6 +30,8 @@ process.on('SIGTERM', ()=>{
 server.use(middleware);
 server.use(router);
 
-server.listen(port)
+server.listen(port, ()=>{
+    console.log(`Server is running on port ${port}`)
+})
 
 
