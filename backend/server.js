@@ -11,8 +11,25 @@ const router=jsonServer.router({annualrain, slums, months, population, map});
 const middleware=jsonServer.defaults();
 const port =process.env.PORT || 3001;
 
+process.on('uncaughtException', (error)=>{
+    console.error('Uncaught exception:', error);
+
+    process.exit(1);
+})
+
+process.on('SIGTERM', ()=>{
+    console.log('Received SIGTERM. Closing server...');
+
+    server.close(()=>{
+        console.log('Server closed.');
+
+        process.exit(1);
+    })
+})
 
 server.use(middleware);
 server.use(router);
 
 server.listen(port)
+
+
