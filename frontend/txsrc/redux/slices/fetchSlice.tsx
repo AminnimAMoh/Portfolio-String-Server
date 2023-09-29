@@ -83,6 +83,7 @@ export const fetchAnnualrainData = createAsyncThunk(
     try {
       const response = await axiosInterceptor().get("annualrain");
       return response.data.annualRain;
+      // return {}
     } catch (err) {
       //Rejecting the action so we can change the state on error for each asyncThunk action.
       return rejectWithValue(err);

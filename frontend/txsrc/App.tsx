@@ -1,7 +1,7 @@
 //This is the 'majula'. Dark Souls fans are familiar with this place. 😅
 //Here we managing the main states.
 
-import React, { useEffect, useState } from "react";
+import React, { memo, useMemo, useState } from "react";
 
 import useStyle from "./AppStyle";
 import { Snackbar, Slide } from "@material-ui/core";
@@ -39,13 +39,13 @@ function App(): React.ReactElement {
   } = useSelector((state: RootState) => state);
   const classes = useStyle();
 
-  useEffect(() => {
+  useMemo(() => {
       if (windowState) {
         dispatch(rowGridToggleToReverce(window.innerWidth));
       }
   }, [windowState]);
 
-  useEffect(() => {
+  useMemo(() => {
     annualrain.state === "fulfilled" &&
       slums.state === "fulfilled" &&
       population.state === "fulfilled" &&
@@ -92,4 +92,4 @@ function App(): React.ReactElement {
   );
 }
 
-export default App;
+export default memo(App);

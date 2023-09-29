@@ -1,1 +1,123 @@
-"use strict";exports.id=426,exports.ids=[426],exports.modules={3754:(t,e,r)=>{r.r(e),r.d(e,{default:()=>l});const l=(t,e,r,l,n,a,s)=>{const c=s.cityCircles,i=s.legendGraph,o=e.data.map((t=>+t[`Sum${r}`]));n=t.min(o),a=t.max(o);const d=t.scaleLinear().domain([n,a]).range([4,24]);let u=c.selectAll("circle").data(o);u.exit().remove(),u.enter().append("circle").attr("r",0),u.select("circle").data(o).enter().selectAll("circle").attr("class","cities-circles").transition().duration(500).attr("r",(function(t){return d(t)}));let m=[],x=o.sort(t.descending);m.push(x[0]),m.push(x[x.length/2]),m.push(x[x.length-1]);const f=i.selectAll("line").data(m);f.exit().remove();const p=i.selectAll("circle").data(m);p.exit().remove();const A=i.selectAll("text").data(m);A.exit().remove(),p.select("circle").data(m).enter().selectAll("circle").transition().duration(500).attr("transform",(function(t,e){return"translate(0,"+-d(t)+")"})).attr("r",(function(t){return d(t)})),f.select("line").data(m).enter().selectAll("line").transition().duration(500).attr("transform",(function(t,e){return"translate(0,"+2*-d(t)+")"})),A.select("text").data(m).enter().selectAll("text").attr("transform",(function(t,e){return"translate("+(50*e+52)+","+(2*-d(t)-3)+")"})).text((t=>t+"mm")).style("font-size","6pt").style("fill","white")}}};
+"use strict";
+exports.id = "D3-DrawAll";
+exports.ids = ["D3-DrawAll"];
+exports.modules = {
+
+/***/ "./txsrc/views/Pages/D3/MapComponents/DrawAllComponents.js":
+/*!*****************************************************************!*\
+  !*** ./txsrc/views/Pages/D3/MapComponents/DrawAllComponents.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const DrawAll = (
+  d3,
+  annualrain,
+  year,
+  yearSelected,
+  firstMin,
+  firstMax,
+  generatedGroups
+) => {
+  const cityCircles = generatedGroups.cityCircles;
+  const legendGraph = generatedGroups.legendGraph;
+
+  const annualRainData = annualrain.data;
+
+  const dataSet = annualRainData.map((properties) => {
+    return +properties[`Sum${year}`];
+  });
+
+  yearSelected=year;
+
+  // let circleTransition = d3.transition().ease(d3.easeExp).duration(1000);
+
+  firstMin = d3.min(dataSet);
+  firstMax = d3.max(dataSet);
+
+  const radScale = d3.scaleLinear().domain([firstMin, firstMax]).range([4, 24]);
+
+  let selectContainerCircles = cityCircles.selectAll("circle").data(dataSet);
+
+  selectContainerCircles.exit().remove();
+
+  selectContainerCircles.enter().append("circle").attr("r", 0);
+
+  selectContainerCircles
+    .select("circle")
+    .data(dataSet)
+    .enter()
+    .selectAll("circle")
+    .attr("class", "cities-circles")
+    .transition()
+    .duration(500)
+    .attr("r", function (d) {
+      return radScale(d);
+    });
+
+  let managedArray = [];
+  let sortedData = dataSet.sort(d3.descending);
+  managedArray.push(sortedData[0]);
+  managedArray.push(sortedData[sortedData.length / 2]);
+  managedArray.push(sortedData[sortedData.length - 1]);
+
+  const legendGraphLines = legendGraph.selectAll("line").data(managedArray);
+  legendGraphLines.exit().remove();
+
+  const legendGraphCircle = legendGraph.selectAll("circle").data(managedArray);
+  legendGraphCircle.exit().remove();
+
+  const legendGraphText = legendGraph.selectAll("text").data(managedArray);
+  legendGraphText.exit().remove();
+
+  legendGraphCircle
+    .select("circle")
+    .data(managedArray)
+    .enter()
+    .selectAll("circle")
+    .transition()
+    .duration(500)
+    .attr("transform", function (d, i) {
+      return "translate(0," + -radScale(d) + ")";
+    })
+    .attr("r", function (d) {
+      return radScale(d);
+    });
+
+  legendGraphLines
+    .select("line")
+    .data(managedArray)
+    .enter()
+    .selectAll("line")
+    .transition()
+    .duration(500)
+    .attr("transform", function (d, i) {
+      return "translate(0," + -radScale(d) * 2 + ")";
+    });
+
+  legendGraphText
+    .select("text")
+    .data(managedArray)
+    .enter()
+    .selectAll("text")
+    .attr("transform", function (d, i) {
+      return "translate(" + (i * 50 + 52) + "," + (-radScale(d) * 2 - 3) + ")";
+    })
+    .text((d) => {
+      return d + "mm";
+    })
+    .style("font-size", "6pt")
+    .style("fill", "white");
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DrawAll);
+
+
+/***/ })
+
+};
+;
+//# sourceMappingURL=D3-DrawAll.js.map

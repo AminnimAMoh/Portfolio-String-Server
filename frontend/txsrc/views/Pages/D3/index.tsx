@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useMemo, useEffect, useState } from "react";
 import { select, Selection } from "d3-selection";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -6,7 +6,7 @@ import {
   fetchSlumsData,
   fetchPopulationData,
   fetchMonthData,
-  fetchMap
+  fetchMap,
 } from "../../../redux/slices/fetchSlice";
 import { RootState } from "../../../store";
 
@@ -25,42 +25,51 @@ function D3(): React.ReactElement {
     undefined
   >>(null);
 
-  useEffect(() => {
-    if (annualrain.state === "empty" || annualrain.state === "rejected")
-      dispatch(fetchAnnualrainData());
-    if (slums.state === "empty" || slums.state === "rejected")
-      dispatch(fetchSlumsData());
-    if (population.state === "empty" || population.state === "rejected")
-      dispatch(fetchPopulationData());
-    if (months.state === "empty" || months.state === "rejected")
-      dispatch(fetchMonthData());
-    if (mapJSON.state === "empty" || mapJSON.state === "rejected")
-      dispatch(fetchMap());
+  useMemo(() => {
+    if (annualrain.state === "empty") dispatch(fetchAnnualrainData());
+    if (slums.state === "empty") dispatch(fetchSlumsData());
+    if (population.state === "empty") dispatch(fetchPopulationData());
+    if (months.state === "empty") dispatch(fetchMonthData());
+    if (mapJSON.state === "empty") dispatch(fetchMap());
   }, [
     refresh,
-    annualrain.state,
-    slums.state,
-    population.state,
-    months.state,
-    mapJSON.state,
+    JSON.stringify(annualrain.state),
+    JSON.stringify(slums.state),
+    JSON.stringify(population.state),
+    JSON.stringify(months.state),
+    JSON.stringify(mapJSON.state),
     dispatch,
   ]);
 
-  useEffect(() => {
+  useMemo(() => {
     annualrain.state === "fulfilled" &&
       slums.state === "fulfilled" &&
       population.state === "fulfilled" &&
       months.state === "fulfilled" &&
-      mapJSON.state==="fulfilled" &&
+      mapJSON.state === "fulfilled" &&
       setSVGSetupTrigger(true);
-  }, [annualrain.state, slums.state, population.state, months.state, mapJSON.state]);
+  }, [
+    JSON.stringify(annualrain.state),
+    JSON.stringify(slums.state),
+    JSON.stringify(population.state),
+    JSON.stringify(months.state),
+    JSON.stringify(mapJSON.state),
+  ]);
 
   useEffect(() => {
     !svg && svgSetupTrigger && setSvg(select(svgRef.current));
     if (annualrain.data.length > 0 && svg) {
       import(/* webpackChunkName: 'D3-Draw' */ "./Draw").then(
         ({ default: Draw }) => {
-          Draw(svg, svgRef, annualrain, slums, population, months, mapJSON.data);
+          Draw(
+            svg,
+            svgRef,
+            annualrain,
+            slums,
+            population,
+            months,
+            mapJSON.data
+          );
         }
       );
     }

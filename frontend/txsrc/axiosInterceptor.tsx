@@ -6,7 +6,7 @@ const axiosInterception=() => {
   
   const axiosInterceptor = axios.create({
     baseURL,
-    timeout: 5000,
+    timeout: 50000,
     headers,
   });
 

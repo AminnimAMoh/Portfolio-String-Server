@@ -13,8 +13,8 @@
     "nd": "nodemon dist/main",
     "start": "pnpm --aggregate-output --parallel start",
     "start:dev": "pnpm start:api & pnpm build:dashboard && build:dashboard:dev",
-    "watch": "webpack --mode development --watch && nodemon dist/main",
-    "dev": "rm -rf dist && webpack --mode development --progress",
+    "watch": "pnpm --aggregate-output --parallel watch",
+    "dev": "pnpm --aggregate-output --parallel dev",
     "build": "pnpm --aggregate-output --parallel build"
   },
   "eslintConfig": {

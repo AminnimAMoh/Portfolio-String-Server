@@ -65,7 +65,6 @@ const Draw = (
 
   let names = [];
   if (mapData) {
-    console.log(mapData);
     for (let i = 0; i < mapData.features.length; i++) {
       names.push(mapData.features[i].properties.NAME_4);
     }

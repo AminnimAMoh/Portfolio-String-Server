@@ -8,7 +8,7 @@ const store: any = configureStore({
     reducer:{
         buttonAction: buttonActionSlice,
         screenAction: ScreenSettingsSlice,
-        dataStore: FetchSlice
+        dataStore: FetchSlice,
     },
 })
 
