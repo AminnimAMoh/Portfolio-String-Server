@@ -1,7 +1,7 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 
 const axiosInterception=() => {
-  const baseURL = 'https://mamp3-6269c7cd81d8.herokuapp.com/';
+  const baseURL = process.env.REACT_APP_BASE_DESTINATION || 'http://localhost:3001/';
   const headers = { "Content-Type": "application/json" };
   
   const axiosInterceptor = axios.create({

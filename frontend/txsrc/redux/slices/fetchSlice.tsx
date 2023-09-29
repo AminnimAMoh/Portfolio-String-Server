@@ -73,12 +73,12 @@ export const fetchMap = createAsyncThunk(
 );
 
 //AsyncThunk function to read 'annualrain' data from data store.
-//Benefits of using asyncThunk in this case is easy API response handeling.
+//Benefits of using asyncThunk in this case is easy API response handling.
 export const fetchAnnualrainData = createAsyncThunk(
   //Name of the action to be monitored in Redux console.
   "fetchData/AnnualRainData",
-  //Dicunstructing 'thunkAPI' and grabing 'rejectWithValue' that we will need
-  //for error handeling.
+  //Deconstructing 'thunkAPI' and garbing 'rejectWithValue' that we will need
+  //for error handling.
   async (_, { rejectWithValue }) => {
     try {
       const response = await axiosInterceptor().get("annualrain");
@@ -91,12 +91,12 @@ export const fetchAnnualrainData = createAsyncThunk(
 );
 
 //AsyncThunk function to read 'slums' data from data store.
-//Benefits of using asyncThunk in this case is easy API response handeling.
+//Benefits of using asyncThunk in this case is easy API response handling.
 export const fetchSlumsData = createAsyncThunk(
   //Name of the action to be monitored in Redux console.
   "fetchData/SlumsData",
-  //Dicunstructing 'thunkAPI' and grabing 'rejectWithValue' that we will need
-  //for error handeling.
+  //Deconstructing 'thunkAPI' and garbing 'rejectWithValue' that we will need
+  //for error handling.
   async (_, { rejectWithValue }) => {
     try {
       const response = await axiosInterceptor().get("slums");
@@ -109,12 +109,12 @@ export const fetchSlumsData = createAsyncThunk(
 );
 
 //AsyncThunk function to read 'population' data from data store.
-//Benefits of using asyncThunk in this case is easy API response handeling.
+//Benefits of using asyncThunk in this case is easy API response handling.
 export const fetchPopulationData = createAsyncThunk(
   //Name of the action to be monitored in Redux console.
   "fetchData/PopulationData",
-  //Dicunstructing 'thunkAPI' and grabing 'rejectWithValue' that we will need
-  //for error handeling.
+  //Deconstructing 'thunkAPI' and garbing 'rejectWithValue' that we will need
+  //for error handling.
   async (_, { rejectWithValue }) => {
     try {
       const response = await axiosInterceptor().get("population");
@@ -127,12 +127,12 @@ export const fetchPopulationData = createAsyncThunk(
 );
 
 //AsyncThunk function to read 'months' data from data store.
-//Benefits of using asyncThunk in this case is easy API response handeling.
+//Benefits of using asyncThunk in this case is easy API response handling.
 export const fetchMonthData = createAsyncThunk(
   //Name of the action to be monitored in Redux console.
   "fetchData/MonthsData",
-  //Dicunstructing 'thunkAPI' and grabing 'rejectWithValue' that we will need
-  //for error handeling.
+  //Deconstructing 'thunkAPI' and garbing 'rejectWithValue' that we will need
+  //for error handling.
   async (_, { rejectWithValue }) => {
     try {
       const response = await axiosInterceptor().get("months");
