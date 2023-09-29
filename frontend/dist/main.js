@@ -10350,7 +10350,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
 const axiosInterception = () => {
-  const baseURL = process.env.REACT_APP_BASE_DESTINATION;
+  const baseURL = 'https://mamp3-backend-2993171d3ed5.herokuapp.com/';
   const headers = {
     "Content-Type": "application/json"
   };
@@ -10954,7 +10954,7 @@ function ContentContainer() {
     state: renderPage
   }));
 }
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ContentContainer);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.memo)(ContentContainer));
 
 /***/ }),
 
@@ -11261,7 +11261,7 @@ function MenuButton() {
     }));
   }));
 }
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (MenuButton);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.memo)(MenuButton));
 
 /***/ }),
 
@@ -11502,7 +11502,7 @@ function Undeveloped() {
     className: classes.topick_heading
   }, "This page is temporary unavailable."));
 }
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Undeveloped);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.memo)(Undeveloped));
 
 /***/ }),
 

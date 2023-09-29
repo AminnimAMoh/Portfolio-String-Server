@@ -44,7 +44,7 @@ function YouTubeEmbed(_ref) {
     title: "Embedded youtube"
   }))));
 }
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (YouTubeEmbed);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.memo)(YouTubeEmbed));
 
 /***/ })
 

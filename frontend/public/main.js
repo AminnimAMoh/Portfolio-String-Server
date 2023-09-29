@@ -8619,7 +8619,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
 const axiosInterception = () => {
-  const baseURL = process.env.REACT_APP_BASE_DESTINATION;
+  const baseURL = 'https://mamp3-backend-2993171d3ed5.herokuapp.com/';
   const headers = {
     "Content-Type": "application/json"
   };
@@ -9169,7 +9169,7 @@ function Loading() {
     color: "inherit"
   })));
 }
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Loading);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.memo)(Loading));
 
 /***/ }),
 

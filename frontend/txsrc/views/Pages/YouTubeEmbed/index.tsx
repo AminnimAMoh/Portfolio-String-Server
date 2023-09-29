@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import useStyle from '../styles'
 import useMeasure from "react-use-measure";
 
@@ -28,4 +28,4 @@ function YouTubeEmbed({ embedID }: Props): React.ReactElement {
   )
 }
 
-export default YouTubeEmbed
+export default memo(YouTubeEmbed)

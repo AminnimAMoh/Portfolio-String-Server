@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, memo } from "react";
 import { RootState } from "../../store";
 import useStyle from "./style";
 import useMeasure from "react-use-measure";
@@ -195,4 +195,4 @@ function MenuButton(): React.ReactElement {
   );
 }
 
-export default MenuButton;
+export default memo(MenuButton);

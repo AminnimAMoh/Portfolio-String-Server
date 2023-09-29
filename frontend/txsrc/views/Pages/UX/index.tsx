@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import useStyle from "../styles";
 import { Grid, Typography, Link } from "@material-ui/core";
 
@@ -253,4 +253,4 @@ function UX(): React.ReactElement {
   );
 }
 
-export default UX;
+export default memo(UX);

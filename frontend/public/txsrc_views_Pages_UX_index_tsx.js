@@ -246,7 +246,7 @@ function UX() {
     alt: "content"
   }))))));
 }
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (UX);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.memo)(UX));
 
 /***/ })
 

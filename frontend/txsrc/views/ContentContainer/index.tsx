@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { memo, useRef } from "react";
 import useStyle from "./style";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
@@ -106,4 +106,4 @@ function ContentContainer(): React.ReactElement {
   );
 }
 
-export default ContentContainer;
+export default memo(ContentContainer);

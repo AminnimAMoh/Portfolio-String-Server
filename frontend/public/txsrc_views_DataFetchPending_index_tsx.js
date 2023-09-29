@@ -376,7 +376,7 @@ function DataPending() {
     }
   }));
 }
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DataPending);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.memo)(DataPending));
 
 /***/ })
 

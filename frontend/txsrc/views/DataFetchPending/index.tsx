@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { useSelector } from "react-redux";
 import LinearProgress from '@material-ui/core/LinearProgress';
@@ -39,4 +39,4 @@ function DataPending(): React.ReactElement {
   );
 }
 
-export default DataPending;
+export default memo(DataPending);

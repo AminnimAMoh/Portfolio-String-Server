@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import useStyle from "../styles";
 import { Grid, Link, Typography, Divider } from "@material-ui/core";
 import { containerStateToggle } from "../../../redux/slices/buttonActionSlice";
@@ -262,4 +262,4 @@ function CV(): React.ReactElement {
   );
 }
 
-export default CV;
+export default memo(CV);

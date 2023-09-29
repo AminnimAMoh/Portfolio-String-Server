@@ -1,4 +1,4 @@
-import React, { useRef, useMemo, useEffect, useState } from "react";
+import React, { useRef, useMemo, useEffect, useState, memo } from "react";
 import { select, Selection } from "d3-selection";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -82,4 +82,4 @@ function D3(): React.ReactElement {
   );
 }
 
-export default D3;
+export default memo(D3);

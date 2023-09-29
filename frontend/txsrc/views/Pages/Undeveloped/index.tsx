@@ -1,5 +1,5 @@
 import { Typography } from '@material-ui/core'
-import React from 'react'
+import React, { memo } from 'react'
 import useStyle from '../styles'
 
 
@@ -14,4 +14,4 @@ function Undeveloped(): React.ReactElement {
     )
 }
 
-export default Undeveloped
+export default memo(Undeveloped)

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 // import { useSelector } from "react-redux";
 import useStyles from "./styles";
 // import { RootState } from "../../store";
@@ -23,4 +23,4 @@ function Info({}: Props): React.ReactElement {
   );
 }
 
-export default Info;
+export default memo(Info);

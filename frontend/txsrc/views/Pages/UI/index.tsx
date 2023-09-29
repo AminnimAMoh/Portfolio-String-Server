@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import useStyle from "../styles";
 import { Grid, Typography, Link } from "@material-ui/core";
 
@@ -286,4 +286,4 @@ function UI(): React.ReactElement {
   );
 }
 
-export default UI;
+export default memo(UI);

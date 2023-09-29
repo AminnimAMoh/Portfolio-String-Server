@@ -250,7 +250,7 @@ function UI() {
     variant: "body1"
   }, "D3.js: this JavaScript library is a very powerful tool to bring the data to life with interactive graphs as well as manipulating DOM elements. Using the data restored in Firebase cloud service shows an overview of the average score for each suburb using postcodes from user inputs. This leaderboard also graph shows the total number of participants from each suburb to explain the differences more clearly.")))));
 }
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (UI);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.memo)(UI));
 
 /***/ })
 

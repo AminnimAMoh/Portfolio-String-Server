@@ -70,7 +70,7 @@ function D3() {
     ref: svgRef
   }));
 }
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (D3);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.memo)(D3));
 
 /***/ })
 
