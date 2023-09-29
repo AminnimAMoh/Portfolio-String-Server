@@ -11,7 +11,7 @@ import {
 
 const app = express();
 
-const port = process.env.FRONTEND_PORT || 3101;
+const port = process.env.PORT || 3101;
 
 app.use(express.static("public"));
 
