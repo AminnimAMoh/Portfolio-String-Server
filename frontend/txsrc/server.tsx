@@ -66,7 +66,7 @@ app.use((rec, res) => {
     `);
 });
 
-const server=app.listen(port, () => console.log(`Frontend server is running on port: ${port}`));
+const server=app.listen(port, () => console.log(`Frontend server is running on port: ${port}`, `Backend address is: ${process.env.REACT_APP_BASE_DESTINATION}`));
 
 process.on('uncaughtException', (error)=>{
   console.error(`Uncaught exception: ${error}`);

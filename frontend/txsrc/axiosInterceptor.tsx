@@ -2,8 +2,6 @@ import axios, { AxiosError, AxiosResponse } from "axios";
 
 const axiosInterception=() => {
   const baseURL = process.env.REACT_APP_BASE_DESTINATION;
-  console.log(baseURL);
-  
   const headers = { "Content-Type": "application/json" };
   
   const axiosInterceptor = axios.create({
