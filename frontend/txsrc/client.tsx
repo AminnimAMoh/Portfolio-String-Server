@@ -7,9 +7,6 @@ import store from "./store";
 import Loading from "./views/Loading";
 const App = lazy(() => import("./App"));
 
-console.log(`Backend address is: ${process.env.REACT_APP_BASE_DESTINATION}`);
-
-
 ReactDOM.hydrate(
   <Suspense fallback={<Loading />}>
     <Provider store={store}>
