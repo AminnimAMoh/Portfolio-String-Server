@@ -25,7 +25,8 @@ chrome-user-data
 *.swo
 .env
 
-dist
+dist/
+frontend/dist/
 
 packages/react-devtools-core/dist
 packages/react-devtools-extensions/chrome/build
