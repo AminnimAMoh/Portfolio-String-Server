@@ -31,7 +31,7 @@ server.use(middleware);
 server.use(router);
 
 server.listen(port, ()=>{
-    console.log(`Server is running on port ${port}`)
+    console.log(`Backend server is running on port ${port}`)
 })
 
 

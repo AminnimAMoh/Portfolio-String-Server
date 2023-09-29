@@ -13,7 +13,6 @@ const app = express();
 
 const port = process.env.FRONTEND_PORT || 3101;
 
-
 app.use(express.static("public"));
 
 
@@ -67,4 +66,20 @@ app.use((rec, res) => {
     `);
 });
 
-app.listen(port, () => console.log(`http://localhost:${port}`));
+const server=app.listen(port, () => console.log(`Frontend server is running on port: ${port}`));
+
+process.on('uncaughtException', (error)=>{
+  console.error(`Uncaught exception: ${error}`);
+
+  process.exit(1);
+})
+
+process.on('SIGTERM', ()=>{
+  console.log('Received SIGTERM. Closing server...');
+
+  server.close(()=>{
+      console.log('Server closed.');
+
+      process.exit(1);
+  })
+})
