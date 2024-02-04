@@ -29,7 +29,7 @@ module.exports = [
     ...common,
     entry: "./txsrc/client",
     output: {
-      path: `${__dirname}/public/dist`,
+      path: `${__dirname}/public/js`,
       filename: "[name].js",
       chunkFilename: "[name].js",
       publicPath: "/"

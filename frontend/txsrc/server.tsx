@@ -4,17 +4,15 @@ import { renderToString } from "react-dom/server";
 import App from "./App";
 import store from "./store";
 import { Provider } from "react-redux";
-import {
-  ServerStyleSheets,
-  StylesProvider,
-} from "@material-ui/core/styles";
+import { ServerStyleSheets, StylesProvider } from "@material-ui/core/styles";
 
 const app = express();
 
 const port = process.env.PORT || 3101;
 
-app.use(express.static("public"));
-
+app.use(express.static("public/js"));
+app.use('/images', express.static("public/images"));
+app.use('/fonts', express.static("public/fonts"));
 
 app.use((rec, res) => {
   const styleSheetsRegistry = new ServerStyleSheets();
@@ -33,7 +31,7 @@ app.use((rec, res) => {
   const preloadedState = store.getState();
 
   res.send(`
-    <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang='en'>
   <head>
     <meta charset='utf-8' />
@@ -66,20 +64,22 @@ app.use((rec, res) => {
     `);
 });
 
-const server=app.listen(port, () => console.log(`Frontend server is running on port: ${port}`));
+const server = app.listen(port, () =>
+  console.log(`Frontend server is running on port: ${port}`)
+);
 
-process.on('uncaughtException', (error)=>{
+process.on("uncaughtException", (error) => {
   console.error(`Uncaught exception: ${error}`);
 
   process.exit(1);
-})
+});
 
-process.on('SIGTERM', ()=>{
-  console.log('Received SIGTERM. Closing server...');
+process.on("SIGTERM", () => {
+  console.log("Received SIGTERM. Closing server...");
 
-  server.close(()=>{
-      console.log('Server closed.');
+  server.close(() => {
+    console.log("Server closed.");
 
-      process.exit(1);
-  })
-})
+    process.exit(1);
+  });
+});

@@ -9,7 +9,7 @@ _SpecRunner.html
 __benchmarks__
 dist/
 frontend/dist
-frontend/public/dist
+frontend/public/js
 remote-repo/
 coverage/
 .module-cache
