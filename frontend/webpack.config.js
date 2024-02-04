@@ -1,3 +1,4 @@
+const path = require("path");
 const nodeExternals = require("webpack-node-externals");
 const common = {
   devtool: "cheap-module-source-map",
@@ -18,6 +19,8 @@ const common = {
     extensions: [".tsx", ".ts", ".js"],
     alias: {
       "@material-ui/core": "@material-ui/core/es",
+      "@redux": path.resolve(__dirname, './txsrc/redux/'),
+      "@hooks": path.resolve(__dirname, './txsrc/hooks/'),
     },
   },
 };
@@ -26,7 +29,7 @@ module.exports = [
     ...common,
     entry: "./txsrc/client",
     output: {
-      path: `${__dirname}/public`,
+      path: `${__dirname}/public/dist`,
       filename: "[name].js",
       chunkFilename: "[name].js",
       publicPath: "/"
@@ -42,8 +45,5 @@ module.exports = [
       chunkFilename: "[name].js",
       publicPath: "/"
     },
-    // externals: [
-    //   nodeExternals(),
-    // ],
   },
 ];

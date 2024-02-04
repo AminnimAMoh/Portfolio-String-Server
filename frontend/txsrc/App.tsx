@@ -34,7 +34,7 @@ function App(): React.ReactElement {
   const windowState=useMediaQuery("(max-width:1280px)")
 
   const {
-    buttonAction: { rootState, buttonTrigered },
+    buttonAction: { rootState, buttonTriggered },
     dataStore: { annualrain, slums, population, months },
   } = useSelector((state: RootState) => state);
   const classes = useStyle();
@@ -59,7 +59,7 @@ function App(): React.ReactElement {
       setSnackState(true);
   }, [annualrain.state, slums.state, population.state, months.state]);
 
-  //This function controles click action on the snack bar.
+  //This function controls click action on the snack bar.
   const snackBarRefreshAction = () => {
     //First we set the 'refresh state of the 'fetchSlice' action to trigger the fetch
     //action on the asyncThunk function with state 'rejected'.
@@ -74,7 +74,7 @@ function App(): React.ReactElement {
     <div
       className={rootState ? `${classes.root} open` : `${classes.root} close`}
     >
-      {!svgSetupTrigger && buttonTrigered === "D3" && (
+      {!svgSetupTrigger && buttonTriggered === "D3" && (
         <div className={classes.loading}>
             <DataFetchPending />
         </div>

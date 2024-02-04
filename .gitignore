@@ -8,8 +8,8 @@ scripts/flow/*/.flowconfig
 _SpecRunner.html
 __benchmarks__
 dist/
-frontend/dist/
-frontend/public/*.js
+frontend/dist
+frontend/public/dist
 remote-repo/
 coverage/
 .module-cache

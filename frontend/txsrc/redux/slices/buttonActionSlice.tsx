@@ -5,7 +5,7 @@ interface initialType {
   rootState: boolean;
   delayState: boolean;
   direction: boolean;
-  buttonTrigered: string;
+  buttonTriggered: string;
   renderPage: string;
   data: MenuData[];
 }
@@ -22,7 +22,7 @@ const initialState: initialType = {
   rootState: false,
   delayState: true,
   direction: true,
-  buttonTrigered: "",
+  buttonTriggered: "",
   renderPage: "",
   data: [
     {
@@ -81,7 +81,7 @@ const buttonActionSlice = createSlice({
   reducers: {
     containerStateToggle(state: any, action: PayloadAction<string>) {
       state.rootState = action.payload === "PowerButton" ? false : true;
-      state.buttonTrigered =
+      state.buttonTriggered =
         action.payload === "PowerButton" ? " " : action.payload;
       state.renderPage =
         action.payload === "PowerButton" ? " " : action.payload;
