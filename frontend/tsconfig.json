@@ -8,7 +8,7 @@
     "allowJs": true,
     "jsx": "react",
     "moduleResolution": "node",
-    "rootDir": "./txsrc",
+    "rootDir": "./src",
     "outDir": "./dist",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
@@ -25,9 +25,11 @@
     "resolveJsonModule": true,
     "isolatedModules": false,
     "paths": {
-      "@redux/*": ["./txsrc/redux/*"],
-      "@hooks/*": ["./txsrc/hooks/*"]
+      "@hooks/*": ["./src/hooks/*"],
+      "@components/*": ["./src/components/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@axios/*": ["./src/axios/*"]
     }
   },
-  "include": ["txsrc/**/*", "node_modules/@types/*"],
+  "include": ["src/**/*", "node_modules/@types/*", "./global-types.d.ts"],
 }

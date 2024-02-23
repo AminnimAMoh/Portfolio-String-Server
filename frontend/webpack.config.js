@@ -19,15 +19,17 @@ const common = {
     extensions: [".tsx", ".ts", ".js"],
     alias: {
       "@material-ui/core": "@material-ui/core/es",
-      "@redux": path.resolve(__dirname, './txsrc/redux/'),
-      "@hooks": path.resolve(__dirname, './txsrc/hooks/'),
+      "@hooks": path.resolve(__dirname, './src/hooks/'),
+      "@components": path.resolve(__dirname, './src/components/'),
+      "@pages": path.resolve(__dirname, './src/pages/'),
+      "@axios": path.resolve(__dirname, './src/axios/'),
     },
   },
 };
 module.exports = [
   {
     ...common,
-    entry: "./txsrc/client",
+    entry: "./src/client",
     output: {
       path: `${__dirname}/public/js`,
       filename: "[name].js",
@@ -38,7 +40,7 @@ module.exports = [
   {
     ...common,
     target: "node",
-    entry: "./txsrc/server",
+    entry: "./src/server",
     output: {
       path: `${__dirname}/dist`,
       filename: "[name].js",

@@ -1,0 +1,8 @@
+node_modules
+/**/__generated__/*
+# prevent style changes in these files, because they are changes rarely
+webpack/**
+.prettierrc.js
+jest.config.js
+babel.config.js
+apollo.config.js
