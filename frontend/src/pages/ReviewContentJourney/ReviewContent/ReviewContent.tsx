@@ -25,7 +25,7 @@ function ReviewContent() {
   }, [step]);
 
   return (
-    <div className={classes.root} style={{ translate: step === ReviewContentView.Default ? '0%' : '150%', width: step === ReviewContentView.Default ? '0%' : '150%'}}>
+    <div className={step === ReviewContentView.Default ? `${classes.root} close` : `${classes.root} open`}>
       {pageContent()}
     </div>
   );

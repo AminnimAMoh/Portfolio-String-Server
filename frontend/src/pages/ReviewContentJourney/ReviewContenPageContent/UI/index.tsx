@@ -3,7 +3,7 @@ import useStyle from "../../../styles";
 import { Grid, Typography } from "@material-ui/core";
 import TitleLayout from "@components/IntroductionLayout/IntroductionLayout";
 
-const YouTubeEmbed = React.lazy(() => import("@components/YouTubeEmbed"));
+const YouTubeEmbed = React.lazy(() => import("@components/YouTubeEmbed/YouTubeEmbed"));
 
 function UI(): React.ReactElement {
   const classes = useStyle();

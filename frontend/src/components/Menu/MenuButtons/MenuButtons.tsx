@@ -9,8 +9,7 @@ import { NUMBER_OF_BUTTONS } from './MenuButtons.constants';
 import { ButtonPosition, MenuButtonProps } from './MenuButton.interface';
 
 function RenderMenuButtons() {
-  const { setStepSelected } = useReviewContentStore();
-  const { powerButtonState: isOpen, powerButtonSize } = useReviewContentStore();
+  const { powerButtonState: isOpen, powerButtonSize, setStepSelected } = useReviewContentStore();
   const windowState = {
     rootState: useMediaQuery('(min-width:1280px)'),
     phase: useMediaQuery('(max-width:560px)'),
@@ -23,12 +22,13 @@ function RenderMenuButtons() {
     [NUMBER_OF_BUTTONS, powerButtonSize, isOpen, windowState],
   );
 
-  const handleMenuButtonClick = useCallback((triggeredElement): Nullable<void> => {
-    const selectedButtonName = triggeredElement.target as HTMLDivElement;
+  const handleMenuButtonClick = useCallback((triggeredElement): void => {
+    triggeredElement.preventDefault();
+    const selectedButtonElement = triggeredElement.target as HTMLDivElement;
+    
+    setActiveButton(selectedButtonElement);
 
-    setActiveButton(selectedButtonName);
-
-    setStepSelected(selectedButtonName.id);
+    setStepSelected(selectedButtonElement.id);
   }, []);
 
   const services: MenuButtonProps[] = [
@@ -60,12 +60,12 @@ function RenderMenuButtons() {
         return (
             <Button
               key={buttonName}
-              id={buttonName}
               onClick={handleMenuButtonClick}
-              icon={img}
               style={{
                 transform: `translate(${position.buttonXPosition}px, ${position.buttonYPosition}px)`,
               }}
+              icon={img}
+              buttonName={buttonName}
             />
         );
       })}

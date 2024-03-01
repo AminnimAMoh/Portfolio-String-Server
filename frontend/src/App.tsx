@@ -64,7 +64,7 @@ function App(): React.ReactElement {
   };
 
   return (
-    <div className={rootState ? `${classes.root} open` : `${classes.root} close`}>
+    <div>
       {!svgSetupTrigger && buttonTriggered === 'D3' && (
         <div className={classes.loading}>
           <DataFetchPending />

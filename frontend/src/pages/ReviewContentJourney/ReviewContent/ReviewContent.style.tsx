@@ -29,7 +29,7 @@ const useStyle = makeStyles((theme) => ({
       padding: theme.spacing(0, 6, 12),
     },
     "&.open": {
-      transform: "translateX(0%)",
+      width: "100%",
     },
     "&.open_vertically": {
       transform: "translateY(0%)",
@@ -40,6 +40,7 @@ const useStyle = makeStyles((theme) => ({
       opacity: 0,
     },
     "&.close": {
+      width: "0%",
       padding: 0,
       opacity: 0,
     },

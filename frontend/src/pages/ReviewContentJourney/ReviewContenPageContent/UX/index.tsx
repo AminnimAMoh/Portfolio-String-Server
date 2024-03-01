@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@hooks/useRootInfo/store";
 import TitleLayout from "@components/IntroductionLayout/IntroductionLayout";
 
-const YouTubeEmbed = React.lazy(() => import("@components/YouTubeEmbed"));
+const YouTubeEmbed = React.lazy(() => import("@components/YouTubeEmbed/YouTubeEmbed"));
 
 function UX(): React.ReactElement {
   const classes = useStyle();

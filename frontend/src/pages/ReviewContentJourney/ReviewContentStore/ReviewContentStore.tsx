@@ -36,6 +36,10 @@ export const ReviewContentStoreProvider = (props: PropsWithChildren<ReviewConten
         setStep(ReviewContentView.DataAnalytics);
 
         break;
+      case ReviewContentView.Default:
+        setStep(ReviewContentView.Default);
+
+        break;
       default:
         break;
     }
