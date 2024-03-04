@@ -8,8 +8,8 @@
   "scripts": {
     "parallel": "run-p -ls --aggregate-output",
     "dev:server": "nodemon dist/main",
+    "watch": "rm -rf dist && webpack --mode development --watch && nodemon dist/main & start",
     "start": "node dist/main.js",
-    "watch": "webpack --mode development --watch && nodemon dist/main",
     "dev": "rm -rf dist && webpack --mode development --progress",
     "build": "rm -rf dist && webpack --mode production --progress"
   }

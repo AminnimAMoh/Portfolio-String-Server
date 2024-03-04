@@ -7,7 +7,9 @@ scripts/flow/*/.flowconfig
 .grunt
 _SpecRunner.html
 __benchmarks__
-build/
+dist/
+frontend/dist
+frontend/public/js
 remote-repo/
 coverage/
 .module-cache
