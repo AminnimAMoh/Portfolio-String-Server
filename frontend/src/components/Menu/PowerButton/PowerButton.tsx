@@ -18,8 +18,8 @@ const PowerButton = () => {
   }, []);
 
   useEffect(() => {
-    setPowerButtonSize(200);
-  }, [width]);
+    setPowerButtonSize(400);
+  }, []);
 
   return (
     <StyledPowerButton

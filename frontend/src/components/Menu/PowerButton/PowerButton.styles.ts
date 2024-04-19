@@ -7,8 +7,6 @@ export const StyledPowerButton = styled(Button)`
   width: 100%;
   box-sizing: border-box;
 
-  opacity: .2;
-
   &::before {
     content: '';
     display: block;
