@@ -1,5 +1,4 @@
 import React, { memo, useEffect, useRef } from "react";
-import useStyle from "./ContentJourney.style";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 // import UX from "../Pages/UX";
@@ -30,7 +29,6 @@ function RenderObject(state: any): React.ReactElement {
 }
 
 function ContentContainer(): React.ReactElement {
-  const classes = useStyle();
   const rootDetails = useRef<HTMLDivElement>(null);
   const scrollToTop = useRef<HTMLDivElement>(null);
   const handleScroll = () => {
@@ -66,16 +64,16 @@ function ContentContainer(): React.ReactElement {
       ref={rootDetails}
       className={
         rootState && screenState === "wide"
-          ? `${classes.root} open`
+          ? `root open`
           : rootState && screenState === "limited"
-          ? `${classes.root} open_vertically`
+          ? `root open_vertically`
           : !rootState && delayState && screenState === "wide"
-          ? `${classes.root} close`
+          ? `root close`
           : !rootState && delayState && screenState === "limited"
-          ? `${classes.root} close_vertically`
+          ? `root close_vertically`
           : screenState === "limited"
-          ? `${classes.root} close_vertically`
-          : classes.root
+          ? `root close_vertically`
+          : "root"
       }
       style={
         rootState && !delayState && screenState === "wide"
@@ -91,7 +89,7 @@ function ContentContainer(): React.ReactElement {
     >
       <div
         ref={scrollToTop}
-        className={classes.scrollToTop}
+        className="scrollToTop"
         onClick={handleClick}
       >
         <div />
@@ -99,7 +97,7 @@ function ContentContainer(): React.ReactElement {
       <img
         src="images/Containers/Content_Frame/Mobile.png"
         alt="content"
-        className={classes.MobileFrame}
+        className="MobileFrame"
       />
       <RenderObject state={renderPage} />
     </div>

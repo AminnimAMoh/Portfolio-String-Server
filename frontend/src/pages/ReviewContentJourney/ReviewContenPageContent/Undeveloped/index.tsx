@@ -1,13 +1,11 @@
-import { Typography } from '@material-ui/core'
+import { Typography } from '@frontend-common/components/Typography'
 import React, { memo } from 'react'
-import useStyle from '../../../styles'
 
 
 function Undeveloped(): React.ReactElement {
-    const classes=useStyle();
     return (
         <div>
-            <Typography>
+            <Typography variant='h1'>
                 This page is temporary unavailable.
             </Typography>
         </div>

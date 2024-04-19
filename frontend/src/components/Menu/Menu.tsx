@@ -1,17 +1,15 @@
-import React, { memo } from 'react';
-import useStyle from './Menu.styles';
+import React, { ReactElement, memo } from 'react';
 
 import PowerButton from './PowerButton/PowerButton';
 import RenderMenuButtons from './MenuButtons/MenuButtons';
+import { StyledMenuContainer } from './Menu.styles';
 
-function Menu(): React.ReactElement {
-  const classes = useStyle();
-
+function Menu(): ReactElement {
   return (
-    <div className={classes.root}>
+    <StyledMenuContainer>
       <PowerButton />
-      <RenderMenuButtons/>
-    </div>
+      <RenderMenuButtons />
+    </StyledMenuContainer>
   );
 }
 

@@ -1,6 +1,4 @@
 import React, { memo } from "react";
-import useStyle from "../../../styles";
-import { Grid, Typography, Link } from "@material-ui/core";
 
 import { useSelector } from "react-redux";
 import { RootState } from "@hooks/useRootInfo/store";
@@ -9,9 +7,8 @@ import TitleLayout from "@components/IntroductionLayout/IntroductionLayout";
 const YouTubeEmbed = React.lazy(() => import("@components/YouTubeEmbed/YouTubeEmbed"));
 
 function UX(): React.ReactElement {
-  const classes = useStyle();
   const {
-    screenAction: { gridRowToReverce, gridRowToColumn },
+    screenAction: { divRowToReverce, divRowToColumn },
   } = useSelector((state: RootState) => state);
   const preventDefault = (
     event:
@@ -19,12 +16,11 @@ function UX(): React.ReactElement {
       | React.MouseEvent<HTMLSpanElement, MouseEvent>
   ) => event.preventDefault();
   return (
-    <div className={classes.root}>
-      <Grid
+    <div>
+      <div
         container
         justifyContent="space-between"
         alignContent="flex-start"
-        className={classes.topic_grid}
       >
         <TitleLayout
           rootTitle={{
@@ -49,18 +45,18 @@ function UX(): React.ReactElement {
             "Technology has played a significant role in increasing the world population dramatically. Consequently it has increased the level of the complexity of problems. However, user research methods developed around design frameworks can be a powerful tool to face these complex wicked problems. since the day I was introduced to the digital world, I have always been looking and thinking beyond the applications and platforms I have used. The temptation to find reliable solutions to build a better future for both humanity and the environment we live at."
           }
         />
-        <Grid item xs={12}>
+        <div item xs={12}>
           <YouTubeEmbed embedID="AikAa-n8vq8" />
-        </Grid>
-        <Grid
+        </div>
+        <div
           item
           container
-          direction={gridRowToReverce}
+          direction={divRowToReverce}
           spacing={4}
           justifyContent="center"
           alignItems="flex-start"
         >
-          <Grid item lg={6} md={12}>
+          <div item lg={6} md={12}>
             <Typography variant="body1">
               Currently our planet is at a critical point of animal extinction
               and biodiversity loss. To aid in combatting this loss we have
@@ -73,28 +69,28 @@ function UX(): React.ReactElement {
               to permeate throughout the users daily life, providing them with a
               platform to continue with environmentally positive life choices.
             </Typography>
-          </Grid>
-          <Grid item lg={6} md={12}>
+          </div>
+          <div item lg={6} md={12}>
             <Typography variant="h5">
               Knowledge As a tool to conserve
             </Typography>
             <Typography variant="h3">Environment and Biodiversity</Typography>
-          </Grid>
-        </Grid>
+          </div>
+        </div>
 
-        <Grid
+        <div
           item
           container
-          direction={gridRowToColumn}
+          direction={divRowToColumn}
           spacing={4}
           justifyContent="center"
           alignItems="flex-start"
         >
-          <Grid item lg={6} md={12}>
+          <div item lg={6} md={12}>
             <Typography variant="h5">What is the strategy?</Typography>
             <Typography variant="h3">Design Solution</Typography>
-          </Grid>
-          <Grid item lg={6} md={12}>
+          </div>
+          <div item lg={6} md={12}>
             <Typography variant="body1">
               Our design Solution is the AtmosCube, a cube roughly 450mm in
               width, height and depth. Within this hologram cube we are propose
@@ -104,20 +100,20 @@ function UX(): React.ReactElement {
               Within the product will be a small AR city projected from the
               base, this AR city will be built and managed by the user.
             </Typography>
-          </Grid>
-        </Grid>
-        <Grid item xs={12}>
+          </div>
+        </div>
+        <div item xs={12}>
           <img src="images/Pages/UX/Render.png" alt="content" />
-        </Grid>
-        <Grid
+        </div>
+        <div
           item
           container
-          direction={gridRowToReverce}
+          direction={divRowToReverce}
           spacing={4}
           justifyContent="center"
           alignItems="flex-start"
         >
-          <Grid item lg={6} md={12}>
+          <div item lg={6} md={12}>
             <Typography variant="body1">
               The design process was guided by the aim of empowering people
               through education in an effort to aid against biodiversity loss
@@ -146,25 +142,25 @@ function UX(): React.ReactElement {
               into a design matrix created to highlight the best design and what
               was most suited to the tasks needs.
             </Typography>
-          </Grid>
-          <Grid item lg={6} md={12}>
+          </div>
+          <div item lg={6} md={12}>
             <Typography variant="h5">Trial and Error</Typography>
             <Typography variant="h3">Design Process</Typography>
-          </Grid>
-        </Grid>
-        <Grid item xs={12}>
+          </div>
+        </div>
+        <div item xs={12}>
           <img src="images/Pages/UX/Render-2.png" alt="content" />
-        </Grid>
-        <Grid
+        </div>
+        <div
           item
           container
           spacing={4}
-          direction={gridRowToReverce}
+          direction={divRowToReverce}
           justifyContent="center"
           alignItems="center"
-          className={classes.inner_GridContainer}
+          className="inner_divContainer"
         >
-          <Grid item lg={6} md={12}>
+          <div item lg={6} md={12}>
             To use the AtmosCube the user must connect it to its home and
             vehicles IoT (Internet of things), the data received from the users
             amenities will be the core of the users experience within AtmosCube,
@@ -172,23 +168,23 @@ function UX(): React.ReactElement {
             daily lives will have a direct effect to their experience within the
             product. An example of this is smog within the user’s city from high
             Co2 emissions or Electricity use in real life.
-          </Grid>
-          <Grid item lg={6} md={12}>
+          </div>
+          <div item lg={6} md={12}>
             <img src="images/Pages/UX/Render-3.png" alt="content" />
-          </Grid>
-          <Grid
+          </div>
+          <div
             item
             container
             spacing={4}
-            direction={gridRowToColumn}
+            direction={divRowToColumn}
             justifyContent="center"
             alignItems="center"
-            className={classes.inner_GridContainer}
+            className="inner_divContainer"
           >
-            <Grid item lg={6} md={12}>
+            <div item lg={6} md={12}>
               <img src="images/Pages/UX/Render-4.png" alt="content" />
-            </Grid>
-            <Grid item lg={6} md={12}>
+            </div>
+            <div item lg={6} md={12}>
               To accompany these mechanics is the systems AI, with the gathered
               data from the users IoT the AI will learn the user’s habits,
               lifestyle and how they could lower their impact on the
@@ -196,24 +192,24 @@ function UX(): React.ReactElement {
               challenges, these challenges were designed with gamification in
               mind, engaging the user and investing them in the experience as a
               whole.
-            </Grid>
-          </Grid>
-        </Grid>
-        <Grid
+            </div>
+          </div>
+        </div>
+        <div
           item
           container
           spacing={4}
           xs={12}
           style={{ paddingTop: "160px" }}
         >
-          <Grid item lg={6} md={12}>
+          <div item lg={6} md={12}>
             <Typography variant="h5">Design Communication Tool</Typography>
             <Typography variant="h3">User Journey Map</Typography>
-          </Grid>
-          <Grid item xs={12} style={{ paddingTop: "12px" }}>
+          </div>
+          <div item xs={12} style={{ paddingTop: "12px" }}>
             <Link
               href="images/Pages/UX/(Icon-Discription-Headings)Jourenny-Map(Custom-Size-Cancas).jpg"
-              className={classes.onlineLink}
+              className="onlineLink"
               style={{ bottom: "0px" }}
               onClick={(e) => preventDefault}
             >
@@ -222,9 +218,9 @@ function UX(): React.ReactElement {
                 alt="content"
               />
             </Link>
-          </Grid>
-        </Grid>
-      </Grid>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -25,10 +25,11 @@
     "resolveJsonModule": true,
     "isolatedModules": false,
     "paths": {
-      "@hooks/*": ["./src/hooks/*"],
+      "@axios/*": ["./src/axios/*"],
       "@components/*": ["./src/components/*"],
+      "@frontend-common/*": ["./src/frontend-common/*"],
+      "@hooks/*": ["./src/hooks/*"],
       "@pages/*": ["./src/pages/*"],
-      "@axios/*": ["./src/axios/*"]
     }
   },
   "include": ["src/**/*", "node_modules/@types/*", "./global-types.d.ts"],

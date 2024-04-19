@@ -10,19 +10,7 @@
       }
     ],
     "@babel/react",
-    "@babel/typescript"
+    "@babel/typescript"  
   ],
-  "plugins": [
-    "@babel/proposal-json-strings",
-    "@babel/syntax-dynamic-import",
-    [
-      "babel-plugin-transform-imports",
-      {
-        "@material-ui/core": {
-          "transform": "@material-ui/core/${member}",
-          "preventFullImport": true
-        }
-      }
-    ]
-  ]
+  "plugins": ["babel-plugin-styled-components"]
 }

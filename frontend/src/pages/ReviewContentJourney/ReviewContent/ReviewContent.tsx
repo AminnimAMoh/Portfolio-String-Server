@@ -1,12 +1,10 @@
-import React, { useCallback, memo } from 'react';
+import React, { useCallback, memo, ReactElement, Fragment } from 'react';
 import { useReviewContentStore } from '../ReviewContentStore/ReviewContentStore';
 import { ReviewContentStore } from '../ReviewContentStore/ReviewContentStore.interface';
 import { ReviewContentView } from '../ReviewContentJourney.constants';
 import { CV, D3, UI, UX, Undeveloped } from '../ReviewContenPageContent';
-import useStyle from './ReviewContent.style';
 
-function ReviewContent() {
-  const classes=useStyle()
+function ReviewContent(): ReactElement {
   const { step }: ReviewContentStore = useReviewContentStore();
 
   const pageContent = useCallback(() => {
@@ -25,9 +23,9 @@ function ReviewContent() {
   }, [step]);
 
   return (
-    <div className={step === ReviewContentView.Default ? `${classes.root} close` : `${classes.root} open`}>
+    <Fragment>
       {pageContent()}
-    </div>
+    </Fragment>
   );
 }
 

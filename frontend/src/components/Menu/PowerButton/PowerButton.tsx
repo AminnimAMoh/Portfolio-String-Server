@@ -1,12 +1,11 @@
 import React, { memo, useCallback, useEffect } from 'react';
 import { useReviewContentStore } from '@pages/ReviewContentJourney/ReviewContentStore/ReviewContentStore';
-import useStyle from './PowerButton.styles';
 import useMeasure from 'react-use-measure';
 import { resetActiveButton } from '../Menu.utils';
 import { ReviewContentView } from '@pages/ReviewContentJourney/ReviewContentJourney.constants';
+import { StyledPowerButton } from './PowerButton.styles';
 
 const PowerButton = () => {
-  const classes = useStyle();
   const { powerButtonState, setPowerButtonSize, togglePowerButtonState, setStepSelected } = useReviewContentStore();
   const [buttonMeasures, { width }] = useMeasure();
 
@@ -19,16 +18,17 @@ const PowerButton = () => {
   }, []);
 
   useEffect(() => {
-    setPowerButtonSize(width);
+    setPowerButtonSize(200);
   }, [width]);
 
   return (
-    <div
+    <StyledPowerButton
       onClick={handlePowerClick}
-      className={powerButtonState ? `${classes.powerButton} open` : `${classes.powerButton} close`}
-    >
-      <img ref={buttonMeasures} src="images/Button/Menu_Trigger/Power_Button-Stoke.png" alt="content-asset" />
-    </div>
+      icon="images/Button/Menu_Trigger/Power_Button-Stoke.png"
+      buttonName="powerButton"
+      squareSize="large"
+      className={powerButtonState ? 'open' : 'close'}
+    />
   );
 };
 

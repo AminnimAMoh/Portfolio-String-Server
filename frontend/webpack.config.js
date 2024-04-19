@@ -1,5 +1,4 @@
 const path = require("path");
-const nodeExternals = require("webpack-node-externals");
 const common = {
   devtool: "cheap-module-source-map",
   module: {
@@ -18,11 +17,11 @@ const common = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
     alias: {
-      "@material-ui/core": "@material-ui/core/es",
-      "@hooks": path.resolve(__dirname, './src/hooks/'),
-      "@components": path.resolve(__dirname, './src/components/'),
-      "@pages": path.resolve(__dirname, './src/pages/'),
       "@axios": path.resolve(__dirname, './src/axios/'),
+      "@components": path.resolve(__dirname, './src/components/'),
+      "@frontend-common": path.resolve(__dirname, './src/frontend-common/'),
+      "@hooks": path.resolve(__dirname, './src/hooks/'),
+      "@pages": path.resolve(__dirname, './src/pages/'),
     },
   },
 };

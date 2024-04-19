@@ -1,22 +1,16 @@
-import { makeStyles } from "@material-ui/core/styles";
+import styled from 'styled-components';
 
-const useStyle = makeStyles((theme) => ({
-  title_container: {
-    color: "white",
-    paddingRight: theme.spacing(4),
-    "& > .MuiGrid-item img": {
-      width: "100%",
-    },
-  },
-  topic_heading: {
-    color: "white",
-    "& >*:not(:first-child)": {
-      paddingTop: "8px",
-    },
-  },
-  link_label: {
-    color: "#5C3B42",
-  },
-}));
-
-export default useStyle;
+export const styledTitleContainer = styled.div`
+color: white;
+paddingRight: theme.spacing(4);
+"& > .MuiGrid-item img": {
+  width: "100%"
+`;
+export const styledTopicHeading = styled.h1`
+color: "white",
+"& >*:not(:first-child)": {
+  paddingTop: "8px",
+`;
+export const styledLinkLabel = styled.a`
+  color: '#5C3B42';
+`;

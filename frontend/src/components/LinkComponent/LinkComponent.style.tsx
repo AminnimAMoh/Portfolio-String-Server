@@ -1,9 +1,5 @@
-import { makeStyles } from "@material-ui/core/styles";
+import styled from 'styled-components';
 
-const useStyle = makeStyles((theme) => ({
-  link_label: {
-    color: "#5C3B42",
-  },
-}));
-
-export default useStyle;
+export const styledLinkLabel = styled.h1`
+  color: '#5C3B42';
+`;

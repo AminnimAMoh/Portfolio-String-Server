@@ -1,10 +1,4 @@
 import express from "express";
-import React from "react";
-import { renderToString } from "react-dom/server";
-import App from "./App";
-import store from "@hooks/useRootInfo/store";
-import { Provider } from "react-redux";
-import { ServerStyleSheets, StylesProvider } from "@material-ui/core/styles";
 
 const app = express();
 
@@ -15,21 +9,6 @@ app.use('/images', express.static("public/images"));
 app.use('/fonts', express.static("public/fonts"));
 
 app.use((rec, res) => {
-  const styleSheetsRegistry = new ServerStyleSheets();
-
-  const html = renderToString(
-    styleSheetsRegistry.collect(
-      <StylesProvider>
-        <Provider store={store}>
-          <App />
-        </Provider>
-      </StylesProvider>
-    )
-  );
-
-  const css = styleSheetsRegistry.toString();
-  const preloadedState = store.getState();
-
   res.send(`
   <!DOCTYPE html>
 <html lang='en'>
@@ -48,15 +27,10 @@ app.use((rec, res) => {
     <link rel='image' href='images/Containers/Content_Frame/Mobile.png'/>
     <meta name='viewport' content='width=device-width, initial-scale=1' />
     <title>Andramedian Design-Mohammad Amin Mohammadi</title>
-    <style id='jss-server-side'>${css}</style>
   </head>
   <body>
-    <div id='root'>${html}</div>
+    <div id='root'></div>
     <script async>
-    window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
-      /</g,
-      "\\u003c"
-    )}
   </script>
     <script src='main.js' async></script>
   </body>

@@ -1,6 +1,4 @@
-import { Grid, Typography } from "@material-ui/core";
 import React from "react";
-import useStyle from "./IntroductionLayout.styles";
 import { LinkItem, TitleLayoutProps } from "./IntroductionLayout.interface";
 import LinkComponent from "@components/LinkComponent/LinkComponent";
 
@@ -10,15 +8,12 @@ function TitleLayout(props: TitleLayoutProps) {
     description,
   } = props;
 
-  const classes = useStyle();
   return (
-    <Grid
-      container
+    <div
       justifyContent="space-between"
       alignContent="flex-start"
-      className={classes.title_container}
     >
-      <Grid item lg={6} md={12} className={classes.title_container}>
+      <div item lg={6} md={12}>
         <Typography variant="h3">{title}</Typography>
 
         {blurbs?.map((blurb) => {
@@ -54,12 +49,12 @@ function TitleLayout(props: TitleLayoutProps) {
               <LinkComponent key={link.label} {...link} />
             );
           })}
-      </Grid>
+      </div>
 
-      <Grid item lg={6} md={12}>
+      <div item lg={6} md={12}>
         <Typography variant="body1">{description}</Typography>
-      </Grid>
-    </Grid>
+      </div>
+    </div>
   );
 }
 

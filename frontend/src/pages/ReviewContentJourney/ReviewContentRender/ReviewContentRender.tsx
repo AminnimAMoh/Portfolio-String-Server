@@ -1,21 +1,26 @@
 import Menu from '@components/Menu/Menu';
 import React, { memo } from 'react';
 import ReviewContent from '../ReviewContent/ReviewContent';
-import useStyle from './ReviewContentRender.styles';
 import { useReviewContentStore } from '../ReviewContentStore/ReviewContentStore';
 import { ReviewContentStore } from '../ReviewContentStore/ReviewContentStore.interface';
 import { ReviewContentView } from '../ReviewContentJourney.constants';
+import { StyledContainer } from './ReviewContentRender.styles';
 
 function ReviewContentMenu() {
-  const classes = useStyle();
   const { powerButtonState, step }: ReviewContentStore = useReviewContentStore();
-  const isReviewPageOpen=powerButtonState && step!=ReviewContentView.Default
-
+  const isReviewPageOpen = powerButtonState && step != ReviewContentView.Default;
+  
   return (
-    <div className={isReviewPageOpen ? `${classes.root} open` : `${classes.root} close`}>
+    <StyledContainer
+      className={isReviewPageOpen ? 'open' : 'close'}
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      direction="row"
+    >
+      <ReviewContent/>
       <Menu />
-      <ReviewContent />
-    </div>
+    </StyledContainer>
   );
 }
 

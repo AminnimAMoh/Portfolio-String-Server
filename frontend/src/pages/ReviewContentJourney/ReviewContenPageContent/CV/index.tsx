@@ -1,6 +1,4 @@
 import React, { memo } from "react";
-import useStyle from "../../../styles";
-import { Grid, Link, Typography, Divider } from "@material-ui/core";
 import { containerStateToggle } from "@hooks/useRootInfo/redux/slices/buttonActionSlice";
 import { useDispatch } from "react-redux";
 import TitleLayout from "@components/IntroductionLayout/IntroductionLayout";
@@ -27,7 +25,6 @@ const mentoringResponsibilities = [
   "Designing small projects for homework practices. ",
 ];
 function CV(): React.ReactElement {
-  const classes = useStyle();
   const dispatch = useDispatch();
 
   const handleLinkClick = (
@@ -38,12 +35,10 @@ function CV(): React.ReactElement {
     dispatch(containerStateToggle(linkName));
   };
   return (
-    <div className={classes.root}>
-      <Grid
-        container
+    <div>
+      <div
         justifyContent="space-between"
         alignContent="flex-start"
-        className={classes.topic_grid}
       >
         <TitleLayout
           rootTitle={{
@@ -59,42 +54,38 @@ function CV(): React.ReactElement {
             "I am graduated from the University of Sydney Bachelor of Design Computing that empowers me with knowledge and experience in User Experience Design and User Interaction Design alongside my speciality in React.js Front-End Development. After mastering skills in CSS, HTML, JavaScript, D3.js, P5.js, P3 Processing Java I fell in love with React.js and have developed several projects in React.js and TypeScripts. After puting my skills in to a real-world test I have mastered React Hooks, React-Redux, Redux ToolKir, TypeScript, Axios Interceptors, Restful API, and Authentication."
           }
         />
-        <Grid
-          item
-          container
+        <div
           xs={12}
           spacing={4}
           justifyContent="space-between"
           alignContent="flex-start"
         >
-          <Grid item xs={12}>
+          <div item xs={12}>
             <Typography variant="h3">Education</Typography>
-          </Grid>
-          <Grid
-            item
-            container
+          </div>
+          <div
             xs={12}
             spacing={4}
             justifyContent="space-between"
             alignContent="flex-start"
           >
-            <Grid item xs={12} sm={6}>
+            <div item xs={12} sm={6}>
               <Typography variant="h4">Bachelor of Design Computing</Typography>
               <Typography variant="body1">University of Sydney</Typography>
               <Typography variant="body1">Jul 2017 — Dec 2020</Typography>
-            </Grid>
-            <Grid item xs={12} sm={6}>
+            </div>
+            <div item xs={12} sm={6}>
               <Typography variant="body1">
                 Certified skills in User Experience Design, User Interaction
                 Design, and Front-End Development. Mastering programming skills
                 in React.js, React-Redux, Redux ToolKit, Axios, Material-UI,
                 D3.js, JavaScript Vanilla, JSX, HTML & CSS.
               </Typography>
-            </Grid>
-            <Grid item xs={12}>
+            </div>
+            <div item xs={12}>
               <Typography variant="h4">Achivements</Typography>
-            </Grid>
-            <Grid item xs={12} sm={6}>
+            </div>
+            <div item xs={12} sm={6}>
               <Typography variant="body1">
                 University of Sydney hackathon Coding Fest 2020 Disaster
                 Prevention Project Award.
@@ -102,8 +93,8 @@ function CV(): React.ReactElement {
               <Link href="" onClick={(e) => handleLinkClick(e, "D3")}>
                 Bangladesh Rainfall Visualization.
               </Link>
-            </Grid>
-            <Grid item xs={12} sm={6}>
+            </div>
+            <div item xs={12} sm={6}>
               <Typography variant="body1">
                 Fighting misinformation through social media around the Covid-19
                 news.
@@ -111,11 +102,11 @@ function CV(): React.ReactElement {
               <Link href="" onClick={(e) => handleLinkClick(e, "UI")}>
                 Covid Fact Check App-Developed in React.js.
               </Link>
-            </Grid>
-          </Grid>
-        </Grid>
+            </div>
+          </div>
+        </div>
 
-        <Grid
+        <div
           item
           container
           xs={12}
@@ -123,10 +114,10 @@ function CV(): React.ReactElement {
           justifyContent="space-between"
           alignContent="flex-start"
         >
-          <Grid item xs={12}>
+          <div item xs={12}>
             <Typography variant="h3">Experience</Typography>
-          </Grid>
-          <Grid
+          </div>
+          <div
             item
             container
             xs={12}
@@ -134,18 +125,18 @@ function CV(): React.ReactElement {
             justifyContent="space-between"
             alignContent="flex-start"
           >
-            <Grid item xs={12} sm={6}>
+            <div item xs={12} sm={6}>
               <Typography variant="h4" style={{ color: "#9C3C41" }}>
                 Growth Developer
               </Typography>
               <Typography variant="body1">Deferit</Typography>
               <Typography variant="body1">Nov 2021 — Current</Typography>
-            </Grid>
+            </div>
 
-            <Grid item xs={12}>
+            <div item xs={12}>
               <Typography variant="h4">Achivements</Typography>
-            </Grid>
-            <Grid item xs={12} sm={6}>
+            </div>
+            <div item xs={12} sm={6}>
               <Typography style={{marginTop: "12px"}} variant="body1">
                 Fine-tuned predictive model by applying cross-validation.
                 Achieved high level of accuracy in predicting dates with highest
@@ -216,9 +207,9 @@ function CV(): React.ReactElement {
                 Identified, analyzed and interpreted trends or patterns in
                 complex data sets.
               </Typography>
-            </Grid>
-          </Grid>
-          <Grid
+            </div>
+          </div>
+          <div
             item
             container
             xs={12}
@@ -226,46 +217,46 @@ function CV(): React.ReactElement {
             justifyContent="space-between"
             alignContent="flex-start"
           >
-            <Grid item xs={12} sm={6}>
+            <div item xs={12} sm={6}>
               <Typography variant="h4" style={{ color: "#9C3C41" }}>
                 React Developer
               </Typography>
               <Typography variant="body1">Reesby</Typography>
               <Typography variant="body1">Mar 2021 — Sep 2021</Typography>
-            </Grid>
-            <Grid item xs={12} sm={6}>
+            </div>
+            <div item xs={12} sm={6}>
               <Typography variant="body1">
                 React Front-End Developer in Reesby. Leader of Front-End
                 development team. Developed Reesby main project landing page
                 using React, React-Redux, React-Spring and Material-UI.
               </Typography>
-            </Grid>
-            <Grid item xs={12}>
+            </div>
+            <div item xs={12}>
               <Typography variant="h4">Responsibilities</Typography>
-            </Grid>
+            </div>
             {reesbyResponsibilities.map((data) => {
               return (
-                <Grid item xs={12} sm={4} key={data}>
+                <div item xs={12} sm={4} key={data}>
                   <Typography variant="body1">{data}</Typography>
-                </Grid>
+                </div>
               );
             })}
 
-            <Grid item xs={12}>
+            <div item xs={12}>
               <Typography variant="h4">Achivements</Typography>
-            </Grid>
-            <Grid item xs={12} sm={6}>
+            </div>
+            <div item xs={12} sm={6}>
               <Typography variant="body1">
                 Three times nominated as the team member of the CRM team for
                 dedication and hard work resulted in great outcomes.
               </Typography>
-            </Grid>
-          </Grid>
-          <Grid item xs={12}>
+            </div>
+          </div>
+          <div item xs={12}>
             <Divider variant="middle" className={classes.divider} />
-          </Grid>
+          </div>
 
-          <Grid
+          <div
             item
             container
             xs={12}
@@ -273,34 +264,34 @@ function CV(): React.ReactElement {
             justifyContent="space-between"
             alignContent="flex-start"
           >
-            <Grid item xs={12} sm={6}>
+            <div item xs={12} sm={6}>
               <Typography variant="h4" style={{ color: "#9C3C41" }}>
                 Freelance Front End Development
               </Typography>
               <Typography variant="body1">Freelance</Typography>
               <Typography variant="body1">2019 — Present</Typography>
-            </Grid>
-            <Grid item xs={12} sm={6}>
+            </div>
+            <div item xs={12} sm={6}>
               <Typography variant="body1">
                 Working from home on projects involve JavaScript programming and
                 UI design.
               </Typography>
-            </Grid>
-            <Grid item xs={12}>
+            </div>
+            <div item xs={12}>
               <Typography variant="h4">Responsibilities</Typography>
-            </Grid>
+            </div>
             {freeLanceResponsibilities.map((data) => {
               return (
-                <Grid item xs={12} sm={4} key={data}>
+                <div item xs={12} sm={4} key={data}>
                   <Typography variant="body1">{data}</Typography>
-                </Grid>
+                </div>
               );
             })}
-          </Grid>
-          <Grid item xs={12}>
+          </div>
+          <div item xs={12}>
             <Divider variant="middle" className={classes.divider} />
-          </Grid>
-          <Grid
+          </div>
+          <div
             item
             container
             xs={12}
@@ -308,31 +299,31 @@ function CV(): React.ReactElement {
             justifyContent="space-between"
             alignContent="flex-start"
           >
-            <Grid item xs={12} sm={6}>
+            <div item xs={12} sm={6}>
               <Typography variant="h4" style={{ color: "#9C3C41" }}>
                 Mentoring Class Mates
               </Typography>
               <Typography variant="body1">University of Sydney</Typography>
               <Typography variant="body1">Feb 2019 — Dec 2019</Typography>
-            </Grid>
-            <Grid item xs={12} sm={6}>
+            </div>
+            <div item xs={12} sm={6}>
               <Typography variant="body1">
                 Mentoring classmates to learn HTML/CSS/JavaScripts and P5.js.
               </Typography>
-            </Grid>
-            <Grid item xs={12}>
+            </div>
+            <div item xs={12}>
               <Typography variant="h4">Responsibilities</Typography>
-            </Grid>
+            </div>
             {mentoringResponsibilities.map((data) => {
               return (
-                <Grid item xs={12} sm={4} key={data}>
+                <div item xs={12} sm={4} key={data}>
                   <Typography variant="body1">{data}</Typography>
-                </Grid>
+                </div>
               );
             })}
-          </Grid>
-        </Grid>
-      </Grid>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

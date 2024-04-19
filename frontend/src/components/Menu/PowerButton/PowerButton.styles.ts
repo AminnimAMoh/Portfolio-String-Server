@@ -1,51 +1,47 @@
-import { makeStyles } from "@material-ui/core/styles";
+import Button from '@frontend-common/components/Button/Button';
+import styled from 'styled-components';
 
-const useStyle = makeStyles((theme) => ({
-  powerButton: {
-    cursor: 'pointer',
-    zIndex: 2,
-    position: 'relative',
-    width: '100%',
-    [theme.breakpoints.down('md')]: {
-      width: '18%',
-    },
-    [theme.breakpoints.down('xs')]: {
-      width: '25%',
-    },
-    '&>img': {
-      width: '100%',
-    },
-    '&::before': {
-      content: '""',
-      display: 'block',
-      position: 'absolute',
-      zIndex: -1,
-      top: '10%',
-      bottom: 0,
-      left: '10%',
-      right: 0,
-      width: '80%',
-      height: '80%',
-      borderRadius: '50%',
-      opacity: 1,
-      filter: 'blur(10px)',
-      transition:
-        'background-color 1s cubic-bezier(0, 1.51, 0.12, -0.29), -webkit-filter 2000ms cubic-bezier(0, 1.51, 0.12, -0.29)',
-    },
-    '&.open': {
-      '&::before': {
-        filter: 'blur(15px)',
-        transform: 'scale(1.05)',
-        backgroundColor: '#12393D',
-      },
-    },
-    '&.close': {
-      '&::before': {
-        filter: 'blur(5px)',
-        backgroundColor: '#E4E5E7',
-      },
-    },
-  },
-}));
+export const StyledPowerButton = styled(Button)`
+  z-index: 2;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
 
-export default useStyle;
+  opacity: .2;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 35px;
+    bottom: 0;
+    left: 35px;
+    right: 0;
+    width: 330px;
+    height: 330px;
+    transform: scale(1);
+    border-radius: 50%;
+    opacity: 1;
+    filter: blur(10px);
+    transition: ${(props)=> props.theme.animation.cubic[100]}
+  }
+
+  ,
+  &.open {
+    &::before {
+      filter: blur(15px);
+      transform: scale(1.05);
+      background-color: ${(props)=> props.theme.palette.red[400]};
+      opacity: .5;
+      }};
+    }
+  }
+
+  &.close {
+    &::before {
+      filter: blur(5px);
+      background-color: ${(props)=> props.theme.palette.grey[100]};
+    }
+  }
+`;

@@ -1,15 +1,22 @@
-export interface MenuButtonProps{
-    buttonName: string,
-    img: string,
-    position: ButtonPosition
-}
+import { ButtonProps } from '@frontend-common/components';
 
+export type mediaQueries = {
+  rootState: boolean;
+  phase: boolean;
+};
+export type ButtonPositionMetrics = {
+  index: number;
+  size: number;
+  state: boolean;
+};
 export interface ButtonPosition{
-    buttonXPosition: number,
-    buttonYPosition: number,
+    x: number;
+    y: number;
 }
-
-export interface mediaQueries {
-    rootState: boolean;
-    phase: boolean;
-  }
+export interface MenuButtonProps {
+  buttonName: string;
+  img: string;
+}
+export interface StyledMenuButtonProps extends ButtonProps{
+    positionMetrics: ButtonPositionMetrics;
+}

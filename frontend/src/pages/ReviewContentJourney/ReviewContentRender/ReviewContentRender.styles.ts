@@ -1,25 +1,23 @@
-import { makeStyles, createStyles } from "@material-ui/core/styles";
+import Box from '@frontend-common/components/Box/Box';
+import styled from 'styled-components';
 
-const useStyle = makeStyles((theme) => createStyles({
-    root: {
-      height: "100vh",
-      display: "flex",
-      flexFlow: "row-reverse",
-      justifyContent: "center",
-      alignItems: "center",
-      [theme.breakpoints.down("md")]: {
-        flexFlow: "column",
-      },
-      "&.open": {
-        paddingRight: theme.spacing(20),
-        [theme.breakpoints.down("md")]: {
-          paddingRight: theme.spacing(0),
-        },
-      },
-      "&.close": {
-        paddingRight: 0,
-      },
-    },
-}))
+export const StyledContainer = styled(Box)`
+  height: "100%";
+  
+  &.open{
+    padding-right: 160px;
+    ${(props) =>
+      `@media ${props.theme.breakpoint.m}{
+        padding-right: 0;
+      }`}
+  }
 
-export default useStyle;
+  &.close{
+    padding-right; 0;
+  }
+  
+  ${(props) =>
+    `@media ${props.theme.breakpoint.m}{
+      flex-direction: column;
+    }`}
+`;

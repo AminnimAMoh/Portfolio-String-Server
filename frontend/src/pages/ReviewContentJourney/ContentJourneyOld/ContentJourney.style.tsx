@@ -1,22 +1,21 @@
-import { makeStyles } from "@material-ui/core/styles";
+import styled from "styled-components";
 
 const mytheme = {
   radius: 80,
 };
 
-const useStyle = makeStyles((theme) => ({
-  root: {
-    width: "100%",
-    height: "100%",
+export const root=styled.div`
+width: "100%",
+height: "100%",
     opacity: 1,
     transform: "translateX(-150%)",
     transition:
-      "transform 1s ease-in-out .5s, width .5s ease, height .5s ease, padding .5s ease, opacity .5s ease .5s",
+    "transform 1s ease-in-out .5s, width .5s ease, height .5s ease, padding .5s ease, opacity .5s ease .5s",
     overflowX: "hidden",
     overflowY: "auto",
     direction: "rtl",
     backgroundImage:
-      "url(images/Containers/Content_Frame/Page-Frame-Light-Wave.png)",
+    "url(images/Containers/Content_Frame/Page-Frame-Light-Wave.png)",
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundPosition: "right",
@@ -119,7 +118,5 @@ const useStyle = makeStyles((theme) => ({
         filter: 'blur(1.5px)',
       }
     }
-  },
-}));
-
-export default useStyle;
+  }
+  `

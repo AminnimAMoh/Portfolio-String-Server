@@ -1,67 +1,66 @@
-import { makeStyles } from "@material-ui/core/styles";
+import styled from 'styled-components';
 
 const mytheme = {
   radius: 80,
 };
 
-const useStyle = makeStyles((theme) => ({
-  root: {
-    width: "100%",
-    height: "100%",
-    opacity: 1,
-    // transform: "translateX(-150%)",
-    transition:
-      "transform 1s ease-in-out .5s, width .5s ease, height .5s ease, padding .5s ease, opacity .5s ease .5s",
-    overflowX: "hidden",
-    overflowY: "auto",
-    direction: "rtl",
-    backgroundImage:
-      "url(images/Containers/Content_Frame/Page-Frame-Light-Wave.png)",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    backgroundPosition: "right",
-    padding: theme.spacing(12, 41, 12, 6),
-    [theme.breakpoints.down("lg")]: {
-      padding: theme.spacing(12, 40, 0, 6),
-    },
-    [theme.breakpoints.down("md")]: {
-      backgroundImage: "none",
-      padding: theme.spacing(0, 6, 12),
-    },
-    "&.open": {
-      width: "100%",
-    },
-    "&.open_vertically": {
-      transform: "translateY(0%)",
-    },
-    "&.close_vertically": {
-      transform: "translate(0%, 100%)",
-      padding: 0,
-      opacity: 0,
-    },
-    "&.close": {
-      width: "0%",
-      padding: 0,
-      opacity: 0,
-    },
+export const root = styled.div`
+width: "100%",
+height: "100%",
+opacity: 1,
+// transform: "translateX(-150%)",
+transition:
+"transform 1s ease-in-out .5s, width .5s ease, height .5s ease, padding .5s ease, opacity .5s ease .5s",
+overflowX: "hidden",
+overflowY: "auto",
+direction: "rtl",
+backgroundImage:
+"url(images/Containers/Content_Frame/Page-Frame-Light-Wave.png)",
+backgroundRepeat: "no-repeat",
+backgroundSize: "cover",
+backgroundPosition: "right",
+padding: theme.spacing(12, 41, 12, 6),
+[theme.breakpoints.down("lg")]: {
+  padding: theme.spacing(12, 40, 0, 6),
+},
+[theme.breakpoints.down("md")]: {
+  backgroundImage: "none",
+  padding: theme.spacing(0, 6, 12),
+},
+"&.open": {
+  width: "100%",
+},
+"&.open_vertically": {
+  transform: "translateY(0%)",
+},
+"&.close_vertically": {
+  transform: "translate(0%, 100%)",
+  padding: 0,
+  opacity: 0,
+},
+"&.close": {
+  width: "0%",
+  padding: 0,
+  opacity: 0,
+},
+},
+MobileFrame: {
+  display: "none",
+  position: "sticky",
+  height: "auto",
+  top: "-5px",
+  width: "100%",
+  [theme.breakpoints.down("md")]: {
+    display: "block",
   },
-  MobileFrame: {
-    display: "none",
-    position: "sticky",
-    height: "auto",
-    top: "-5px",
-    width: "100%",
-    [theme.breakpoints.down("md")]: {
-      display: "block",
-    },
-  },
-  scrollToTop: {
-    position: "sticky",
-    top: "100%",
-    right: "0%",
-    transform: "translateY(-15px) scale(0)",
-    width: mytheme.radius,
-    height: mytheme.radius,
+},
+scrollToTop: {
+  position: "sticky",
+  top: "100%",
+  right: "0%",
+  transform: "translateY(-15px) scale(0)",
+  width: mytheme.radius,
+  height: mytheme.radius,
     borderRadius: "50%",
     cursor: "pointer",
     transition: "transform .5s ease-in-out",
@@ -121,6 +120,4 @@ const useStyle = makeStyles((theme) => ({
       }
     }
   },
-}));
-
-export default useStyle;
+  `;
